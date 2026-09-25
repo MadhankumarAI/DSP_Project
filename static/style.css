@@ -1,0 +1,338 @@
+/* ===================================================================
+   WINDOWS 95 THEME
+   - teal desktop, silver (#c0c0c0) 3D windows, navy title bars,
+     beveled buttons and sunken input fields. MS Sans Serif type.
+   =================================================================== */
+
+:root {
+  --desk:   #3a9d9d;   /* teal desktop background          */
+  --silver: #c0c0c0;   /* window / button face             */
+  --white:  #ffffff;   /* light bevel edge                 */
+  --light:  #dfdfdf;   /* soft light bevel                 */
+  --gray:   #808080;   /* mid shadow                       */
+  --dark:   #000000;   /* hard shadow                      */
+  --navy:   #000080;   /* active title bar                 */
+  --ok:     #008000;
+  --danger: #aa0000;
+}
+
+/* Raised 3D edge (windows, buttons)  */
+/* Sunken 3D edge (inputs, outputs)   */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0 auto;
+  max-width: 940px;
+  padding: 14px 14px 54px;
+  background-color: var(--desk);
+  /* subtle desktop texture */
+  background-image: radial-gradient(rgba(255, 255, 255, .07) 1px, transparent 1px);
+  background-size: 4px 4px;
+  color: var(--dark);
+  font-family: "MS Sans Serif", "Microsoft Sans Serif", Tahoma, Geneva, sans-serif;
+  font-size: 12px;
+}
+img { image-rendering: pixelated; }
+
+/* ---------- MASTHEAD = a real window with a title bar ---------- */
+.masthead {
+  background: var(--silver);
+  border: 2px solid;
+  border-color: var(--white) var(--dark) var(--dark) var(--white);
+  box-shadow: inset 1px 1px 0 var(--light), inset -1px -1px 0 var(--gray),
+              3px 3px 7px rgba(0, 0, 0, .30);
+  padding: 3px;
+  margin-bottom: 16px;
+}
+.titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #000080 0%, #1084d0 100%);
+  color: var(--white);
+  padding: 3px 4px;
+}
+.titlebar-text { display: flex; align-items: center; gap: 6px; font-weight: bold; font-size: 12px; }
+.titlebar-text img { width: 16px; height: 16px; }
+.titlebar-controls { display: flex; gap: 2px; }
+.titlebar-controls i {
+  width: 17px; height: 15px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--silver); color: var(--dark);
+  border: 1px solid; border-color: var(--white) var(--dark) var(--dark) var(--white);
+  font-style: normal; font-size: 10px; line-height: 1;
+}
+.masthead-body {
+  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  padding: 12px 12px 10px;
+}
+.masthead-copy h1 { margin: 0; font-size: 24px; color: var(--navy); letter-spacing: .5px; }
+.masthead-copy p { margin: 3px 0 0; font-size: 12px; }
+.masthead-copy .sub { color: #404040; }
+.credit {
+  margin-top: 8px;
+  display: inline-block;
+  background: var(--white);
+  border: 2px solid;
+  border-color: var(--gray) var(--white) var(--white) var(--gray);
+  box-shadow: inset 1px 1px 0 var(--dark), inset -1px -1px 0 var(--light);
+  padding: 5px 8px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.hero { width: 158px; height: auto; flex: 0 0 auto; }
+
+/* ---------- QUESTION SWITCHER (Win95 buttons) ---------- */
+.qtabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.qtab {
+  flex: 1 1 auto;
+  background: var(--silver);
+  border: 2px solid;
+  border-color: var(--white) var(--dark) var(--dark) var(--white);
+  box-shadow: inset 1px 1px 0 var(--light), inset -1px -1px 0 var(--gray);
+  padding: 8px 12px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.qtab:active,
+.qtab.active {
+  border-color: var(--dark) var(--white) var(--white) var(--dark);
+  box-shadow: inset 1px 1px 0 var(--gray), inset -1px -1px 0 var(--light);
+  padding: 9px 11px 7px 13px;   /* nudge label like a pressed button */
+}
+
+/* ---------- QUESTIONS / GRID ---------- */
+.question { display: none; }
+.question.active { display: block; }
+
+.panel-grid {
+  display: grid;
+  gap: 12px;
+  /* cap card width so they stay compact instead of stretching huge */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 300px));
+  justify-content: start;
+  align-items: start;
+}
+
+/* ---------- SUB-TABS ---------- */
+.tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.tab {
+  background: var(--silver);
+  border: 2px solid;
+  border-color: var(--white) var(--dark) var(--dark) var(--white);
+  box-shadow: inset 1px 1px 0 var(--light), inset -1px -1px 0 var(--gray);
+  padding: 6px 14px;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.tab.active {
+  border-color: var(--dark) var(--white) var(--white) var(--dark);
+  box-shadow: inset 1px 1px 0 var(--gray), inset -1px -1px 0 var(--light);
+  font-weight: bold;
+}
+
+/* ---------- BOX = a window ---------- */
+.panel { display: none; }
+.panel.active { display: block; }
+
+.box {
+  background: var(--silver);
+  border: 2px solid;
+  border-color: var(--white) var(--dark) var(--dark) var(--white);
+  box-shadow: inset 1px 1px 0 var(--light), inset -1px -1px 0 var(--gray),
+              3px 3px 6px rgba(0, 0, 0, .28);
+  padding: 7px;
+}
+.box.wide { max-width: 440px; }
+
+/* the h2 acts as the window's title bar */
+.box h2 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+  margin: -7px -7px 8px -7px;
+  background: linear-gradient(90deg, #000080 0%, #1084d0 100%);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: bold;
+  padding: 3px 5px;
+}
+.box h2::before {               /* per-window pixel icon (set by ic-* classes) */
+  content: "";
+  flex: 0 0 16px;
+  width: 16px; height: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.box h2::after {                /* decorative close button, pushed to the right */
+  content: "\00d7";
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px; height: 14px;
+  background: var(--silver);
+  color: var(--dark);
+  border: 1px solid;
+  border-color: var(--white) var(--dark) var(--dark) var(--white);
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* ---------- PER-WINDOW ICONS ---------- */
+.ic-lock    h2::before { background-image: url("img/lock.svg"); }
+.ic-shield  h2::before { background-image: url("img/shield.svg"); }
+.ic-monitor h2::before { background-image: url("img/monitor.svg"); }
+.ic-book    h2::before { background-image: url("img/book.svg"); }
+.ic-bomb    h2::before { background-image: url("img/bomb.svg"); }
+.ic-key     h2::before { background-image: url("img/key.svg"); }
+.ic-doc     h2::before { background-image: url("img/doc.svg"); }
+.ic-bug     h2::before { background-image: url("img/bug.svg"); }
+.ic-scan    h2::before { background-image: url("img/scan.svg"); }
+.hint { font-size: 11px; margin: 0 0 8px; color: #202020; }
+
+/* ---------- FORM FIELDS (sunken) ---------- */
+label {
+  display: block;
+  font-size: 11px;
+  margin: 6px 0 2px;
+}
+label.check { display: flex; align-items: center; gap: 6px; }
+
+input[type=text], input[type=number], select, textarea {
+  width: 100%;
+  background: var(--white);
+  border: 2px solid;
+  border-color: var(--gray) var(--white) var(--white) var(--gray);
+  box-shadow: inset 1px 1px 0 var(--dark), inset -1px -1px 0 var(--light);
+  padding: 3px 5px;
+  font-family: inherit;
+  font-size: 12px;
+  resize: vertical;
+}
+input:focus, select:focus, textarea:focus { outline: 1px dotted var(--dark); }
+
+.row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+
+/* ---------- BUTTONS (raised, press = sunken) ---------- */
+button, .btnlink {
+  display: inline-block;
+  background: var(--silver);
+  color: var(--dark);
+  border: 2px solid;
+  border-color: var(--white) var(--dark) var(--dark) var(--white);
+  box-shadow: inset 1px 1px 0 var(--light), inset -1px -1px 0 var(--gray);
+  padding: 5px 12px;
+  margin-top: 8px;
+  font-family: inherit;
+  font-size: 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+button:active, .btnlink:active {
+  border-color: var(--dark) var(--white) var(--white) var(--dark);
+  box-shadow: inset 1px 1px 0 var(--gray), inset -1px -1px 0 var(--light);
+}
+.row button, .row .btnlink { margin-top: 0; flex: 1 1 auto; text-align: center; }
+
+/* ---------- OUTPUT (sunken panel) ---------- */
+.output {
+  margin-top: 12px;
+  background: var(--white);
+  border: 2px solid;
+  border-color: var(--gray) var(--white) var(--white) var(--gray);
+  box-shadow: inset 1px 1px 0 var(--dark), inset -1px -1px 0 var(--light);
+  padding: 6px;
+  min-height: 32px;
+  white-space: pre-wrap;
+  word-break: break-all;
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+}
+.output.ok  { color: var(--ok); }
+.output.bad { color: var(--danger); }
+
+/* ---------- PROGRESS BAR (Win95 style) ---------- */
+.progress {
+  margin-top: 12px;
+  height: 22px;
+  background: var(--white);
+  border: 2px solid;
+  border-color: var(--gray) var(--white) var(--white) var(--gray);
+  box-shadow: inset 1px 1px 0 var(--dark), inset -1px -1px 0 var(--light);
+  padding: 2px;
+}
+.bar {
+  height: 100%;
+  width: 0%;
+  /* segmented blue blocks like the classic Win95 progress control */
+  background: repeating-linear-gradient(
+    to right, var(--navy) 0, var(--navy) 10px, transparent 10px, transparent 12px);
+  background-color: var(--navy);
+  transition: width 0.05s linear;
+}
+
+.meter {
+  margin-top: 10px; height: 18px; padding: 2px;
+  background: var(--white);
+  border: 2px solid;
+  border-color: var(--gray) var(--white) var(--white) var(--gray);
+  box-shadow: inset 1px 1px 0 var(--dark), inset -1px -1px 0 var(--light);
+}
+.meter-fill { height: 100%; width: 0%; background: var(--danger); transition: width .2s, background .2s; }
+
+/* ---------- WIN95 TASKBAR ---------- */
+.taskbar {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 3px 4px;
+  background: var(--silver);
+  border-top: 2px solid var(--white);
+  box-shadow: inset 0 1px 0 var(--light);
+}
+.startbtn {
+  display: flex; align-items: center; gap: 5px;
+  margin: 0;
+  padding: 4px 9px;
+  font-weight: bold; font-size: 13px;
+  background: var(--silver);
+  border: 2px solid;
+  border-color: var(--white) var(--dark) var(--dark) var(--white);
+  box-shadow: inset 1px 1px 0 var(--light), inset -1px -1px 0 var(--gray);
+  cursor: pointer;
+}
+.startbtn:active {
+  border-color: var(--dark) var(--white) var(--white) var(--dark);
+  box-shadow: inset 1px 1px 0 var(--gray), inset -1px -1px 0 var(--light);
+}
+.startbtn img { width: 16px; height: 16px; }
+.task-item {
+  font-size: 12px; padding: 5px 12px;
+  border: 2px solid;
+  border-color: var(--dark) var(--white) var(--white) var(--dark);
+  box-shadow: inset 1px 1px 0 var(--gray);
+  background: var(--silver);
+}
+.task-note {
+  font-size: 11px; color: #303030;
+  padding: 0 8px;
+  overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+}
+.tray {
+  margin-left: auto;
+  font-size: 12px; padding: 5px 10px;
+  border: 1px solid;
+  border-color: var(--gray) var(--white) var(--white) var(--gray);
+}
+@media (max-width: 620px) { .task-note { display: none; } }

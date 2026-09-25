@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SECURITY LAB</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="titlebar">
+      <span class="titlebar-text">
+        <img src="{{ url_for('static', filename='img/winflag.svg') }}" alt="">
+        Security Lab &mdash; C:\demo\security_lab.exe
+      </span>
+      <span class="titlebar-controls"><i>_</i><i>&#9633;</i><i>&times;</i></span>
+    </div>
+    <div class="masthead-body">
+      <div class="masthead-copy">
+        <h1>Security Lab</h1>
+        <p>CIA Triad &middot; Password Attacks &middot; Virus Simulation</p>
+        <p class="sub">Flask + Windows&nbsp;95 UI &mdash; educational demo</p>
+        <div class="credit">
+          <b>Madhan Kumar R</b> &middot; USN 1DS23AI035<br>
+          Dept. of AI &amp; ML, DSCE &middot; Subject: DSP
+        </div>
+      </div>
+      <img class="hero" src="{{ url_for('static', filename='img/hero.svg') }}" alt="retro computer">
+    </div>
+  </header>
+
+  <!-- ===== QUESTION SWITCHER ===== -->
+  <nav class="qtabs">
+    <button class="qtab active" data-q="q3">Q3 · CIA TRIAD</button>
+    <button class="qtab" data-q="q4">Q4 · PASSWORD ATTACKS</button>
+    <button class="qtab" data-q="q5">Q5 · VIRUS SIMULATION</button>
+  </nav>
+
+  <!-- =================================================================== -->
+  <!-- Q3 : CIA TRIAD                                                       -->
+  <!-- =================================================================== -->
+  <div class="question active" id="q3">
+    <div class="panel-grid">
+
+      <div class="box ic-lock">
+        <h2>[C] CONFIDENTIALITY</h2>
+        <p class="hint">Encrypt data so only someone with the key can read it (XOR cipher).</p>
+        <label>TEXT</label>
+        <input id="c-text" type="text" placeholder="secret message">
+        <label>KEY</label>
+        <input id="c-key" type="text" placeholder="mykey">
+        <div class="row">
+          <button onclick="doCipher('encrypt')">ENCRYPT</button>
+          <button onclick="doCipher('decrypt')">DECRYPT</button>
+        </div>
+        <pre id="c-out" class="output"></pre>
+      </div>
+
+      <div class="box ic-shield">
+        <h2>[I] INTEGRITY</h2>
+        <p class="hint">Fingerprint a message. Change one letter and the hash changes = tampering.</p>
+        <label>MESSAGE</label>
+        <input id="i-msg" type="text" placeholder="transfer $100 to Bob">
+        <div class="row">
+          <button onclick="hashMessage()">GENERATE HASH</button>
+          <button onclick="verifyMessage()">VERIFY (TAMPER CHECK)</button>
+        </div>
+        <label>SAVED HASH</label>
+        <input id="i-saved" type="text" placeholder="stored fingerprint">
+        <pre id="i-out" class="output"></pre>
+      </div>
+
+      <div class="box ic-monitor">
+        <h2>[A] AVAILABILITY</h2>
+        <p class="hint">Flood a server with requests. Without protection it goes OFFLINE (DoS).</p>
+        <label>REQUESTS SENT</label>
+        <input id="a-req" type="number" value="100">
+        <label>SERVER CAPACITY</label>
+        <input id="a-cap" type="number" value="50">
+        <label class="check"><input id="a-prot" type="checkbox"> ENABLE RATE-LIMIT PROTECTION</label>
+        <button onclick="testAvailability()">SIMULATE TRAFFIC</button>
+        <pre id="a-out" class="output"></pre>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =================================================================== -->
+  <!-- Q4 : PASSWORD ATTACKS (has its own sub-tabs)                         -->
+  <!-- =================================================================== -->
+  <div class="question" id="q4">
+    <nav class="tabs">
+      <button class="tab active" data-tab="dict">DICTIONARY ATTACK</button>
+      <button class="tab" data-tab="brute">BRUTE FORCE</button>
+      <button class="tab" data-tab="tools">PASSWORD TOOLS</button>
+    </nav>
+
+    <section class="panel active" id="dict">
+      <div class="box wide ic-book">
+        <h2>DICTIONARY ATTACK</h2>
+        <p class="hint">Try every word in the wordlist against a target password or hash.</p>
+        <label>TARGET (plaintext or hash)</label>
+        <input id="d-target" type="text" placeholder="e.g. dragon  OR  a hash">
+        <label>MODE</label>
+        <select id="d-mode">
+          <option value="plain">PLAINTEXT</option>
+          <option value="md5">MD5 HASH</option>
+          <option value="sha1">SHA1 HASH</option>
+          <option value="sha256">SHA256 HASH</option>
+        </select>
+        <button onclick="runDictionary()">LAUNCH ATTACK</button>
+        <div class="progress"><div class="bar" id="d-bar"></div></div>
+        <pre id="d-out" class="output"></pre>
+      </div>
+    </section>
+
+    <section class="panel" id="brute">
+      <div class="box wide ic-bomb">
+        <h2>BRUTE-FORCE ATTACK</h2>
+        <p class="hint">Try EVERY combination. Longer passwords make this explode.</p>
+        <label>TARGET (plaintext or hash)</label>
+        <input id="b-target" type="text" placeholder="e.g. a1  OR  a hash">
+        <label>MODE</label>
+        <select id="b-mode">
+          <option value="plain">PLAINTEXT</option>
+          <option value="md5">MD5 HASH</option>
+          <option value="sha256">SHA256 HASH</option>
+        </select>
+        <label>CHARSET</label>
+        <select id="b-charset">
+          <option value="digits">DIGITS 0-9</option>
+          <option value="lower">LOWERCASE a-z</option>
+          <option value="lower_digits" selected>a-z + 0-9</option>
+        </select>
+        <label>MAX LENGTH (up to 5)</label>
+        <input id="b-maxlen" type="number" value="3" min="1" max="5">
+        <button onclick="runBrute()">LAUNCH ATTACK</button>
+        <div class="progress"><div class="bar" id="b-bar"></div></div>
+        <pre id="b-out" class="output"></pre>
+      </div>
+    </section>
+
+    <section class="panel" id="tools">
+      <div class="panel-grid">
+        <div class="box ic-key">
+          <h2>STRENGTH CHECKER</h2>
+          <label>PASSWORD</label>
+          <input id="s-pw" type="text" placeholder="type a password" oninput="checkStrength()">
+          <div class="meter"><div class="meter-fill" id="s-meter"></div></div>
+          <pre id="s-out" class="output"></pre>
+          <div class="row">
+            <button onclick="addAnalyzed()">ADD TO REPORT</button>
+            <button onclick="clearAnalyzed()">CLEAR</button>
+          </div>
+          <div class="row">
+            <button onclick="exportAnalyzed('txt')">EXPORT .TXT</button>
+            <button onclick="exportAnalyzed('csv')">EXPORT .CSV</button>
+          </div>
+          <pre id="s-history" class="output"></pre>
+        </div>
+
+        <div class="box ic-doc">
+          <h2>WORDLIST ANALYSIS + EXPORT</h2>
+          <p class="hint">Categorise the built-in <b>wordlist.txt</b> and export it. (To export the passwords YOU typed, use the Strength Checker's ADD TO REPORT.)</p>
+          <button onclick="analyzeWordlist()">ANALYZE WORDLIST</button>
+          <div class="row">
+            <a class="btnlink" href="/api/export?fmt=txt">EXPORT .TXT</a>
+            <a class="btnlink" href="/api/export?fmt=csv">EXPORT .CSV</a>
+          </div>
+          <div class="row">
+            <a class="btnlink" href="/api/export?fmt=csv&category=WEAK">WEAK.CSV</a>
+            <a class="btnlink" href="/api/export?fmt=csv&category=MEDIUM">MEDIUM.CSV</a>
+            <a class="btnlink" href="/api/export?fmt=csv&category=STRONG">STRONG.CSV</a>
+          </div>
+          <pre id="w-out" class="output"></pre>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- =================================================================== -->
+  <!-- Q5 : VIRUS SIMULATION (safe / educational)                          -->
+  <!-- =================================================================== -->
+  <div class="question" id="q5">
+    <div class="panel-grid">
+
+      <div class="box ic-bug">
+        <h2>INFECTION SPREAD SIMULATOR</h2>
+        <p class="hint">Watch a virus REPLICATE across files, then turn on the antivirus to contain it. No real files are touched.</p>
+        <label>NUMBER OF FILES</label>
+        <input id="v-files" type="number" value="30">
+        <label>SPREAD RATE (files infected per infected file each tick)</label>
+        <input id="v-rate" type="number" value="2">
+        <label>TICKS (time steps)</label>
+        <input id="v-ticks" type="number" value="8">
+        <label class="check"><input id="v-av" type="checkbox"> ENABLE ANTIVIRUS (DEFENDER)</label>
+        <label>DETECTION RATE (0.0 - 1.0)</label>
+        <input id="v-det" type="number" value="0.5" step="0.1" min="0" max="1">
+        <button onclick="runVirusSpread()">RUN SIMULATION</button>
+        <pre id="v-out" class="output"></pre>
+      </div>
+
+      <div class="box ic-scan">
+        <h2>SIGNATURE SCANNER (DETECTION)</h2>
+        <p class="hint">Antivirus flags a file if it contains a known malware "signature". Insert the sample and scan.</p>
+        <label>FILE CONTENT</label>
+        <textarea id="vs-content" rows="6" placeholder="paste file text here..."></textarea>
+        <div class="row">
+          <button onclick="loadSample()">LOAD INFECTED SAMPLE</button>
+          <button onclick="scanContent()">SCAN FILE</button>
+        </div>
+        <pre id="vs-out" class="output"></pre>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== WIN95 TASKBAR ===== -->
+  <div class="taskbar">
+    <button class="startbtn" type="button">
+      <img src="{{ url_for('static', filename='img/winflag.svg') }}" alt="">Start
+    </button>
+    <div class="task-item">Security Lab</div>
+    <div class="task-note">FOR EDUCATIONAL / AUTHORIZED USE ONLY</div>
+    <div class="tray"><span id="clock">--:--</span></div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
