@@ -195,6 +195,12 @@ img { image-rendering: pixelated; }
 .ic-doc     h2::before { background-image: url("img/doc.svg"); }
 .ic-bug     h2::before { background-image: url("img/bug.svg"); }
 .ic-scan    h2::before { background-image: url("img/scan.svg"); }
+.ic-hash    h2::before { background-image: url("img/hash.svg"); }
+.ic-mask    h2::before { background-image: url("img/mask.svg"); }
+.ic-sign    h2::before { background-image: url("img/sign.svg"); }
+.ic-token   h2::before { background-image: url("img/token.svg"); }
+.ic-idcard  h2::before { background-image: url("img/idcard.svg"); }
+.ic-anon    h2::before { background-image: url("img/anon.svg"); }
 .hint { font-size: 11px; margin: 0 0 8px; color: #202020; }
 
 /* ---------- FORM FIELDS (sunken) ---------- */

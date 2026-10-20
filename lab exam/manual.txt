@@ -1,0 +1,3747 @@
+DEPARTMENT OF ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING
+
+
+
+
+
+
+
+Data Security &amp; Privacy Lab [22AI73]
+Course Type: IPCC
+LABORATORY MANUAL
+ BE-VII SEMESTER
+(2025-2026)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+COURSE: Data Security &amp; Privacy 
+Lab Manual
+
+(COURSE CODE: 22AI73) SEMESTER: VII
+
+
+Name of the Student: Semester/ Section: USN and Roll No: Batch:
+
+
+
+
+
+
+
+Vision of the Institution
+To impart quality technical education with a focus on Research and Innovation emphasizing on Development of Sustainable and Inclusive Technology for the benefit of society.
+Mission of the Institution
+To provide an environment that enhances creativity and Innovation in pursuit of Excellence.
+To nurture teamwork in order to transform individuals as responsible leaders and entrepreneurs.
+To train the students to the changing technical scenario and make them to understand the importance of Sustainable and Inclusive technologies.
+DEPARTMENT OF ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING
+
+Vision of the Department
+To provide progressive education and flourish the students' ingenuity to be successful professionals impacting the society for a smarter and ethical world.
+
+Mission of the Department
+
+To adopt an engaging teaching–learning process with emphasis on problem-solving, programming, and intelligent systems development skills.
+To promote additional skill development through enhanced and experiential learning.
+To collaborate with industries and professional bodies to make students industry-ready.
+To encourage innovation through multi-disciplinary research and development activities.
+To nurture human values and ethical principles in students, empowering them to contribute meaningfully to society as responsible professionals.
+
+
+
+
+
+
+
+
+
+PEOs
+•Graduates will effectively apply problem-solving, communication, and collaborative skills to design and deliver innovative engineering solutions in professional practice.
+•Graduates will contribute Artificial Intelligence and Machine Learning expertise grounded in Computer Science and Mathematics as effective members and leaders of multidisciplinary engineering teams.
+•Graduates will demonstrate a strong research orientation through engagement in interdisciplinary, cross-domain, and innovation-driven research.
+•Graduates will demonstrate social and ethical responsibility by applying engineering knowledge and skills to address societal challenges and contribute to a sustainable and intelligent world.
+PSOs
+•Graduates will demonstrate strong programming and problem-solving abilities for the design, development, and maintenance of software solutions.
+•Graduates will be able to identify, formulate, analyze, and solve real-world problems by applying principles of Artificial Intelligence and Machine Learning.
+•Graduates will be capable of using computational platforms and execution environments to deploy and manage computing solutions effectively.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DEPARTMENT OF ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING
+
+               DOs and DON’Ts in Laboratory:
+
+1.Make entry in the Log Book as soon as you enter the Laboratory.
+2.All the students should sit according to their roll numbers starting from their Left to right.
+3.All the students are supposed to enter the terminal number in the log book.
+4.Do not change the terminal on which you are working.
+5.All the students are expected to get at least the algorithm of the Program/concept to be implemented.
+6.Strictly observe the instructions given by the teacher/Lab Instructor.
+Do not disturb machine Hardware / Software Setup
+Instruction for Laboratory Teachers:
+1.Submission related to whatever lab work has been completed should be done during the next lab session along with signing the index.
+2.The promptness of submission should be encouraged by way of marking and evaluation patterns that will benefit the sincere students.
+3.Continuous assessment in the prescribed format must be followed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Course Objectives 
+1
+To provide a strong foundation in the principles of cybersecurity with emphasis on confidentiality, integrity, and availability.
+2
+To develop the ability to understand and analyze various cyber threats such as phishing, identity theft, malware, and ransomware through real-world case studies.
+3
+To introduce cryptographic techniques, including symmetric and asymmetric encryption and digital signatures, and highlight their applications in securing information.
+4
+To familiarize students with privacy-preserving mechanisms such as k-anonymity, differential privacy, and anonymization models applied across different domains.
+5
+To enable students to design effective security and privacy governance frameworks aligned with current standards, regulations, and organizational contingency plans.
+6
+To provide hands-on experience in implementing data security and privacy mechanisms using tools, technologies, and practical applications
+
+Course Outcomes: At the end of the course, student will be able to:
+
+CO No 
+Course Outcome (Summary) 
+CO1
+Use cybersecurity and data privacy principles to identify and mitigate threats like phishing, identity theft, malware, and data breaches using real-world scenarios.
+CO2
+Analyze cybersecurity and data privacy principles to examine, differentiate, mitigate and evaluate threats such as phishing, identity theft, malware, and data breaches using case studies.
+CO3
+Demonstrate the use of cryptographic and privacy-preserving mechanisms to secure data and resolve practical security issues in diverse cybersecurity scenarios.
+CO4
+Examine security governance frameworks, risk-management practices, and privacy regulations to evaluate organizational resilience and compliance through case-based analysis.
+CO5
+Design and implement comprehensive data security and privacy mechanisms in practical applications and suggest improvements.
+
+
+Course
+Outcomes
+Washington Accord Knowledge and Attitude Profile (WKs)
+Program Outcomes
+PSO
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+1
+2
+3
+1
+
+✔
+✔
+
+
+✔
+
+
+✔
+
+3
+ 
+ 
+ 3
+ 
+ 
+2
+2
+ 
+ 
+3
+1
+
+2
+
+✔
+✔
+
+✔
+✔
+
+
+✔
+ 
+3
+ 
+ 
+ 3
+ 
+ 
+2
+2
+ 
+ 
+3
+1
+
+3
+
+✔
+✔
+
+✔
+✔
+
+
+✔
+3
+ 
+3
+ 
+ 3
+ 
+ 
+2
+2
+ 
+ 
+3
+1
+
+4
+
+✔
+✔
+
+✔
+✔
+
+
+✔
+
+
+ 
+3
+ 3
+ 
+ 
+2
+2
+ 
+ 
+3
+1
+
+5
+
+✔
+✔
+
+✔
+✔
+
+
+✔
+ 
+ 
+3
+ 
+3
+ 
+ 
+2
+2
+ 
+ 
+3
+1
+
+Overall mapping
+3
+3
+3
+3
+2
+2
+3
+1
+
+
+
+
+
+
+
+DEPARTMENT OF ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING
+Name:USN:
+Semester: VII               Course Title: Data Security &amp; Privacy Lab       Course Code: 22AI73
+Program No.
+Date
+Experiment Details
+Signature with marks
+1
+
+Basic Security Tool, Tryhack,MyIpaddress, Hashcalc,Basic Cryptography
+
+2
+
+ Kali Linux, Wireshark, Burp Suite ,QWASP, CryptoHack
+
+
+3
+
+Exploring CIA Triad with Simulations: using a Python-based simulation or online tools to demonstrate how data can be protected (confidentiality), checked for tampering (integrity), and ensured to be available under attack (availability).
+
+4
+
+Build python code for Dictionary Attack for plaintext and hash value.
+Add brute-force simulation in this GUI?
+Add password strength checker (like weak/mediu Hashm/strong)?
+Export analyzed passwords by category?
+Support longer passwords (4+ characters)?
+Export analysis report as .txt or .csv?
+Add real-time progress bar for brute-force?
+
+
+5
+
+Build a virus simulation tool — safe, educational, and non-malicious — to help you understand how malware might behave in a system, and how defenders can detect or prevent it.
+
+
+6
+
+Build a Vulnerability Analyser Tool in Python that can scan source code files (any programming language) for common security vulnerabilities or bad coding patterns.
+
+
+7
+
+Phishing Website Detection using Python: Use a dataset of phishing and legitimate websites. Train a simple ML model using scikit-learn to classify URLs based on features like length, presence of @, https, etc.
+
+
+
+8
+
+Develop a real-time messaging application where two devices can communicate securely. The application must use Transport Layer Security (TLS) for securing the client-server communication and End-to-End Encryption (E2EE) to ensure that only the sender and recipient can access the message content. The server should act solely as a message relay and have no access to plaintext messages.
+Draw a sequence diagram and Build a real-world messaging application where two devices can communicate securely using end-to-end encryption (E2EE). The
+application should ensure that only the sender and receiver can read the messages, and even the server facilitating the communication cannot access the plaintext messages.
+
+
+
+9
+
+Hash Functions and Obfuscation:a)Implement common hash functions (e.g., SHA- 256, MD5) using Python's hashlib. Input: A string or file. Output: Its hash value.
+b) Explore obfuscation techniques.
+Example: Create a simple obfuscation script that hides a Python function's logic.
+
+
+10
+
+Digital Signatures, Authentication, and Authorization. a) Implement digital signature generation and verification using RSA. oUse cryptography or PyCrypto libraries.
+b) Simulate authentication and authorization using a web application (e.g., Flask or Django).Implement login functionality and secure API calls with tokens (e.g., JWT). Case Study:Topic: "Use of digital signatures in e-commerce and banking." Analysis: Explore how digital signatures secure online transactions.
+
+11
+
+Ia) dentifying and Classifying PII Data: Given a dataset, students will write a script to classify data into types (structured/unstructured), states (in-transit, at-rest, in-use), and highlight PII elements. b)Anonymization with k-Anonymity, , l-diversity, t-closeness, differential privacy: Use a sample dataset with PII (like healthcare data). Apply anonymity using Python or tools like ARX. Compare &amp; Evaluate re-identification risk before and after anonymization.
+
+12
+
+Case Study on GDPR and DPDP Act 2023: create a comparative chart of GDPR and DPDP Act 2023 principles and explain roles like Data Protection Officer (DPO). Include a mock incident report format.
+
+13
+
+Demo of Micro project+ certificate 
+
+14
+
+CIA
+
+
+
+
+
+
+
+
+
+
+Writeup+Execution(20)
+Viva (5)
+Record (5)
+Total(30)
+CIE
+
+
+
+
+Micro_Project Assessment
+
+
+
+
+
+Writeup (8)
+Execution (35)
+Viva (7)
+Total(50)
+IA
+
+
+
+
+
+Final CIA + IA 
+CIA(30)
+IA(20)
+Total(50)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Signature of CoordinatorHoD
+
+Introduction to Basic Security Tools
+a)Introduction to Basic Security Tools: Simple Password Strength Checker
+password = input("Enter password: ")
+if len(password) &gt;= 8:
+    print("Password length is good")
+else:
+    print("Weak password: Use at least 8 characters")
+
+b) Introduction to TryHackMe:Basic User Authentication Simulation
+username = input("Enter username: ")
+password = input("Enter password: ")
+
+if username == "student" and password == "1234":
+    print("Login Successful")
+else:
+    print("Invalid Username or Password")
+
+c) Identifying Network and Public IP Information:Find Local IP Address
+import socket
+hostname = socket.gethostname()
+ip_address = socket.gethostbyname(hostname)
+print("Hostname:", hostname)
+print("Local IP Address:", ip_address)
+
+Basic Cryptography Using Python:Simple Caesar Cipher
+text = input("Enter message: ")
+shift = 3
+encrypted = ""
+for char in text:
+    encrypted += chr(ord(char) + shift)
+print("Encrypted Message:", encrypted)
+
+e) Practical Cryptography Using CryptoHack:Hex Encoding and Decoding
+
+text = "Hello"
+encoded = text.encode().hex()
+print("Encoded:", encoded)
+decoded = bytes.fromhex(encoded).decode()
+print("Decoded:", decoded)
+
+
+
+
+
+
+
+
+
+
+
+
+
+Introduction to Basic Security Tools
+a)Exploring Kali Linux:Check System Information
+import platform
+print("Operating System:", platform.system())
+print("Version:", platform.version())
+print("Machine:", platform.machine())
+
+Network Traffic Analysis Using Wireshark:For this experiment, students can capture packets using Wireshark. A simple Python program can generate network traffic:
+import requests
+website = "https://example.com"
+response = requests.get(website)
+print("Status Code:", response.status_code)
+
+Basic Web Security Testing:Simple Input Validation
+
+username = input("Enter username: ")
+if username.isalnum():
+    print("Valid Input")
+else:
+    print("Invalid Input: Special characters detected")
+
+Understanding OWASP Security Risks:Simple SQL Injection Keyword Detection
+user_input = input("Enter username: ")
+keywords = ["SELECT", "DROP", "DELETE", "--"]
+for word in keywords:
+    if word.lower() in user_input.lower():
+        print("Possible malicious input detected")
+        break
+else:
+    print("Input appears normal")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Exploring CIA Triad with Simulations: using a Python-based simulation or online tools to demonstrate how data can be protected (confidentiality), checked for tampering (integrity), and ensured to be available under attack (availability).
+
+CODE IMPLEMENTATION
+
+import hashlib
+import time
+import threading
+from cryptography.fernet import Fernet
+
+# -----------------------
+# Confidentiality
+# -----------------------
+def confidentiality_demo():
+    print("\n--- Confidentiality Demo ---")
+    # Generate a secret key for encryption
+    key = Fernet.generate_key()
+    cipher = Fernet(key)
+
+    message = "Top Secret: AI is amazing!"
+    print("Original Message:", message)
+
+    # Encrypt
+    encrypted = cipher.encrypt(message.encode())
+    print("Encrypted Message:", encrypted)
+
+    # Decrypt
+    decrypted = cipher.decrypt(encrypted).decode()
+    print("Decrypted Message:", decrypted)
+
+# -----------------------
+# Integrity
+# -----------------------
+def integrity_demo():
+    print("\n--- Integrity Demo ---")
+    message = "Data must stay the same"
+    # Calculate hash
+    hash1 = hashlib.sha256(message.encode()).hexdigest()
+    print("Original Hash:", hash1)
+
+    # Simulate tampering
+    tampered_message = "Data must stay different"
+    hash2 = hashlib.sha256(tampered_message.encode()).hexdigest()
+
+    print("Tampered Hash :", hash2)
+    if hash1 == hash2:
+        print("✅ Integrity OK")
+    else:
+        print("❌ Integrity Breach! Data has been altered")
+
+# -----------------------
+# Availability
+# -----------------------
+def availability_demo():
+    print("\n--- Availability Demo ---")
+    data_store = {"file1": "important data", "file2": "student records"}
+
+    def server():
+        while True:
+            print("✅ Server running. Files available:", list(data_store.keys()))
+            time.sleep(2)
+
+    def ddos_attack():
+        print("⚠️ Simulating DDoS Attack... server busy!")
+        time.sleep(5)
+        print("⚠️ Server unresponsive for some time!")
+        time.sleep(3)
+        print("✅ Server restored and available again.")
+
+    # Run server in background
+    server_thread = threading.Thread(target=server, daemon=True)
+    server_thread.start()
+
+    # Simulate attack after some time
+    time.sleep(3)
+    ddos_attack()
+
+# -----------------------
+# Run all demos
+# -----------------------
+if __name__ == "__main__":
+    confidentiality_demo()
+    integrity_demo()
+    availability_demo()
+RESULT
+
+
+4. Build python code for Dictionary Attack for plaintext and hash value.
+Add brute-force simulation in this GUI?
+Add password strength checker (like weak/medium/strong)?
+Export analyzed passwords by category?
+Support longer passwords (4+ characters)?
+Export analysis report as .txt or .csv?
+Add real-time progress bar for brute-force
+
+
+CODE IMPLEMENTATION
+
+import hashlib
+import itertools
+import string
+import threading
+import time
+import csv
+import os
+from tkinter import Tk, StringVar, BooleanVar, IntVar, filedialog, messagebox, END
+from tkinter import ttk
+from tkinter.scrolledtext import ScrolledText
+
+# ----------------------------- Utility functions -----------------------------
+
+def hash_text(text: str, algo: str) -&gt; str:
+    t = text.encode("utf-8", errors="ignore")
+    algo = algo.lower()
+    if algo == "md5":
+        return hashlib.md5(t).hexdigest()
+    if algo == "sha1":
+        return hashlib.sha1(t).hexdigest()
+    if algo == "sha256":
+        return hashlib.sha256(t).hexdigest()
+    raise ValueError("Unsupported algorithm")
+
+def detect_hash_algo(hexstr: str) -&gt; str | None:
+    s = hexstr.strip().lower()
+    if all(c in string.hexdigits for c in s):
+        if len(s) == 32:
+            return "md5"
+        if len(s) == 40:
+            return "sha1"
+        if len(s) == 64:
+            return "sha256"
+    return None
+
+COMMON_WEAK = {
+    "123456", "password", "qwerty", "111111", "letmein", "abc123", "12345678",
+    "iloveyou", "admin", "welcome", "monkey", "dragon", "football", "login"
+}
+
+def password_strength(pw: str, dictionary_set: set[str] | None = None) -&gt; tuple[str, float, list[str]]:
+    reasons = []
+    length = len(pw)
+    variety = sum([
+        any(c.islower() for c in pw),
+        any(c.isupper() for c in pw),
+        any(c.isdigit() for c in pw),
+        any(c in string.punctuation for c in pw),
+    ])
+    score = min(60, length * 4) + variety * 10
+    if pw.lower() in COMMON_WEAK:
+        score -= 30; reasons.append("in common weak list")
+    if pw.isdigit() and length &lt; 8:
+        score -= 20; reasons.append("short digits-only")
+    if dictionary_set and pw.lower() in dictionary_set:
+        score -= 15; reasons.append("found in dictionary")
+    score = max(0, min(100, score))
+    if score &lt; 40: cat = "Weak"
+    elif score &lt; 70: cat = "Medium"
+    else: cat = "Strong"
+    if not reasons:
+        reasons.append({"Weak":"short or low variety","Medium":"ok but could be longer/more diverse","Strong":"good length and variety"}[cat])
+    return cat, float(score), reasons
+
+# ----------------------------- Attack controller -----------------------------
+
+class AttackController:
+    def __init__(self, log_callback, progress_callback, live_callback, done_callback):
+        self.stop_event = threading.Event()
+        self.log = log_callback
+        self.progress = progress_callback
+        self.live = live_callback          
+        self.done = done_callback
+        self.total = 0
+        self.attempts = 0
+        self.start_time = None
+
+    def reset(self):
+        self.stop_event.clear()
+        self.total = 0
+        self.attempts = 0
+        self.start_time = time.time()
+
+    def request_stop(self):
+        self.stop_event.set()
+
+    def should_stop(self):
+        return self.stop_event.is_set()
+
+# ----------------------------- Attack workers -----------------------------
+
+def dict_attack(controller: AttackController, target: str, mode: str, algo: str, words: list[str]):
+    controller.reset()
+    controller.total = len(words)
+    found = None
+    for i, w in enumerate(words, 1):
+        if controller.should_stop():
+            controller.log("\n[!] Attack cancelled by user.")
+            controller.done(None, cancelled=True); return
+        w = w.strip("\r\n")
+        controller.attempts = i
+        # Live guess (throttled)
+        if i % 50 == 0 or i == 1:
+            controller.live(f"Trying: {w}")
+        match = (w == target) if mode == 'plaintext' else (hash_text(w, algo) == target.lower())
+        if i % 200 == 0 or i == controller.total:
+            controller.progress(controller.attempts, controller.total)
+        if match:
+            found = w
+            controller.log(f"[+] Found: '{w}' after {i} attempts")
+            break
+    if not found:
+        controller.log("[-] No match in dictionary.")
+    controller.done(found, cancelled=False)
+
+def brute_force_attack(controller: AttackController, target: str, mode: str, algo: str,
+                       charset: str, min_len: int, max_len: int):
+    controller.reset()
+    total = sum(len(charset) ** L for L in range(min_len, max_len + 1))
+    controller.total = total
+    attempts = 0
+    for L in range(min_len, max_len + 1):
+        for combo in itertools.product(charset, repeat=L):
+            if controller.should_stop():
+                controller.log("\n[!] Attack cancelled by user.")
+                controller.done(None, cancelled=True); return
+            cand = ''.join(combo)
+            attempts += 1
+            controller.attempts = attempts
+            # Live guess (throttled)
+            if attempts % 200 == 0 or attempts == 1:
+                controller.live(f"Trying: {cand}")
+            match = (cand == target) if mode == 'plaintext' else (hash_text(cand, algo) == target.lower())
+            if attempts % 2000 == 0 or attempts == total:
+                controller.progress(attempts, total)
+            if match:
+                controller.log(f"[+] Found: '{cand}' after {attempts} attempts")
+                controller.progress(attempts, total)
+                controller.done(cand, cancelled=False); return
+    controller.log("[-] Not found in brute-force range.")
+    controller.done(None, cancelled=False)
+
+# --------------------------------- GUI ---------------------------------
+
+class App:
+    def __init__(self, root: Tk):
+        self.root = root
+        root.title("Dictionary &amp; Brute-Force Password Demo (Educational)")
+        root.geometry("980x740")
+
+        self.controller = AttackController(
+            log_callback=self.log,
+            progress_callback=self.update_progress,
+            live_callback=self.update_live_guess,     
+            done_callback=self.on_done
+        )
+
+        # Vars
+        self.mode = StringVar(value="hash")  
+        self.hash_algo = StringVar(value="md5")
+        self.target_input = StringVar()
+        self.auto_detect = BooleanVar(value=True)
+
+        self.charset_choice = StringVar(value="lower+digits")
+        self.min_len = IntVar(value=1)
+        self.max_len = IntVar(value=4)      
+
+        self.words: list[str] = [
+            "password","123456","qwerty","letmein","welcome","admin","iloveyou",
+            "dragon","monkey","football","login","abc123"
+        ]
+        self.analysis_results = {"Weak": [], "Medium": [], "Strong": []}
+
+        self._build_ui()
+
+    # ---------- UI builders ----------
+    def _build_ui(self):
+        nb = ttk.Notebook(self.root); nb.pack(fill="both", expand=True, padx=8, pady=8)
+        self.tab_attack = ttk.Frame(nb); self.tab_analyze = ttk.Frame(nb); self.tab_log = ttk.Frame(nb)
+        nb.add(self.tab_attack, text="Attack")
+        nb.add(self.tab_analyze, text="Analyze Passwords")
+        nb.add(self.tab_log, text="Log &amp; Export")
+        self._build_attack_tab()
+        self._build_analyze_tab()
+        self._build_log_tab()
+
+    def _build_attack_tab(self):
+        frm = ttk.Frame(self.tab_attack); frm.pack(fill="x", padx=10, pady=10)
+
+        # Target
+        row1 = ttk.Frame(frm); row1.pack(fill="x", pady=4)
+        ttk.Label(row1, text="Target (password or hash):").pack(side="left")
+        ttk.Entry(row1, textvariable=self.target_input, width=70).pack(side="left", padx=6)
+        ttk.Button(row1, text="Paste", command=self._paste).pack(side="left")
+        ttk.Checkbutton(row1, text="Auto-detect hash algo", variable=self.auto_detect).pack(side="left", padx=6)
+
+        # Mode &amp; algo + Strength Check
+        row2 = ttk.Frame(frm); row2.pack(fill="x", pady=4)
+        ttk.Label(row2, text="Mode:").pack(side="left")
+        ttk.Radiobutton(row2, text="Hash target", variable=self.mode, value="hash").pack(side="left")
+        ttk.Radiobutton(row2, text="Plaintext target", variable=self.mode, value="plaintext").pack(side="left")
+        ttk.Label(row2, text="Algorithm:").pack(side="left", padx=(20, 2))
+        algo_combo = ttk.Combobox(row2, textvariable=self.hash_algo, values=["md5","sha1","sha256"], width=8)
+        algo_combo.pack(side="left", padx=(0,10))
+        ttk.Button(row2, text="Check Strength", command=self.check_strength_button).pack(side="left")
+
+        # Dictionary controls
+        dictf = ttk.LabelFrame(self.tab_attack, text="Dictionary Attack")
+        dictf.pack(fill="x", padx=10, pady=6)
+        ttk.Label(dictf, text=f"Loaded words: (default {len(self.words)}). You can load your own wordlist file.").pack(anchor="w", padx=8, pady=2)
+        btns = ttk.Frame(dictf); btns.pack(fill="x", padx=6, pady=4)
+        ttk.Button(btns, text="Load Wordlist...", command=self.load_wordlist).pack(side="left")
+        ttk.Button(btns, text="Start Dictionary Attack", command=self.start_dict_attack).pack(side="left", padx=6)
+
+        # Brute-force controls
+        bf = ttk.LabelFrame(self.tab_attack, text="Brute-Force Attack (Simulation)")
+        bf.pack(fill="x", padx=10, pady=6)
+        ttk.Label(bf, text="Charset:").grid(row=0, column=0, sticky="w", padx=6, pady=3)
+        ttk.Combobox(bf, textvariable=self.charset_choice, values=[
+            "lower","digits","lower+digits","letters","letters+digits","letters+digits+symbols"
+        ], width=24).grid(row=0, column=1, sticky="w", padx=4)
+        ttk.Label(bf, text="Min length:").grid(row=0, column=2, sticky="w", padx=6)
+        ttk.Spinbox(bf, from_=1, to=8, textvariable=self.min_len, width=5).grid(row=0, column=3)
+        ttk.Label(bf, text="Max length:").grid(row=0, column=4, sticky="w", padx=6)
+        ttk.Spinbox(bf, from_=1, to=8, textvariable=self.max_len, width=5).grid(row=0, column=5)
+        ttk.Button(bf, text="Start Brute-Force", command=self.start_brute_force).grid(row=0, column=6, padx=8)
+        ttk.Button(bf, text="Cancel", command=self.cancel_attack).grid(row=0, column=7, padx=4)
+
+        # Progress + live guess
+        progf = ttk.LabelFrame(self.tab_attack, text="Progress")
+        progf.pack(fill="x", padx=10, pady=8)
+        self.progress_var = IntVar(value=0)
+        self.progressbar = ttk.Progressbar(progf, orient="horizontal", length=600, mode="determinate", maximum=1000)
+        self.progressbar.pack(fill="x", padx=8, pady=6)
+        self.status_var = StringVar(value="Idle")
+        ttk.Label(progf, textvariable=self.status_var).pack(anchor="w", padx=8)
+        self.live_var = StringVar(value="")    # &lt;- NEW live guess label
+        ttk.Label(progf, textvariable=self.live_var, foreground="#555").pack(anchor="w", padx=8, pady=(2,6))
+
+    def _build_analyze_tab(self):
+        frm = ttk.Frame(self.tab_analyze); frm.pack(fill="both", expand=True, padx=10, pady=10)
+        ttk.Label(frm, text="Analyze passwords from a file (one per line), then export by category:").pack(anchor="w")
+        top = ttk.Frame(frm); top.pack(fill="x", pady=6)
+        ttk.Button(top, text="Load Password List...", command=self.load_password_list).pack(side="left")
+        ttk.Button(top, text="Export CSV", command=lambda: self.export_analysis("csv")).pack(side="left", padx=6)
+        ttk.Button(top, text="Export TXT", command=lambda: self.export_analysis("txt")).pack(side="left")
+        self.tree = ttk.Treeview(frm, columns=("password","category","score","notes"), show="headings")
+        for col, w in (("password",260),("category",100),("score",80),("notes",360)):
+            self.tree.heading(col, text=col.capitalize()); self.tree.column(col, width=w)
+        self.tree.pack(fill="both", expand=True, pady=6)
+
+    def _build_log_tab(self):
+        frm = ttk.Frame(self.tab_log); frm.pack(fill="both", expand=True, padx=10, pady=10)
+        self.logbox = ScrolledText(frm, height=22); self.logbox.pack(fill="both", expand=True)
+        btns = ttk.Frame(frm); btns.pack(fill="x", pady=6)
+        ttk.Button(btns, text="Save Log as TXT", command=self.save_log).pack(side="left")
+        ttk.Button(btns, text="Clear Log", command=lambda: self.logbox.delete('1.0', END)).pack(side="left", padx=6)
+
+    # ---------- Handlers ----------
+    def _paste(self):
+        try:
+            self.target_input.set(self.root.clipboard_get())
+        except Exception:
+            pass
+
+    def check_strength_button(self):
+        target = self.target_input.get().strip()
+        if not target:
+            messagebox.showwarning("Input", "Enter a target first."); return
+        if self.mode.get() == "hash":
+            messagebox.showinfo("Strength", "Strength applies to plaintext.\nSwitch to 'Plaintext target' to evaluate."); return
+        dict_set = set(w.lower() for w in self.words)
+        cat, score, reasons = password_strength(target, dict_set)
+        msg = f"Strength: {cat} (score {score:.0f})\n- " + "\n- ".join(reasons)
+        self.status_var.set(f"Strength: {cat} (score {score:.0f})")
+        self.log(msg)
+
+    def load_wordlist(self):
+        path = filedialog.askopenfilename(title="Choose wordlist", filetypes=[("Text","*.txt"),("All","*.*")])
+        if not path: return
+        try:
+            with open(path, "r", encoding="utf-8", errors="ignore") as f:
+                self.words = [line.strip() for line in f if line.strip()]
+            messagebox.showinfo("Wordlist", f"Loaded {len(self.words)} words.")
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to load wordlist: {e}")
+
+    def start_dict_attack(self):
+        target = self.target_input.get().strip()
+        if not target:
+            messagebox.showwarning("Input", "Enter a target (hash or plaintext)."); return
+        mode = self.mode.get()
+        algo = self.hash_algo.get()
+        if mode == 'hash' and self.auto_detect.get():
+            guess = detect_hash_algo(target)
+            if guess:
+                algo = guess; self.hash_algo.set(guess)
+                self.log(f"[i] Auto-detected hash algo: {guess}")
+        self.status_var.set("Running dictionary attack...")
+        self.progressbar['value'] = 0
+        t = threading.Thread(target=dict_attack, args=(self.controller, target, mode, algo, list(self.words)), daemon=True)
+        t.start()
+
+    def start_brute_force(self):
+        target = self.target_input.get().strip()
+        if not target:
+            messagebox.showwarning("Input", "Enter a target (hash or plaintext)."); return
+        mode = self.mode.get()
+        algo = self.hash_algo.get()
+        min_len = int(self.min_len.get()); max_len = int(self.max_len.get())
+        if min_len &gt; max_len:
+            messagebox.showwarning("Lengths", "Min length cannot exceed Max length."); return
+        charset = self._charset_from_choice(self.charset_choice.get())
+        combos = sum(len(charset) ** L for L in range(min_len, max_len + 1))
+        if combos &gt; 50_000_000:
+            if not messagebox.askyesno("Warning", f"This will try ~{combos:,} combos. Continue?"):
+                return
+        self.status_var.set("Running brute-force...")
+        self.progressbar['value'] = 0
+        self.live_var.set("")
+        t = threading.Thread(target=brute_force_attack, args=(self.controller, target, mode, algo, charset, min_len, max_len), daemon=True)
+        t.start()
+
+    def cancel_attack(self):
+        self.controller.request_stop()
+
+    def update_progress(self, attempts, total):
+        frac = attempts / total if total else 0
+        self.progressbar['value'] = int(frac * 1000)
+        elapsed = time.time() - (self.controller.start_time or time.time())
+        rate = attempts / elapsed if elapsed &gt; 0 else 0
+        eta = (total - attempts) / rate if rate &gt; 0 else float('inf')
+        eta_txt = "∞" if eta == float('inf') else f"{int(eta)}s"
+        self.status_var.set(f"Attempts: {attempts:,}/{total:,}  |  Rate: {rate:,.0f}/s  |  ETA: {eta_txt}")
+        self.root.update_idletasks()
+
+    def update_live_guess(self, text: str):
+        self.live_var.set(text)
+
+    def on_done(self, found, cancelled=False):
+        if cancelled:
+            self.status_var.set("Cancelled")
+        elif found:
+            self.status_var.set(f"Found: {found}")
+            self.live_var.set("")
+        else:
+            self.status_var.set("Finished: not found")
+
+    def log(self, text: str):
+        self.logbox.insert(END, text + "\n")
+        self.logbox.see(END)
+
+    def _charset_from_choice(self, choice: str) -&gt; str:
+        return {
+            "lower": string.ascii_lowercase,
+            "digits": string.digits,
+            "lower+digits": string.ascii_lowercase + string.digits,
+            "letters": string.ascii_letters,
+            "letters+digits": string.ascii_letters + string.digits,
+            "letters+digits+symbols": string.ascii_letters + string.digits + string.punctuation
+        }.get(choice, string.ascii_lowercase)
+
+    # -------- Password list analysis &amp; export (Analyze tab) --------
+    def load_password_list(self):
+        path = filedialog.askopenfilename(title="Choose password list (one per line)", filetypes=[("Text","*.txt"),("CSV","*.csv"),("All","*.*")])
+        if not path: return
+        passwords = []
+        try:
+            if path.lower().endswith('.csv'):
+                with open(path, newline='', encoding='utf-8', errors='ignore') as f:
+                    reader = csv.reader(f)
+                    for row in reader:
+                        if row: passwords.append(str(row[0]).strip())
+            else:
+                with open(path, 'r', encoding='utf-8', errors='ignore') as f:
+                    passwords = [line.strip() for line in f if line.strip()]
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to read file: {e}"); return
+        dict_set = set(w.lower() for w in self.words)
+        for c in self.tree.get_children(): self.tree.delete(c)
+        self.analysis_results = {"Weak": [], "Medium": [], "Strong": []}
+        for pw in passwords:
+            cat, score, reasons = password_strength(pw, dict_set)
+            notes = "; ".join(reasons)
+            self.tree.insert('', END, values=(pw, cat, f"{score:.0f}", notes))
+            self.analysis_results[cat].append({"password": pw, "score": score, "notes": notes})
+        messagebox.showinfo("Analyze", f"Analyzed {len(passwords)} passwords.")
+
+    def export_analysis(self, kind: str = "csv"):
+        if kind not in {"csv","txt"}: return
+        default_name = f"password_analysis.{kind}"
+        path = filedialog.asksaveasfilename(defaultextension=f".{kind}", initialfile=default_name,
+                                            filetypes=[("CSV","*.csv"),("Text","*.txt")])
+        if not path: return
+        try:
+            if kind == "csv":
+                with open(path, 'w', newline='', encoding='utf-8') as f:
+                    writer = csv.writer(f)
+                    writer.writerow(["Category","Password","Score","Notes"])
+                    for cat in ("Weak","Medium","Strong"):
+                        for item in self.analysis_results[cat]:
+                            writer.writerow([cat, item["password"], f"{item['score']:.0f}", item["notes"]])
+            else:
+                with open(path, 'w', encoding='utf-8') as f:
+                    for cat in ("Weak","Medium","Strong"):
+                        f.write(f"[{cat}]\n")
+                        for item in self.analysis_results[cat]:
+                            f.write(f"- {item['password']}  (score {item['score']:.0f})  {item['notes']}\n")
+                        f.write("\n")
+            messagebox.showinfo("Export", f"Saved: {os.path.basename(path)}")
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to save: {e}")
+
+    # ---------------- Log export ----------------
+    def save_log(self):
+        path = filedialog.asksaveasfilename(defaultextension=".txt", initialfile="attack_log.txt", filetypes=[("Text","*.txt")])
+        if not path: return
+        try:
+            with open(path, 'w', encoding='utf-8') as f:
+                f.write(self.logbox.get('1.0', END))
+            messagebox.showinfo("Saved", f"Saved log to {os.path.basename(path)}")
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to save: {e}")
+
+# ------------------------------ Main ------------------------------
+
+if __name__ == "__main__":
+    root = Tk()
+    try:
+        root.call("tk", "scaling", 1.2)
+        style = ttk.Style()
+        if "vista" in style.theme_names(): style.theme_use("vista")
+        elif "clam" in style.theme_names(): style.theme_use("clam")
+    except Exception:
+        pass
+    App(root)
+    root.mainloop()
+
+
+SMALL VERSION 
+
+
+import tkinter as tk
+from tkinter import filedialog, ttk, messagebox
+import hashlib
+import itertools
+import string
+import csv
+import os
+
+# ---------------- Password Strength Checker ---------------- #
+def check_strength(password):
+    strength = 0
+    remarks = ""
+
+    if len(password) &gt;= 8:
+        strength += 1
+    if any(char.isdigit() for char in password):
+        strength += 1
+    if any(char.isupper() for char in password):
+        strength += 1
+    if any(char.islower() for char in password):
+        strength += 1
+    if any(char in string.punctuation for char in password):
+        strength += 1
+
+    if strength &lt;= 2:
+        remarks = "Weak"
+    elif strength == 3 or strength == 4:
+        remarks = "Medium"
+    else:
+        remarks = "Strong"
+
+    return remarks
+
+# ---------------- Hashing Function ---------------- #
+def sha256_hash(text):
+    return hashlib.sha256(text.encode()).hexdigest()
+
+# ---------------- Dictionary Attack ---------------- #
+def load_dictionary():
+    global dictionary_words
+    file_path = filedialog.askopenfilename(title="Select Dictionary File", filetypes=[("Text Files", "*.txt")])
+    if file_path:
+        with open(file_path, "r", encoding="utf-8", errors="ignore") as file:
+            dictionary_words = file.read().splitlines()
+        status_var.set(f"Dictionary Loaded: {len(dictionary_words)} words")
+
+def run_dictionary_attack():
+    global dictionary_words, target_hash, found_password
+    if not dictionary_words:
+        status_var.set("No dictionary loaded!")
+        return
+    
+    target_hash = entry_hash.get().strip()
+    if not target_hash:
+        status_var.set("Enter a hash value!")
+        return
+
+    status_var.set("Running Dictionary Attack...")
+    root.update()
+
+    for word in dictionary_words:
+        if sha256_hash(word) == target_hash:
+            status_var.set(f"Password Found: {word}")
+            found_password = word
+            return
+
+    status_var.set("Dictionary Attack Failed: No match found.")
+
+# ---------------- Brute-force Attack ---------------- #
+def run_bruteforce_attack():
+    global found_password
+    target_hash = entry_hash.get().strip()
+    if not target_hash:
+        status_var.set("Enter a hash value!")
+        return
+
+    max_length = int(combo_length.get())
+    charset = string.ascii_letters + string.digits + string.punctuation
+
+    progress_bar["value"] = 0
+    total_guesses = sum(len(charset) ** i for i in range(1, max_length + 1))
+    guess_counter = 0
+
+    status_var.set("Running Brute-force Attack...")
+    root.update()
+
+    for length in range(1, max_length + 1):
+        for guess in itertools.product(charset, repeat=length):
+            guess_word = ''.join(guess)
+            guess_counter += 1
+
+            # Update progress bar and live guess
+            progress_bar["value"] = (guess_counter / total_guesses) * 100
+            live_guess_var.set(f"Trying: {guess_word}")
+            root.update_idletasks()
+
+            if sha256_hash(guess_word) == target_hash:
+                status_var.set(f"Password Found: {guess_word}")
+                found_password = guess_word
+                return
+    
+    status_var.set("Brute-force Attack Failed.")
+
+# ---------------- Analyze Passwords ---------------- #
+def analyze_passwords():
+    global dictionary_words
+    if not dictionary_words:
+        status_var.set("Load dictionary first for analysis!")
+        return
+
+    categories = {"Weak": [], "Medium": [], "Strong": []}
+    for word in dictionary_words:
+        strength = check_strength(word)
+        categories[strength].append(word)
+
+    analysis_results.set(f"Weak: {len(categories['Weak'])}, Medium: {len(categories['Medium'])}, Strong: {len(categories['Strong'])}")
+    return categories
+
+# ---------------- Export Results ---------------- #
+def export_results():
+    categories = analyze_passwords()
+    if not categories:
+        return
+
+    file_path = filedialog.asksaveasfilename(defaultextension=".csv",
+                                             filetypes=[("CSV Files", ".csv"), ("Text Files", ".txt")])
+    if not file_path:
+        return
+
+    ext = os.path.splitext(file_path)[1]
+    if ext == ".csv":
+        with open(file_path, "w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow(["Category", "Passwords"])
+            for cat, words in categories.items():
+                writer.writerow([cat, ", ".join(words)])
+    else:
+        with open(file_path, "w", encoding="utf-8") as f:
+            for cat, words in categories.items():
+                f.write(f"{cat}:\n")
+                f.write(", ".join(words) + "\n\n")
+
+    status_var.set(f"Results exported to {file_path}")
+
+# ---------------- GUI ---------------- #
+root = tk.Tk()
+root.title("Password Cracker (Dictionary + Brute-force)")
+root.geometry("600x450")
+
+dictionary_words = []
+found_password = None
+
+# Input field
+tk.Label(root, text="Enter Password / Hash (SHA-256):").pack(pady=5)
+entry_hash = tk.Entry(root, width=60)
+entry_hash.pack()
+
+# Strength checker
+tk.Button(root, text="Check Strength", command=lambda: status_var.set(f"Strength: {check_strength(entry_hash.get())}")).pack(pady=5)
+
+# Dictionary Attack
+tk.Button(root, text="Load Dictionary", command=load_dictionary).pack(pady=5)
+tk.Button(root, text="Run Dictionary Attack", command=run_dictionary_attack).pack(pady=5)
+
+# Brute-force Attack
+tk.Label(root, text="Max Brute-force Password Length:").pack(pady=5)
+combo_length = ttk.Combobox(root, values=[4,5,6], width=5)
+combo_length.set(4)
+combo_length.pack()
+
+tk.Button(root, text="Run Brute-force Attack", command=run_bruteforce_attack).pack(pady=5)
+
+progress_bar = ttk.Progressbar(root, orient="horizontal", length=400, mode="determinate")
+progress_bar.pack(pady=5)
+
+live_guess_var = tk.StringVar()
+tk.Label(root, textvariable=live_guess_var).pack()
+
+# Analysis + Export
+tk.Button(root, text="Analyze Passwords", command=analyze_passwords).pack(pady=5)
+tk.Button(root, text="Export Results", command=export_results).pack(pady=5)
+
+# Status
+status_var = tk.StringVar(value="Status: Waiting...")
+tk.Label(root, textvariable=status_var, fg="blue").pack(pady=10)
+
+analysis_results = tk.StringVar()
+tk.Label(root, textvariable=analysis_results, fg="green").pack()
+
+root.mainloop()
+
+RESULTS
+
+Password check
+
+
+
+Dictionary Attack
+
+
+Brute force attack
+
+
+Password analyzed by category
+
+Log of Attacks
+
+
+
+Support for Longer Passwords
+
+
+
+5. Build a virus simulation tool — safe, educational, and non-malicious — to help you understand how malware might behave in a system, and how defenders can detect or prevent it.
+
+CODE IMPLEMENTATION
+import random
+import tkinter as tk
+from tkinter import messagebox, scrolledtext
+
+# -------------------------
+# File Object
+class File:
+    def __init__(self, name):
+        self.name = name
+        self.infected = False
+        self.quarantined = False
+        self.quarantine_timer = 0
+
+# -------------------------
+# Computer Object
+class Computer:
+    def __init__(self, name, file_count=6):
+        self.name = name
+        self.files = [File(f"{name}_file_{i}.txt") for i in range(file_count)]
+        self.infected = False
+
+    def infect_file(self, chance=0.3):
+        target = random.choice(self.files)
+        if not target.infected and not target.quarantined and random.random() &lt; chance:
+            target.infected = True
+            self.infected = True
+            return target.name
+        return None
+
+    def spread_within(self, chance=0.2):
+        events = []
+        for file in self.files:
+            if file.infected and not file.quarantined:
+                target = random.choice(self.files)
+                if not target.infected and random.random() &lt; chance:
+                    target.infected = True
+                    self.infected = True
+                    events.append(f"{target.name} infected internally")
+        return events
+
+    def scan_and_quarantine(self, chance=0.3):
+        events = []
+        for file in self.files:
+            if file.infected and not file.quarantined and random.random() &lt; chance:
+                file.quarantined = True
+                file.quarantine_timer = 2
+                events.append(f"{file.name} quarantined")
+        return events
+
+    def recover_files(self):
+        events = []
+        for file in self.files:
+            if file.quarantined:
+                file.quarantine_timer -= 1
+                if file.quarantine_timer &lt;= 0:
+                    file.infected = False
+                    file.quarantined = False
+                    events.append(f"{file.name} recovered")
+        self.infected = any(f.infected for f in self.files)
+        return events
+
+# -------------------------
+# Virus Simulation (grid-based only)
+class VirusSimulation:
+    def __init__(self, gui, computers=6, files=6, infection_chance=0.4, detection_chance=0.3):
+        self.gui = gui
+        self.computers = [Computer(f"PC_{i}", files) for i in range(computers)]
+        self.infection_chance = infection_chance
+        self.detection_chance = detection_chance
+
+    def infect_random_computer(self, initial_infections=1):
+        events = []
+        for _ in range(initial_infections):
+            comp_idx = random.randrange(len(self.computers))
+            name = self.computers[comp_idx].infect_file(chance=1.0)
+            events.append(f"{self.computers[comp_idx].name} initial infection -&gt; {name}")
+        return events
+
+    def step_cycle(self):
+        events = []
+        for comp in self.computers:
+            events += comp.spread_within()
+        for i, comp in enumerate(self.computers):
+            if comp.infected:
+                target = random.choice([c for c in self.computers if c != comp])
+                fname = target.infect_file(self.infection_chance)
+                if fname:
+                    events.append(f"{target.name}: {fname} infected from {comp.name}")
+        for comp in self.computers:
+            events += comp.scan_and_quarantine(self.detection_chance)
+        for comp in self.computers:
+            events += comp.recover_files()
+        return events
+
+    def get_totals(self):
+        total_files = sum(len(c.files) for c in self.computers)
+        infected = sum(f.infected for c in self.computers for f in c.files)
+        quarantined = sum(f.quarantined for c in self.computers for f in c.files)
+        return total_files, infected, quarantined
+
+# -------------------------
+# GUI Class (grid only)
+class VirusSimulationGUI:
+    
+    def __init__(self, root):
+        self.root = root
+        self.root.title("💻 Virus Simulation Tool — Grid View")
+        self.root.geometry("1200x700")
+        self.root.configure(bg="#0f1724")
+        self.cycle_stats = []  # track per-cycle stats
+
+        # Controls
+        control_frame = tk.Frame(root, bg="#091025", padx=12, pady=12)
+        control_frame.pack(side='left', fill='y')
+
+        tk.Label(control_frame, text="Controls", bg="#091025", fg="#ffffff", font=("Segoe UI", 12, "bold")).pack(pady=6)
+
+        self.entry_computers = self._add_input(control_frame, "Computers", "6")
+        self.entry_files = self._add_input(control_frame, "Files/Computer", "6")
+        self.entry_infect = self._add_input(control_frame, "Infection Chance (0-1)", "0.4")
+        self.entry_detect = self._add_input(control_frame, "Detection Chance (0-1)", "0.3")
+        self.entry_cycles = self._add_input(control_frame, "Cycles", "12")
+        self.entry_delay = self._add_input(control_frame, "Delay (ms)", "800")
+
+        btn_frame = tk.Frame(control_frame, bg="#091025")
+        btn_frame.pack(pady=10)
+        self.btn_start = tk.Button(btn_frame, text="Start", command=self.start_simulation, bg="#10b981", fg="#021018",
+                                   width=10, font=("Segoe UI", 12, "bold"))
+        self.btn_start.grid(row=0, column=0, padx=6)
+        self.btn_stop = tk.Button(btn_frame, text="Stop", command=self.stop_simulation, bg="#ef4444", fg="#fff",
+                                  width=10, font=("Segoe UI", 12, "bold"), state='disabled')
+        self.btn_stop.grid(row=0, column=1, padx=6)
+
+        reset_btn = tk.Button(control_frame, text="Reset Log", command=self.reset_log, bg="#374151", fg="#fff", font=("Segoe UI", 11))
+        reset_btn.pack(pady=6)
+
+        # Main display
+        self.grid_frame = tk.Frame(root, bg="#071020")
+        self.grid_frame.pack(side='left', fill='both', expand=True, padx=8, pady=8)
+
+        bottom = tk.Frame(root, bg="#06101a", height=180)
+        bottom.pack(fill='x')
+        stats_l = tk.Frame(bottom, bg="#06101a")
+        stats_l.pack(side='left', fill='y', padx=8, pady=8)
+        tk.Label(stats_l, text="Stats", bg="#06101a", fg="#bfe9ff", font=("Segoe UI", 11, "bold")).pack(anchor='nw')
+        self.stats_text = tk.Label(stats_l, text="Ready", bg="#06101a", fg="#e6f7ff", justify='left')
+        self.stats_text.pack(anchor='nw')
+
+        log_frame = tk.Frame(bottom, bg="#000")
+        log_frame.pack(side='right', fill='both', expand=True, padx=8, pady=8)
+        tk.Label(log_frame, text="Event Log", bg="#000", fg="#8cffc9", font=("Consolas", 10, "bold")).pack(anchor='nw')
+        self.log_box = scrolledtext.ScrolledText(
+            log_frame,
+            height=20,             # more lines visible
+            width=80,              # wider display
+            bg="#020202",
+            fg="#b7f5d6",
+            font=("Consolas", 10),
+            wrap=tk.WORD            # wraps long lines instead of horizontal scroll
+        )
+        self.log_box.pack(fill='both', expand=True)
+
+        # Internal simulation state
+        self.simulation = None
+        self.current_cycle = 0
+        self.total_cycles = 0
+        self.running = False
+        self.delay_ms = 800
+
+    def _add_input(self, frame, label, default):
+        tk.Label(frame, text=label, bg="#091025", fg="#cfe7ff").pack(pady=2, anchor='w')
+        entry = tk.Entry(frame, width=12)
+        entry.insert(0, default)
+        entry.pack(pady=2)
+        return entry
+
+    def reset_log(self):
+        self.log_box.delete('1.0', tk.END)
+
+    def start_simulation(self):
+        try:
+            computers = int(self.entry_computers.get())
+            files = int(self.entry_files.get())
+            infect = float(self.entry_infect.get())
+            detect = float(self.entry_detect.get())
+            cycles = int(self.entry_cycles.get())
+            delay = int(self.entry_delay.get())
+        except ValueError:
+            messagebox.showerror("Input error", "Please enter valid numeric values")
+            return
+
+        self.simulation = VirusSimulation(self, computers, files, infect, detect)
+        inits = self.simulation.infect_random_computer(initial_infections=max(1, computers//4))
+        for e in inits:
+            self.log(e)
+
+        self.current_cycle = 0
+        self.total_cycles = cycles
+        self.delay_ms = delay
+        self.running = True
+        self.btn_start.config(state='disabled')
+        self.btn_stop.config(state='normal')
+        self.cycle_stats = []  # reset stats for new simulation
+
+        self.update_grid()
+        self.root.after(400, self.run_cycle)
+
+    def stop_simulation(self):
+        self.running = False
+        self.btn_start.config(state='normal')
+        self.btn_stop.config(state='disabled')
+        self.log('[STOP] Simulation halted')
+
+    def run_cycle(self):
+        if not self.running:
+            return
+
+        if self.current_cycle &gt;= self.total_cycles:
+            self.running = False
+            self.btn_start.config(state='normal')
+            self.btn_stop.config(state='disabled')
+            self.log(f'[END] Completed {self.total_cycles} cycles')
+
+            # --- Final cumulative summary ---
+            self.log("\n=== FINAL CUMULATIVE SUMMARY ===")
+            for i, (inf, quar) in enumerate(self.cycle_stats, start=1):
+                self.log(f"Cycle {i}: Infected = {inf}, Quarantined = {quar}")
+            return
+
+        self.current_cycle += 1
+        events = self.simulation.step_cycle()
+        self.update_grid()
+
+        # Track per-cycle stats
+        total_files, infected, quarantined = self.simulation.get_totals()
+        self.cycle_stats.append((infected, quarantined))
+
+        self.log(f'[CYCLE {self.current_cycle}] {len(events)} events')
+        for ev in events:
+            self.log(f'  - {ev}')
+        self.root.after(self.delay_ms, self.run_cycle)
+
+    def update_grid(self):
+        # Update stats
+        total_files, infected, quarantined = self.simulation.get_totals()
+        self.stats_text.config(text=f"Cycles: {self.current_cycle}/{self.total_cycles}\n"
+                                    f"Files: {total_files}\n"
+                                    f"Infected: {infected}\n"
+                                    f"Quarantined: {quarantined}")
+
+        # Clear grid
+        for widget in self.grid_frame.winfo_children():
+            widget.destroy()
+
+        # Draw grid
+        cols = 4
+        for idx, comp in enumerate(self.simulation.computers):
+            cf = tk.LabelFrame(self.grid_frame, text=comp.name, bg='#0b1220', fg='#cfe7ff', font=("Segoe UI", 10, "bold"))
+            cf.grid(row=idx//cols, column=idx%cols, padx=8, pady=8)
+            for f in comp.files:
+                color = '#32CD32' if not f.infected and not f.quarantined else ('#FFD700' if f.quarantined else '#FF6347')
+                tk.Label(cf, text=f.name, bg=color, width=20, anchor='w', font=("Segoe UI", 9)).pack(anchor='w', pady=1)
+
+    def log(self, msg):
+        self.log_box.insert(tk.END, msg + "\n")
+        self.log_box.see(tk.END)
+
+# -------------------------
+if __name__ == '__main__':
+    root = tk.Tk()
+    app = VirusSimulationGUI(root)
+    root.mainloop()
+
+RESULT
+
+
+
+
+
+
+6. Build a Vulnerability Analyser Tool in Python that can scan source code files (any programming language) for common security vulnerabilities or bad coding patterns.
+
+CODE IMPLEMENTATION
+import tkinter as tk
+from tkinter import filedialog, messagebox, scrolledtext
+import os
+import re
+
+# -------------------------
+# Define patterns with severity
+vuln_patterns = {
+    "Use of eval()": {"pattern": r"\beval\(", "severity": "Critical", "suggestion": "Use ast.literal_eval() instead"},
+    "Use of exec()": {"pattern": r"\bexec\(", "severity": "Critical", "suggestion": "Avoid using exec()"},
+    "Hardcoded password": {"pattern": r"(password|passwd|secret|apikey)\s*=\s*['\"].+['\"]",
+                           "severity": "High", "suggestion": "Use environment variables or config files"},
+    "SQL Injection Risk": {"pattern": r"(SELECT|INSERT|UPDATE|DELETE).*\+.*['\"]",
+                           "severity": "Medium", "suggestion": "Use parameterized queries"},
+    "Use of os.system": {"pattern": r"os\.system\(", "severity": "High", "suggestion": "Use subprocess with sanitization"},
+    "Use of subprocess without sanitization": {"pattern": r"subprocess\.(call|Popen|run)\(", "severity": "High",
+                                               "suggestion": "Ensure proper sanitization"},
+}
+
+supported_extensions = ['.py', '.js', '.php', '.java', '.c', '.cpp', '.rb']
+
+# -------------------------
+def scan_code(file_path):
+    vulnerabilities_found = []
+    try:
+        with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
+            lines = f.readlines()
+    except Exception as e:
+        return []
+
+    for i, line in enumerate(lines, start=1):
+        for vuln, info in vuln_patterns.items():
+            if re.search(info["pattern"], line, re.IGNORECASE):
+                # Get context lines (2 before, 2 after)
+                start = max(0, i-3)
+                end = min(len(lines), i+2)
+                context = "".join(lines[start:end]).strip()
+                vulnerabilities_found.append({
+                    "file": file_path,
+                    "line": i,
+                    "type": vuln,
+                    "severity": info["severity"],
+                    "code": line.strip(),
+                    "context": context,
+                    "suggestion": info["suggestion"]
+                })
+    return vulnerabilities_found
+
+def scan_directory(directory):
+    all_vulnerabilities = []
+    for root, _, files in os.walk(directory):
+        for file in files:
+            if any(file.endswith(ext) for ext in supported_extensions):
+                file_path = os.path.join(root, file)
+                vulns = scan_code(file_path)
+                all_vulnerabilities.extend(vulns)
+    return all_vulnerabilities
+
+# -------------------------
+# GUI
+class VulnerabilityScannerGUI:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("🛡 Vulnerability Analyzer Tool")
+        self.root.geometry("1000x700")
+        self.root.configure(bg="#0f1724")
+
+        # Top controls
+        control_frame = tk.Frame(root, bg="#091025", pady=10)
+        control_frame.pack(fill='x')
+
+        tk.Label(control_frame, text="Vulnerability Analyzer", bg="#091025", fg="#9ecbff",
+                 font=("Segoe UI", 16, "bold")).pack(side='left', padx=10)
+
+        tk.Button(control_frame, text="Scan File", command=self.select_file,
+                  bg="#10b981", fg="#fff", font=("Segoe UI", 11, "bold")).pack(side='left', padx=10)
+        tk.Button(control_frame, text="Scan Directory", command=self.select_directory,
+                  bg="#3b82f6", fg="#fff", font=("Segoe UI", 11, "bold")).pack(side='left', padx=10)
+        tk.Button(control_frame, text="Clear Results", command=self.clear_results,
+                  bg="#ef4444", fg="#fff", font=("Segoe UI", 11, "bold")).pack(side='left', padx=10)
+
+        # Scrollable frame for results
+        self.canvas = tk.Canvas(root, bg="#071020")
+        self.scroll_frame = tk.Frame(self.canvas, bg="#071020")
+        self.scrollbar = tk.Scrollbar(root, orient="vertical", command=self.canvas.yview)
+        self.canvas.configure(yscrollcommand=self.scrollbar.set)
+
+        self.scrollbar.pack(side='right', fill='y')
+        self.canvas.pack(side='left', fill='both', expand=True)
+        self.canvas.create_window((0, 0), window=self.scroll_frame, anchor='nw')
+        self.scroll_frame.bind("&lt;Configure&gt;", lambda e: self.canvas.configure(scrollregion=self.canvas.bbox("all")))
+
+    def clear_results(self):
+        for widget in self.scroll_frame.winfo_children():
+            widget.destroy()
+
+    def display_vulnerability(self, vuln):
+        # Each vulnerability in its own frame
+        frame = tk.LabelFrame(self.scroll_frame, text=f"{vuln['severity']} - {vuln['type']}", 
+                              bg="#0b1220", fg="#f0f0f0", font=("Segoe UI", 10, "bold"), padx=8, pady=8)
+        frame.pack(fill='x', padx=10, pady=6)
+
+        tk.Label(frame, text=f"File: {vuln['file']}", bg="#0b1220", fg="#a5f3fc", anchor='w', font=("Segoe UI", 10, "bold")).pack(fill='x')
+        tk.Label(frame, text=f"Line: {vuln['line']}", bg="#0b1220", fg="#a5f3fc").pack(anchor='w')
+        tk.Label(frame, text=f"Code: {vuln['code']}", bg="#0b1220", fg="#ffedd5").pack(anchor='w')
+        tk.Label(frame, text="Context:", bg="#0b1220", fg="#c7d2fe", font=("Segoe UI", 9, "italic")).pack(anchor='w', pady=(4,0))
+        ctx_box = scrolledtext.ScrolledText(frame, height=5, bg="#020202", fg="#f9f5ff", font=("Consolas", 10))
+        ctx_box.insert(tk.END, vuln['context'])
+        ctx_box.configure(state='disabled')
+        ctx_box.pack(fill='x', pady=2)
+        tk.Label(frame, text=f"Suggestion: {vuln['suggestion']}", bg="#0b1220", fg="#6ee7b7", font=("Segoe UI", 9, "italic")).pack(anchor='w', pady=(2,0))
+
+    def scan_and_display(self, path):
+        self.clear_results()
+        if os.path.isfile(path):
+            results = scan_code(path)
+        else:
+            results = scan_directory(path)
+        
+        if results:
+            for vuln in results:
+                self.display_vulnerability(vuln)
+        else:
+            messagebox.showinfo("Scan Complete", "No vulnerabilities found!")
+
+    def select_file(self):
+        path = filedialog.askopenfilename(title="Select a file")
+        if path:
+            self.scan_and_display(path)
+
+    def select_directory(self):
+        path = filedialog.askdirectory(title="Select a directory")
+        if path:
+            self.scan_and_display(path)
+
+# -------------------------
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = VulnerabilityScannerGUI(root)
+    root.mainloop()
+
+
+RESULTS
+
+
+
+
+7. Phishing Website Detection using Python: Use a dataset of phishing and legitimate websites. Train a simple ML model using scikit-learn to classify URLs based on features like length, presence of @, https, etc.
+
+CODE IMPLEMENTATION
+
+import tkinter as tk
+from tkinter import messagebox
+import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+from sklearn.model_selection import train_test_split
+
+# --------------------------
+# Load dataset
+dataset_file = "C:/Users/HP/Desktop/dsp/URL_dataset[1].csv"
+
+df = pd.read_csv(dataset_file, encoding='ISO-8859-1', on_bad_lines='skip')
+
+# Map labels: legitimate -&gt; 0, phishing -&gt; 1
+df['Label'] = df['type'].map({'legitimate': 0, 'phishing': 1})
+
+# --------------------------
+# Feature extraction function
+def extract_features(url):
+    features = []
+    features.append(len(url))                  # URL length
+    features.append(1 if '@' in url else 0)    # '@' symbol
+    features.append(1 if url.startswith('https') else 0)  # 'https'
+    features.append(url.count('-'))            # number of '-'
+    features.append(url.count('.'))            # number of '.'
+    suspicious_words = ['login', 'verify', 'secure', 'update', 'account']
+    features.append(1 if any(word in url.lower() for word in suspicious_words) else 0)  # suspicious words
+    return features
+
+# Apply feature extraction
+X = df['url'].astype(str).apply(lambda x: extract_features(x)).tolist()
+y = df['Label']
+
+# --------------------------
+# Train/Test Split
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42, stratify=y
+)
+
+# Train model
+model = RandomForestClassifier(n_estimators=100, random_state=42)
+model.fit(X_train, y_train)
+
+# Evaluate model
+y_pred = model.predict(X_test)
+print("Model Accuracy (on test set):", accuracy_score(y_test, y_pred))
+
+# --------------------------
+# GUI Application
+class PhishingDetectorApp:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Phishing Website Detector")
+        self.root.geometry("450x250")
+        
+        tk.Label(root, text="Enter URL to Check:", font=("Arial", 14)).pack(pady=10)
+        self.url_entry = tk.Entry(root, width=50)
+        self.url_entry.pack(pady=5)
+        
+        tk.Button(root, text="Check URL", font=("Arial", 12), command=self.check_url).pack(pady=15)
+        
+        self.result_label = tk.Label(root, text="", font=("Arial", 12))
+        self.result_label.pack(pady=10)
+    
+    def check_url(self):
+        url = self.url_entry.get().strip()
+        if not url:
+            messagebox.showwarning("Input Error", "Please enter a URL.")
+            return
+        
+        features = extract_features(url)
+        prediction = model.predict([features])[0]
+        
+        if prediction == 1:
+            self.result_label.config(text="⚠️ Warning: Phishing Website Detected!", fg="red")
+        else:
+            self.result_label.config(text="✅ Safe: Legitimate Website", fg="green")
+
+# --------------------------
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = PhishingDetectorApp(root)
+    root.mainloop()
+
+
+
+
+
+
+
+
+
+
+
+
+RESULTS
+
+
+
+
+
+
+
+
+8.Develop a real-time messaging application where two devices can communicate securely. The application must use Transport Layer Security (TLS) for securing the client-server communication and End-to-End Encryption (E2EE) to ensure that only the sender and recipient can access the message content. The server should act solely as a message relay and have no access to plaintext messages.
+
+import socket, ssl, threading, time, base64, hashlib
+from cryptography.fernet import Fernet
+import tkinter as tk
+from tkinter import scrolledtext
+
+HOST = "127.0.0.1"
+PORT = 12345
+
+# --- derive Fernet key from passphrase ---
+def derive_key(passphrase):
+    return base64.urlsafe_b64encode(hashlib.sha256(passphrase.encode()).digest())
+
+class ChatClientPanel:
+    def __init__(self, parent, name, passphrase, side, color):
+        self.name = name
+        self.color = color
+        self.cipher = Fernet(derive_key(passphrase))
+
+        # Frame for this client
+        frame = tk.Frame(parent, bd=3, relief="ridge")
+        frame.pack(side=side, fill="both", expand=True, padx=5, pady=5)
+
+        # Title
+        tk.Label(frame, text=f"Client: {name}", font=("Arial", 12, "bold")).pack(pady=5)
+
+        # Chat box
+        self.chat_area = scrolledtext.ScrolledText(
+            frame, wrap=tk.WORD, state="disabled", width=50, height=20, bg="#1e1e1e", fg="white"
+        )
+        self.chat_area.pack(padx=5, pady=5)
+
+        # Add tags for colored messages
+        self.chat_area.tag_config("Alice", foreground="lime")
+        self.chat_area.tag_config("Bob", foreground="cyan")
+        self.chat_area.tag_config("system", foreground="white")
+
+        # Typing status
+        self.typing_label = tk.Label(frame, text="", fg="orange")
+        self.typing_label.pack()
+
+        # Entry + Send
+        entry_frame = tk.Frame(frame)
+        entry_frame.pack(pady=5)
+
+        self.entry = tk.Entry(entry_frame, width=40)
+        self.entry.pack(side=tk.LEFT, padx=5)
+        self.entry.bind("&lt;KeyRelease&gt;", self.send_typing_status)
+
+        send_btn = tk.Button(entry_frame, text="Send", command=self.send_message)
+        send_btn.pack(side=tk.LEFT)
+
+        # Setup TLS socket
+        context = ssl.create_default_context(ssl.Purpose.SERVER_AUTH)
+        context.check_hostname = False
+        context.verify_mode = ssl.CERT_NONE
+        sock = socket.create_connection((HOST, PORT))
+        self.ssock = context.wrap_socket(sock, server_hostname=HOST)
+
+        self.add_message("[🔒] Connected via TLS. E2EE enabled.", "system")
+
+        # Start receiver thread
+        threading.Thread(target=self.receive_messages, daemon=True).start()
+
+    def add_message(self, msg, sender="system", self_sent=False):
+        self.chat_area.config(state="normal")
+        if self_sent:
+            # Sender sees only their own text (no name prefix)
+            self.chat_area.insert(tk.END, msg + "\n", self.name)
+        else:
+            # Show with name if coming from the other person
+            if sender in ["Alice", "Bob"]:
+                self.chat_area.insert(tk.END, msg + "\n", sender)
+            else:
+                self.chat_area.insert(tk.END, msg + "\n", "system")
+        self.chat_area.yview(tk.END)
+        self.chat_area.config(state="disabled")
+
+    def receive_messages(self):
+        while True:
+            try:
+                data = self.ssock.recv(4096)
+                if not data:
+                    break
+                msg = self.cipher.decrypt(data).decode()
+                if msg.startswith("[") and msg.endswith("is typing...]"):
+                    self.typing_label.config(text=msg)
+                    self.chat_area.after(2000, lambda: self.typing_label.config(text=""))
+                else:
+                    # Example msg: "[12:00:00] Alice: Hi"
+                    if "Alice:" in msg:
+                        self.add_message(msg, "Alice")
+                    elif "Bob:" in msg:
+                        self.add_message(msg, "Bob")
+                    else:
+                        self.add_message(msg, "system")
+            except:
+                break
+
+    def send_typing_status(self, event=None):
+        status_msg = f"[{self.name} is typing...]"
+        encrypted = self.cipher.encrypt(status_msg.encode())
+        self.ssock.sendall(encrypted)
+
+    def send_message(self):
+        msg = self.entry.get().strip()
+        if msg:
+            timestamp = time.strftime("%H:%M:%S")
+            full_msg = f"[{timestamp}] {self.name}: {msg}"
+
+            # Show only msg locally (no prefix)
+            self.add_message(msg, self.name, self_sent=True)
+
+            # Send encrypted full msg (with name so others know sender)
+            encrypted = self.cipher.encrypt(full_msg.encode())
+            self.ssock.sendall(encrypted)
+
+            self.entry.delete(0, tk.END)
+
+# --- Main app ---
+if __name__ == "__main__":
+    root = tk.Tk()
+    root.title("Secure Chat Demo (TLS + E2EE)")
+
+    passphrase = "secretpass"
+
+    # Two clients side by side
+    ChatClientPanel(root, "Alice", passphrase, tk.LEFT, "lime")
+    ChatClientPanel(root, "Bob", passphrase, tk.RIGHT, "cyan")
+
+    root.mainloop()
+
+
+SERVER.PY
+import socket, ssl, threading
+
+HOST = "127.0.0.1"
+PORT = 12345
+
+clients = []  # keep track of connected clients
+
+def handle_client(conn, addr):
+    print(f"[+] {addr} connected.")
+    while True:
+        try:
+            data = conn.recv(4096)
+            if not data:
+                break
+            # broadcast encrypted message to all other clients
+            for client in clients:
+                if client != conn:
+                    client.sendall(data)
+        except:
+            break
+    conn.close()
+    clients.remove(conn)
+    print(f"[-] {addr} disconnected.")
+
+def main():
+    context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+    context.load_cert_chain(certfile="cert.pem", keyfile="key.pem")
+
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0) as sock:
+        sock.bind((HOST, PORT))
+        sock.listen(5)
+        print(f"[*] Server listening on {HOST}:{PORT} with TLS...")
+
+        with context.wrap_socket(sock, server_side=True) as ssock:
+            while True:
+                conn, addr = ssock.accept()
+                clients.append(conn)
+                threading.Thread(target=handle_client, args=(conn, addr), daemon=True).start()
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+RESULTS
+
+
+
+
+
+
+
+
+
+
+
+
+9 a. Implement common hash functions (e.g., SHA-256, MD5) using Python's hashlib. Input: A string or file. Output: Its hash value.
+
+CODE IMPLEMENTATION
+
+import tkinter as tk
+from tkinter import filedialog, messagebox, ttk
+import hashlib
+import os
+import datetime
+import pyperclip
+
+# --------------------------
+# Hash functions
+def hash_string(data: str):
+    return {
+        "MD5": hashlib.md5(data.encode()).hexdigest(),
+        "SHA-1": hashlib.sha1(data.encode()).hexdigest(),
+        "SHA-256": hashlib.sha256(data.encode()).hexdigest(),
+        "SHA-512": hashlib.sha512(data.encode()).hexdigest()
+    }
+
+def hash_file(filepath: str):
+    try:
+        with open(filepath, "rb") as f:
+            file_data = f.read()
+        return {
+            "MD5": hashlib.md5(file_data).hexdigest(),
+            "SHA-1": hashlib.sha1(file_data).hexdigest(),
+            "SHA-256": hashlib.sha256(file_data).hexdigest(),
+            "SHA-512": hashlib.sha512(file_data).hexdigest()
+        }
+    except FileNotFoundError:
+        return None
+
+# --------------------------
+# GUI Application
+class HashToolApp:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Advanced Hash Generator &amp; Verifier")
+        self.root.geometry("700x500")
+
+        tab_control = ttk.Notebook(root)
+        self.string_tab = ttk.Frame(tab_control)
+        self.file_tab = ttk.Frame(tab_control)
+        self.batch_tab = ttk.Frame(tab_control)
+        self.verify_tab = ttk.Frame(tab_control)
+
+        tab_control.add(self.string_tab, text="String Hashing")
+        tab_control.add(self.file_tab, text="File Hashing")
+        tab_control.add(self.batch_tab, text="Batch Hashing")
+        tab_control.add(self.verify_tab, text="Verify Hash")
+        tab_control.pack(expand=1, fill="both")
+
+        self.setup_string_tab()
+        self.setup_file_tab()
+        self.setup_batch_tab()
+        self.setup_verify_tab()
+
+    # -------------------------- String Hashing Tab
+    def setup_string_tab(self):
+        tk.Label(self.string_tab, text="Enter text to hash:", font=("Arial", 12)).pack(pady=10)
+        self.string_entry = tk.Entry(self.string_tab, width=60)
+        self.string_entry.pack(pady=5)
+        tk.Button(self.string_tab, text="Generate Hash", command=self.generate_string_hash).pack(pady=10)
+        self.string_result = tk.Text(self.string_tab, height=8, width=70)
+        self.string_result.pack(pady=10)
+    
+    def generate_string_hash(self):
+        text = self.string_entry.get().strip()
+        if not text:
+            messagebox.showwarning("Input Error", "Please enter text.")
+            return
+        hashes = hash_string(text)
+        self.string_result.delete("1.0", tk.END)
+        for k, v in hashes.items():
+            self.string_result.insert(tk.END, f"{k}: {v}   [Copy]\n")
+        self.add_copy_buttons(self.string_result)
+
+    # -------------------------- File Hashing Tab
+    def setup_file_tab(self):
+        tk.Button(self.file_tab, text="Select File", command=self.select_file).pack(pady=10)
+        self.file_label = tk.Label(self.file_tab, text="No file selected")
+        self.file_label.pack(pady=5)
+        self.file_result = tk.Text(self.file_tab, height=8, width=70)
+        self.file_result.pack(pady=10)
+
+    def select_file(self):
+        file_path = filedialog.askopenfilename()
+        if file_path:
+            self.file_label.config(text=os.path.basename(file_path))
+            hashes = hash_file(file_path)
+            if not hashes:
+                messagebox.showerror("Error", "File not found.")
+                return
+            self.file_result.delete("1.0", tk.END)
+            for k, v in hashes.items():
+                self.file_result.insert(tk.END, f"{k}: {v}   [Copy]\n")
+            self.add_copy_buttons(self.file_result)
+
+    # -------------------------- Batch Hashing Tab
+    def setup_batch_tab(self):
+        tk.Button(self.batch_tab, text="Select Multiple Files", command=self.select_batch_files).pack(pady=10)
+        self.batch_result = tk.Text(self.batch_tab, height=20, width=80)
+        self.batch_result.pack(pady=10)
+        tk.Button(self.batch_tab, text="Save Report", command=self.save_batch_report).pack(pady=5)
+
+    def select_batch_files(self):
+        file_paths = filedialog.askopenfilenames()
+        if not file_paths:
+            return
+        self.batch_result.delete("1.0", tk.END)
+        self.batch_hashes = []
+        for f in file_paths:
+            h = hash_file(f)
+            if h:
+                info = f"{os.path.basename(f)} | MD5: {h['MD5']} | SHA-256: {h['SHA-256']}\n"
+                self.batch_result.insert(tk.END, info)
+                self.batch_hashes.append((f, h))
+
+    def save_batch_report(self):
+        if not hasattr(self, 'batch_hashes') or not self.batch_hashes:
+            messagebox.showwarning("No Data", "No batch data to save.")
+            return
+        save_path = filedialog.asksaveasfilename(defaultextension=".txt", filetypes=[("Text files","*.txt")])
+        if save_path:
+            with open(save_path, "w") as f:
+                for file, h in self.batch_hashes:
+                    f.write(f"{file} | MD5: {h['MD5']} | SHA-256: {h['SHA-256']}\n")
+            messagebox.showinfo("Saved", f"Batch report saved to {save_path}")
+
+    # -------------------------- Hash Verification Tab
+    def setup_verify_tab(self):
+        tk.Label(self.verify_tab, text="Enter hash value:", font=("Arial", 12)).pack(pady=5)
+        self.verify_entry = tk.Entry(self.verify_tab, width=60)
+        self.verify_entry.pack(pady=5)
+        tk.Label(self.verify_tab, text="Select file to verify:", font=("Arial", 12)).pack(pady=5)
+        tk.Button(self.verify_tab, text="Select File", command=self.verify_file_hash).pack(pady=5)
+        self.verify_result = tk.Label(self.verify_tab, text="", font=("Arial", 12))
+        self.verify_result.pack(pady=10)
+
+    def verify_file_hash(self):
+        hash_val = self.verify_entry.get().strip()
+        if not hash_val:
+            messagebox.showwarning("Input Error", "Please enter hash value.")
+            return
+        file_path = filedialog.askopenfilename()
+        if not file_path:
+            return
+        file_hashes = hash_file(file_path)
+        if not file_hashes:
+            messagebox.showerror("Error", "File not found.")
+            return
+        if hash_val in file_hashes.values():
+            self.verify_result.config(text="✅ Hash MATCHES file.", fg="green")
+        else:
+            self.verify_result.config(text="❌ Hash does NOT match.", fg="red")
+
+    # -------------------------- Utility to add copy buttons
+    def add_copy_buttons(self, text_widget):
+        def copy_to_clipboard(event):
+            line = text_widget.get("insert linestart", "insert lineend").split(":")[1].split("[")[0].strip()
+            pyperclip.copy(line)
+            messagebox.showinfo("Copied", f"Copied: {line}")
+        text_widget.bind("&lt;Button-1&gt;", copy_to_clipboard)
+
+# -------------------------- MAIN
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = HashToolApp(root)
+    root.mainloop()
+
+
+RESULTS
+
+
+
+
+
+
+
+
+
+
+
+9 b. Explore obfuscation techniques.
+Example: Create a simple obfuscation script that hides a Python function's logic.
+
+CODE IMPLEMENTATION
+
+import tkinter as tk
+from tkinter import ttk, messagebox, filedialog
+import base64
+import binascii
+import codecs
+import urllib.parse
+import pyperclip  # pip install pyperclip
+import string
+import math
+
+# -------------------------
+# Safe obfuscation helpers
+def b64_encode(s: str) -&gt; str:
+    return base64.b64encode(s.encode('utf-8')).decode('utf-8')
+
+def b64_decode(s: str):
+    try:
+        return base64.b64decode(s).decode('utf-8')
+    except Exception:
+        return None
+
+def hex_encode(s: str) -&gt; str:
+    return binascii.hexlify(s.encode('utf-8')).decode('utf-8')
+
+def hex_decode(s: str):
+    try:
+        return binascii.unhexlify(s).decode('utf-8')
+    except Exception:
+        return None
+
+def rot13(s: str) -&gt; str:
+    return codecs.decode(s, 'rot_13')
+
+def xor_obfuscate(s: str, key: int) -&gt; str:
+    # return hex string of XORed bytes
+    b = s.encode('utf-8')
+    x = bytes([bb ^ key for bb in b])
+    return binascii.hexlify(x).decode('utf-8')
+
+def xor_deobfuscate_from_hex(hexstr: str, key: int):
+    try:
+        data = binascii.unhexlify(hexstr)
+        x = bytes([bb ^ key for bb in data])
+        return x.decode('utf-8', errors='replace')
+    except Exception:
+        return None
+
+def url_encode(s: str) -&gt; str:
+    return urllib.parse.quote(s)
+
+def url_decode(s: str) -&gt; str:
+    try:
+        return urllib.parse.unquote(s)
+    except Exception:
+        return None
+
+def whitespace_concat(s: str) -&gt; str:
+    # split into small pieces with random-ish splits (deterministic here)
+    parts = [s[i:i+3] for i in range(0, len(s), 3)]
+    # return pieces joined with " + " to mimic concatenation obfuscation
+    return " + ".join([f"'{p}'" for p in parts])
+
+def remove_concat_marks(s: str) -&gt; str:
+    # Try to join simple quoted parts like 'abc' + 'def'
+    import re
+    parts = re.findall(r"'([^']*)'", s)
+    if parts:
+        return "".join(parts)
+    return None
+
+# -------------------------
+# Heuristics &amp; detection helpers
+def printable_ratio(s: str):
+    if not s:
+        return 0.0
+    printable = sum(1 for c in s if c in string.printable)
+    return printable / len(s)
+
+def looks_like_base64(s: str):
+    # base64 uses A-Z a-z 0-9 +/ and = padding; reasonable length multiple of 4
+    import re
+    s_stripped = s.strip()
+    if len(s_stripped) % 4 != 0:
+        return False
+    return re.fullmatch(r'[A-Za-z0-9+/]+={0,2}', s_stripped) is not None
+
+def looks_like_hex(s: str):
+    import re
+    s_stripped = s.strip()
+    return re.fullmatch(r'[0-9a-fA-F]+', s_stripped) is not None and len(s_stripped) % 2 == 0
+
+def detection_score(s: str):
+    # simple weighted heuristic; 0..100 (higher -&gt; more likely obfuscated)
+    score = 0.0
+    pr = printable_ratio(s)
+    if pr &lt; 0.6:
+        score += 30
+    if looks_like_base64(s):
+        score += 30
+    if looks_like_hex(s):
+        score += 20
+    if '%' in s:
+        score += 10
+    if '\\x' in s or '0x' in s:
+        score += 10
+    # suspicious tokens commonly used in obfuscation wrappers
+    for token in ['eval(', 'Function(', 'unescape(', 'atob(', 'btoa(']:
+        if token in s:
+            score += 10
+    # clamp
+    return int(min(100, score))
+
+# -------------------------
+# GUI
+class ObfuscationExplorer:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Obfuscation Explorer — Safe &amp; Educational")
+        self.root.geometry("1000x700")
+        self._build_ui()
+
+    def _build_ui(self):
+        # Top: input and controls
+        top_frame = tk.Frame(self.root, pady=8)
+        top_frame.pack(fill='x')
+
+        tk.Label(top_frame, text="Input text:", font=("Segoe UI", 11)).grid(row=0, column=0, sticky='w')
+        self.input_box = tk.Text(top_frame, height=4, width=100, wrap='word', font=("Consolas", 11))
+        self.input_box.grid(row=1, column=0, columnspan=6, padx=8, pady=6)
+
+        tk.Button(top_frame, text="Clear", command=self.clear_input).grid(row=0, column=5, sticky='e', padx=6)
+        tk.Button(top_frame, text="Load from File...", command=self.load_file).grid(row=0, column=4, sticky='e', padx=6)
+
+        # Left: obfuscate actions
+        left = tk.LabelFrame(self.root, text="Obfuscate (apply)", padx=8, pady=8)
+        left.pack(side='left', fill='y', padx=10, pady=10)
+
+        tk.Button(left, text="Base64 Encode", width=20, command=self.do_b64).pack(pady=4)
+        tk.Button(left, text="Hex Encode", width=20, command=self.do_hex).pack(pady=4)
+        tk.Button(left, text="ROT13", width=20, command=self.do_rot13).pack(pady=4)
+        tk.Button(left, text="URL-Percent Encode", width=20, command=self.do_urlencode).pack(pady=4)
+
+        xor_frame = tk.Frame(left)
+        xor_frame.pack(pady=6)
+        tk.Label(xor_frame, text="XOR key (0-255):").pack(side='left')
+        self.xor_key_var = tk.IntVar(value=42)
+        tk.Entry(xor_frame, width=4, textvariable=self.xor_key_var).pack(side='left', padx=4)
+        tk.Button(xor_frame, text="XOR (hex output)", command=self.do_xor).pack(side='left', padx=6)
+
+        tk.Button(left, text="Whitespace / concat obfuscation", command=self.do_concat).pack(pady=6)
+
+        # Middle: outputs
+        mid = tk.LabelFrame(self.root, text="Output / Results", padx=8, pady=8)
+        mid.pack(side='left', fill='both', expand=True, padx=8, pady=10)
+
+        tk.Label(mid, text="Last Obfuscated Output:", font=("Segoe UI", 10, "bold")).pack(anchor='w')
+        self.output_box = tk.Text(mid, height=6, wrap='word', font=("Consolas", 11))
+        self.output_box.pack(fill='x', pady=6)
+        self.output_box.config(state='disabled')
+
+        copy_btn = tk.Button(mid, text="Copy Output", command=self.copy_output)
+        copy_btn.pack(anchor='e')
+
+        # Right: deobfuscate tries
+        right = tk.LabelFrame(self.root, text="Deobfuscate / Try decode", padx=8, pady=8)
+        right.pack(side='right', fill='y', padx=10, pady=10)
+
+        tk.Button(right, text="Try Base64 Decode", width=24, command=self.try_b64).pack(pady=4)
+        tk.Button(right, text="Try Hex Decode", width=24, command=self.try_hex).pack(pady=4)
+        tk.Button(right, text="Try ROT13", width=24, command=self.try_rot13).pack(pady=4)
+        tk.Button(right, text="URL Decode", width=24, command=self.try_urldecode).pack(pady=4)
+
+        tk.Label(right, text="Try XOR brute force (1-byte keys):").pack(pady=(8,0))
+        tk.Button(right, text="Run XOR brute (show printable results)", width=28, command=self.try_xor_bruteforce).pack(pady=4)
+
+        tk.Button(right, text="Try remove concat marks", width=28, command=self.try_remove_concat).pack(pady=6)
+
+        # Bottom: detection, deobfuscation attempts log
+        bottom = tk.LabelFrame(self.root, text="Detection &amp; Deobfuscation Log", padx=8, pady=8)
+        bottom.pack(fill='both', expand=True, padx=10, pady=(0,10))
+
+        self.log_box = tk.Text(bottom, height=12, wrap='word', font=("Consolas", 11))
+        self.log_box.pack(fill='both', expand=True)
+        self.log_box.config(state='disabled')
+
+        # initial tip
+        self.log("Tip: Enter text above, click obfuscation buttons to see transformed output. Use 'Try ...' buttons to attempt deobfuscation.")
+
+    # -------------------------
+    # UI actions
+    def clear_input(self):
+        self.input_box.delete("1.0", tk.END)
+        self.output_box.config(state='normal')
+        self.output_box.delete("1.0", tk.END)
+        self.output_box.config(state='disabled')
+        self.log("Cleared input and output.")
+
+    def load_file(self):
+        path = filedialog.askopenfilename(title="Select file to load text from")
+        if not path:
+            return
+        try:
+            with open(path, 'r', encoding='utf-8', errors='ignore') as f:
+                data = f.read()
+            self.input_box.delete("1.0", tk.END)
+            self.input_box.insert(tk.END, data)
+            self.log(f"Loaded file: {path}")
+        except Exception as e:
+            messagebox.showerror("Error", f"Could not load file: {e}")
+
+    def _get_input(self):
+        return self.input_box.get("1.0", tk.END).rstrip("\n")
+
+    def _set_output(self, text):
+        self.output_box.config(state='normal')
+        self.output_box.delete("1.0", tk.END)
+        self.output_box.insert(tk.END, text)
+        self.output_box.config(state='disabled')
+
+    def copy_output(self):
+        out = self.output_box.get("1.0", tk.END).strip()
+        if out:
+            pyperclip.copy(out)
+            self.log("Output copied to clipboard.")
+        else:
+            messagebox.showinfo("Nothing", "No output to copy.")
+
+    def log(self, msg):
+        self.log_box.config(state='normal')
+        self.log_box.insert(tk.END, f"{msg}\n")
+        self.log_box.see(tk.END)
+        self.log_box.config(state='disabled')
+
+    # -------------------------
+    # Obfuscation actions
+    def do_b64(self):
+        s = self._get_input()
+        if not s:
+            messagebox.showwarning("Input needed", "Please enter text to obfuscate.")
+            return
+        out = b64_encode(s)
+        self._set_output(out)
+        self.log(f"[Base64] Encoded. Printable ratio {printable_ratio(out):.2f}. Detection score {detection_score(out)}")
+
+    def do_hex(self):
+        s = self._get_input()
+        if not s:
+            messagebox.showwarning("Input needed", "Please enter text to obfuscate.")
+            return
+        out = hex_encode(s)
+        self._set_output(out)
+        self.log(f"[Hex] Encoded. Length {len(out)}. Detection score {detection_score(out)}")
+
+    def do_rot13(self):
+        s = self._get_input()
+        if not s:
+            messagebox.showwarning("Input needed", "Please enter text to obfuscate.")
+            return
+        out = rot13(s)
+        self._set_output(out)
+        self.log("[ROT13] Applied.")
+
+    def do_urlencode(self):
+        s = self._get_input()
+        if not s:
+            messagebox.showwarning("Input needed", "Please enter text to obfuscate.")
+            return
+        out = url_encode(s)
+        self._set_output(out)
+        self.log("[URL-Percent] Encoded. Detection score %d" % detection_score(out))
+
+    def do_xor(self):
+        s = self._get_input()
+        if not s:
+            messagebox.showwarning("Input needed", "Please enter text to obfuscate.")
+            return
+        key = self.xor_key_var.get()
+        if not (0 &lt;= key &lt;= 255):
+            messagebox.showwarning("Key error", "XOR key must be 0-255")
+            return
+        out = xor_obfuscate(s, key)
+        self._set_output(out)
+        self.log(f"[XOR] Obfuscated with key {key}. Hex length {len(out)}. Try brute-force in Deobfuscate tab.")
+
+    def do_concat(self):
+        s = self._get_input()
+        if not s:
+            messagebox.showwarning("Input needed", "Please enter text to obfuscate.")
+            return
+        out = whitespace_concat(s)
+        self._set_output(out)
+        self.log("[Concat] Applied naive split+joint obfuscation.")
+
+    # -------------------------
+    # Deobfuscation tries
+    def try_b64(self):
+        s = self._get_input() or self.output_box.get("1.0", tk.END).strip()
+        if not s:
+            messagebox.showwarning("Input needed", "Please enter or produce some text to try decoding.")
+            return
+        if not looks_like_base64(s):
+            self.log("[Base64] Input does not look like canonical base64. Still attempting decode...")
+        res = b64_decode(s)
+        if res is None:
+            self.log("[Base64] decode failed or produced non-text.")
+        else:
+            self.log("[Base64] Success. Result preview:\n" + res[:100])
+
+    def try_hex(self):
+        s = self._get_input() or self.output_box.get("1.0", tk.END).strip()
+        if not s:
+            messagebox.showwarning("Input needed", "Please enter or produce some text to try decoding.")
+            return
+        if not looks_like_hex(s):
+            self.log("[Hex] Input doesn't look like pure hex; still attempting decode...")
+        res = hex_decode(s)
+        if res is None:
+            self.log("[Hex] decode failed.")
+        else:
+            self.log("[Hex] Success. Result preview:\n" + res[:200])
+
+    def try_rot13(self):
+        s = self._get_input() or self.output_box.get("1.0", tk.END).strip()
+        if not s:
+            messagebox.showwarning("Input needed", "Please enter or produce some text to try ROT13.")
+            return
+        self.log("[ROT13] Result preview:\n" + rot13(s)[:200])
+
+    def try_urldecode(self):
+        s = self._get_input() or self.output_box.get("1.0", tk.END).strip()
+        if not s:
+            messagebox.showwarning("Input needed", "Please enter or produce some text to try URL decode.")
+            return
+        res = url_decode(s)
+        if res is None:
+            self.log("[URLDecode] decode failed.")
+        else:
+            self.log("[URLDecode] Result preview:\n" + res[:200])
+
+    def try_xor_bruteforce(self):
+        s = self._get_input() or self.output_box.get("1.0", tk.END).strip()
+        if not s:
+            messagebox.showwarning("Input needed", "Please enter hex text (XORed output) to try brute force.")
+            return
+        if not looks_like_hex(s):
+            self.log("[XOR Bruteforce] Input does not look like hex — convert to hex first or select XOR output.")
+            # still attempt by treating raw bytes
+        candidates = []
+        for key in range(0, 256):
+            try:
+                out = xor_deobfuscate_from_hex(s, key)
+                # consider "likely readable" if printable ratio &gt; 0.8 and has a space
+                pr = printable_ratio(out)
+                if pr &gt; 0.8 and ' ' in out:
+                    candidates.append((key, out[:200]))
+            except Exception:
+                continue
+        if not candidates:
+            self.log("[XOR Bruteforce] No high-confidence plaintext candidates found (showing low-confidence attempts):")
+            # show some attempts
+            for key in range(0, 10):
+                out = xor_deobfuscate_from_hex(s, key)
+                if out is not None:
+                    self.log(f" key={key}: {out[:120]}")
+        else:
+            self.log("[XOR Bruteforce] Found plausible candidates:")
+            for key, out in candidates[:8]:
+                self.log(f" key={key}: {out}")
+
+    def try_remove_concat(self):
+        s = self._get_input() or self.output_box.get("1.0", tk.END).strip()
+        if not s:
+            messagebox.showwarning("Input needed", "Please enter or produce some text to try concat removal.")
+            return
+        res = remove_concat_marks(s)
+        if res:
+            self.log("[Concat removal] Success. Result:\n" + res[:200])
+        else:
+            self.log("[Concat removal] No simple quoted parts found.")
+
+# -------------------------
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = ObfuscationExplorer(root)
+    root.mainloop()
+
+
+
+
+RESULTS 
+
+
+
+
+
+
+
+
+
+
+10 a. Implement digital signature generation and verification using RSA. o Use cryptography or PyCrypto libraries
+
+
+CODE IMPLEMENTATION
+A)
+import tkinter as tk
+from tkinter import filedialog, messagebox import base64
+from cryptography.hazmat.primitives import hashes, serialization from cryptography.hazmat.primitives.asymmetric import rsa, padding from cryptography.hazmat.backends import default_backend
+
+# --- RSA helpers --- def generate_keys():
+private_key = rsa.generate_private_key(public_exponent=65537, key_size=2048, backend=default_backend())
+public_key = private_key.public_key()
+
+with open("private_key.pem", "wb") as f: f.write(private_key.private_bytes(
+encoding=serialization.Encoding.PEM, format=serialization.PrivateFormat.TraditionalOpenSSL, encryption_algorithm=serialization.NoEncryption()
+))
+with open("public_key.pem", "wb") as f: f.write(public_key.public_bytes(
+encoding=serialization.Encoding.PEM, format=serialization.PublicFormat.SubjectPublicKeyInfo
+))
+messagebox.showinfo("Keys Generated", "Saved as private_key.pem and public_key.pem")
+
+def load_private_key():
+with open("private_key.pem", "rb") as f:
+return serialization.load_pem_private_key(f.read(), password=None, backend=default_backend())
+
+def load_public_key():
+with open("public_key.pem", "rb") as f:
+return serialization.load_pem_public_key(f.read(), backend=default_backend())
+
+def sign_message():
+msg = entry_message.get("1.0", tk.END).strip().encode() if not msg:
+messagebox.showerror("Error", "Enter a message to sign") return
+try:
+priv = load_private_key() sig = priv.sign(
+msg,
+padding.PSS(mgf=padding.MGF1(hashes.SHA256()), salt_length=padding.PSS.MAX_LENGTH), hashes.SHA256()
+)
+signature_b64.set(base64.b64encode(sig).decode()) except Exception as e:
+messagebox.showerror("Error", f"Failed to sign: {e}")
+
+def verify_signature():
+
+msg = entry_message.get("1.0", tk.END).strip().encode() sig = signature_b64.get().strip()
+if not msg or not sig:
+messagebox.showerror("Error", "Need message and signature") return
+try:
+pub = load_public_key() pub.verify(
+base64.b64decode(sig), msg,
+padding.PSS(mgf=padding.MGF1(hashes.SHA256()), salt_length=padding.PSS.MAX_LENGTH), hashes.SHA256()
+)
+messagebox.showinfo("Verification", "Signature is VALID ⬛  ") except Exception:
+messagebox.showerror("Verification", "Signature is INVALID +")
+# --- GUI setup --- root = tk.Tk()
+root.title("RSA Digital Signature (GUI)")
+
+frame = tk.Frame(root, padx=10, pady=10) frame.pack()
+
+btn_gen = tk.Button(frame, text="Generate Keys", command=generate_keys, bg="lightblue") btn_gen.grid(row=0, column=0, columnspan=2, pady=5)
+tk.Label(frame, text="Message:").grid(row=1, column=0, sticky="w") entry_message = tk.Text(frame, height=5, width=40) entry_message.grid(row=2, column=0, columnspan=2, pady=5)
+
+btn_sign = tk.Button(frame, text="Sign Message", command=sign_message, bg="lightgreen") btn_sign.grid(row=3, column=0, pady=5)
+
+btn_verify = tk.Button(frame, text="Verify Signature", command=verify_signature, bg="orange") btn_verify.grid(row=3, column=1, pady=5)
+tk.Label(frame, text="Signature (base64):").grid(row=4, column=0, sticky="w") signature_b64 = tk.StringVar()
+entry_sig = tk.Entry(frame, textvariable=signature_b64, width=50) entry_sig.grid(row=5, column=0, columnspan=2, pady=5)
+root.mainloop()
+
+
+
+
+
+
+RESULTS
+
+
+10 b. Simulate authentication and authorization using a web application (e.g., Flask or Django).Implement login functionality and secure API calls with tokens (e.g., JWT).
+
+CODE IMPLEMENTATION
+
+A) APP.PY
+
+from flask import Flask, request, jsonify
+from werkzeug.security import generate_password_hash, check_password_hash
+from functools import wraps
+import jwt, datetime, random
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)
+
+JWT_SECRET = "change_this_super_secret_in_prod"
+JWT_ALGO = "HS256"
+JWT_EXP_MINUTES = 60
+
+# In-memory user database
+USERS = {
+    "admin": {"password_hash": generate_password_hash("adminpass"), "role": "admin"},
+    "user": {"password_hash": generate_password_hash("userpass"), "role": "user"}
+}
+
+# Temporary OTP store {username: otp}
+OTP_STORE = {}
+
+# JWT helpers
+def create_token(username, role):
+    payload = {
+        "sub": username,
+        "role": role,
+        "exp": datetime.datetime.utcnow() + datetime.timedelta(minutes=JWT_EXP_MINUTES)
+    }
+    return jwt.encode(payload, JWT_SECRET, algorithm=JWT_ALGO)
+
+def decode_token(token):
+    return jwt.decode(token, JWT_SECRET, algorithms=[JWT_ALGO])
+
+# Auth decorators
+def auth_required(f):
+    @wraps(f)
+    def wrapper(*args, **kwargs):
+        auth = request.headers.get("Authorization", "")
+        if not auth.startswith("Bearer "):
+            return jsonify({"error": "Missing Bearer token"}), 401
+        token = auth.split()[1]
+        try:
+            payload = decode_token(token)
+            request.user = payload
+        except Exception as e:
+            return jsonify({"error": "Invalid or expired token", "detail": str(e)}), 401
+        return f(*args, **kwargs)
+    return wrapper
+
+def role_required(role):
+    def decorator(f):
+        @wraps(f)
+        def wrapper(*args, **kwargs):
+            if request.user.get("role") != role:
+                return jsonify({"error": "Forbidden"}), 403
+            return f(*args, **kwargs)
+        return wrapper
+    return decorator
+
+# Routes
+@app.route("/register", methods=["POST"])
+def register():
+    data = request.json
+    username, password = data.get("username"), data.get("password")
+    if username in USERS:
+        return jsonify({"error": "User exists"}), 400
+    USERS[username] = {"password_hash": generate_password_hash(password), "role": "user"}
+    return jsonify({"ok": True, "msg": "User registered"})
+
+@app.route("/login", methods=["POST"])
+def login():
+    data = request.json
+    username, password = data.get("username"), data.get("password")
+    user = USERS.get(username)
+    if not user or not check_password_hash(user["password_hash"], password):
+        return jsonify({"error": "Invalid credentials"}), 401
+
+    # Generate OTP
+    otp = str(random.randint(100000, 999999))
+    OTP_STORE[username] = otp
+    return jsonify({"msg": f"OTP generated. Your OTP is {otp}. Enter it to continue."})
+
+@app.route("/verify-otp", methods=["POST"])
+def verify_otp():
+    data = request.json
+    username, otp = data.get("username"), data.get("otp")
+    stored = OTP_STORE.get(username)
+
+    if not stored or otp != stored:
+        return jsonify({"error": "Invalid OTP"}), 401
+
+    del OTP_STORE[username]
+    role = USERS[username]["role"]
+    token = create_token(username, role)
+    return jsonify({"access_token": token, "msg": "Login successful!", "role": role})
+
+@app.route("/profile")
+@auth_required
+def profile():
+    return jsonify({
+        "username": request.user["sub"],
+        "role": request.user["role"],
+        "welcome_msg": f"Welcome, {request.user['sub']}!"
+    })
+
+@app.route("/admin")
+@auth_required
+@role_required("admin")
+def admin_area():
+    return jsonify({
+        "msg": "Welcome, admin! Here are admin-specific resources.",
+        "admin_data": ["User stats", "System logs", "Manage users"]
+    })
+
+@app.route("/admin/users")
+@auth_required
+@role_required("admin")
+def admin_users():
+    users_list = [{"username": u, "role": info["role"]} for u, info in USERS.items()]
+    return jsonify({"users": users_list})
+
+if __name__ == "__main__":
+    app.run(port=5000, debug=True)
+
+
+
+
+
+B) client.html
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;JWT Auth Client&lt;/title&gt;
+  &lt;style&gt;
+    body { font-family: Arial; background: #eef0f3; margin: 0; padding: 0; }
+    .main { padding: 40px; max-width: 900px; margin: auto; }
+    h2 { color: #333; }
+    input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 6px; font-size: 16px; }
+    button { padding: 12px 20px; margin: 8px 5px; border: none; border-radius: 6px; font-size: 15px; cursor: pointer; background: #5a6d7c; color: white; }
+    button:hover { background: #44525f; }
+    #messageBox { margin-top: 20px; background: #fefefe; border: 2px solid #ccc; padding: 15px; border-radius: 6px; font-size: 20px; font-weight: bold; min-height: 60px; }
+    #roleContent { margin-top: 30px; padding: 20px; background: #fff; border-radius: 6px; border: 1px solid #ccc; }
+    #adminData { margin-top: 15px; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="main"&gt;
+    &lt;h2&gt;Register / Login with OTP + JWT&lt;/h2&gt;
+    &lt;input type="text" id="username" placeholder="Username"&gt;
+    &lt;input type="password" id="password" placeholder="Password"&gt;
+
+    &lt;div&gt;
+      &lt;button onclick="register()"&gt;Register&lt;/button&gt;
+      &lt;button onclick="login(event)"&gt;Login (Get OTP)&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;input type="text" id="otp" placeholder="Enter OTP"&gt;
+    &lt;button onclick="verifyOtp()"&gt;Verify OTP&lt;/button&gt;
+
+    &lt;div id="messageBox"&gt;Messages will appear here...&lt;/div&gt;
+    &lt;div id="roleContent"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;script&gt;
+    const API_URL = "http://127.0.0.1:5000";
+    let token = null;
+
+    function showMessage(data, force=false) {
+      let msg = "";
+      if (typeof data === "string") msg = data;
+      else if (data.msg) msg = "📢 " + data.msg;
+      else if (data.error) msg = "❌ Error: " + data.error;
+      else if (data.access_token) msg = "✅ Login successful! Token generated.";
+      else msg = JSON.stringify(data, null, 2);
+      document.getElementById("messageBox").textContent = msg;
+    }
+
+    async function register() {
+      const u = document.getElementById("username").value;
+      const p = document.getElementById("password").value;
+      const res = await fetch(`${API_URL}/register`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username: u, password: p })
+      });
+      showMessage(await res.json(), true);
+    }
+
+    async function login(event) {
+      event.preventDefault();
+      const u = document.getElementById("username").value;
+      const p = document.getElementById("password").value;
+      const res = await fetch(`${API_URL}/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username: u, password: p })
+      });
+      const data = await res.json();
+      showMessage(data, true);
+      if (data.msg &amp;&amp; data.msg.includes("OTP")) document.getElementById("otp").focus();
+    }
+
+    async function verifyOtp() {
+      const u = document.getElementById("username").value;
+      const otp = document.getElementById("otp").value;
+      const res = await fetch(`${API_URL}/verify-otp`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username: u, otp })
+      });
+      const data = await res.json();
+      if (data.access_token) {
+        token = data.access_token;
+
+        // Fetch profile to get role
+        const profileRes = await fetch(`${API_URL}/profile`, {
+          headers: { "Authorization": `Bearer ${token}` }
+        });
+        const profileData = await profileRes.json();
+        showMessage(data, true);
+
+        const roleDiv = document.getElementById("roleContent");
+        if(profileData.role === "admin") {
+          roleDiv.innerHTML = `
+            &lt;h3&gt;Admin Dashboard&lt;/h3&gt;
+            &lt;p&gt;Welcome, ${profileData.username}! You have admin privileges.&lt;/p&gt;
+            &lt;button onclick="getAdmin()"&gt;View Admin Resources&lt;/button&gt;
+            &lt;button onclick="getAllUsers()"&gt;View All Users&lt;/button&gt;
+            &lt;div id="adminData"&gt;&lt;/div&gt;
+          `;
+        } else {
+          roleDiv.innerHTML = `
+            &lt;h3&gt;User Dashboard&lt;/h3&gt;
+            &lt;p&gt;Welcome, ${profileData.username}! You have regular user access.&lt;/p&gt;
+          `;
+        }
+      } else {
+        showMessage(data, true);
+      }
+    }
+
+    async function getAdmin() {
+      if (!token) return alert("Login first!");
+      const res = await fetch(`${API_URL}/admin`, {
+        headers: { "Authorization": `Bearer ${token}` }
+      });
+      const data = await res.json();
+      const adminDiv = document.getElementById("adminData");
+      adminDiv.innerHTML = `&lt;pre&gt;${JSON.stringify(data, null, 2)}&lt;/pre&gt;`;
+    }
+
+    async function getAllUsers() {
+      if (!token) return alert("Login first!");
+      const res = await fetch(`${API_URL}/admin/users`, {
+        headers: { "Authorization": `Bearer ${token}` }
+      });
+      const data = await res.json();
+      const adminDiv = document.getElementById("adminData");
+      if(data.users) {
+        adminDiv.innerHTML = `&lt;h4&gt;Registered Users:&lt;/h4&gt;&lt;ul&gt;${data.users.map(u =&gt; `&lt;li&gt;${u.username} (${u.role})&lt;/li&gt;`).join("")}&lt;/ul&gt;`;
+      } else {
+        adminDiv.innerHTML = `&lt;p&gt;No users found.&lt;/p&gt;`;
+      }
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+
+C) Client_gui.py
+import tkinter as tk
+from tkinter import messagebox
+import requests
+
+API_URL = "http://127.0.0.1:5000"
+token = None  # store JWT here
+
+def register_user():
+    u, p = entry_user.get(), entry_pass.get()
+    if not u or not p:
+        messagebox.showerror("Error", "Enter username &amp; password")
+        return
+    r = requests.post(f"{API_URL}/register", json={"username": u, "password": p})
+    text_output.delete("1.0", tk.END)
+    text_output.insert(tk.END, r.text)
+
+def login_user():
+    global token
+    u, p = entry_user.get(), entry_pass.get()
+    r = requests.post(f"{API_URL}/login", json={"username": u, "password": p})
+    data = r.json()
+    text_output.delete("1.0", tk.END)
+    text_output.insert(tk.END, str(data))
+    if "access_token" in data:
+        token = data["access_token"]
+
+def get_profile():
+    if not token:
+        messagebox.showerror("Error", "Login first!")
+        return
+    r = requests.get(f"{API_URL}/profile", headers={"Authorization": f"Bearer {token}"})
+    text_output.delete("1.0", tk.END)
+    text_output.insert(tk.END, r.text)
+
+def get_admin():
+    if not token:
+        messagebox.showerror("Error", "Login first!")
+        return
+    r = requests.get(f"{API_URL}/admin", headers={"Authorization": f"Bearer {token}"})
+    text_output.delete("1.0", tk.END)
+    text_output.insert(tk.END, r.text)
+
+# --- GUI setup ---
+root = tk.Tk()
+root.title("JWT Auth Client")
+
+frame = tk.Frame(root, padx=10, pady=10)
+frame.pack()
+
+tk.Label(frame, text="Username:").grid(row=0, column=0)
+entry_user = tk.Entry(frame, width=20)
+entry_user.grid(row=0, column=1)
+
+tk.Label(frame, text="Password:").grid(row=1, column=0)
+entry_pass = tk.Entry(frame, width=20, show="*")
+entry_pass.grid(row=1, column=1)
+
+tk.Button(frame, text="Register", command=register_user, bg="lightblue").grid(row=2, column=0, pady=5)
+tk.Button(frame, text="Login", command=login_user, bg="lightgreen").grid(row=2, column=1, pady=5)
+tk.Button(frame, text="Profile", command=get_profile, bg="orange").grid(row=3, column=0, pady=5)
+tk.Button(frame, text="Admin", command=get_admin, bg="red").grid(row=3, column=1, pady=5)
+
+text_output = tk.Text(frame, height=10, width=50)
+text_output.grid(row=4, column=0, columnspan=2, pady=10)
+
+root.mainloop()
+
+
+
+
+
+OR
+
+RESULTS
+
+Login - user
+
+
+
+
+ 
+
+
+Login - admin
+
+
+
+11 a Identifying and Classifying PII Data: Given a dataset, students will write a script to classify data into types (structured/unstructured), states (in-transit, at-rest, in-use), and highlight PII elements. 
+
+CODE IMPLEMENTATION
+
+import tkinter as tk
+from tkinter import filedialog, messagebox, ttk
+import pandas as pd
+import re
+import os
+import requests
+from io import StringIO
+
+# ------------------- PII Patterns -------------------
+PII_PATTERNS = {
+    "Email": r'[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+',
+    "Phone": r'\b\d{10}\b',
+    "Aadhaar": r'\b\d{4}\s?\d{4}\s?\d{4}\b',
+    "PAN": r'[A-Z]{5}\d{4}[A-Z]{1}',
+    "Name": r'\b[A-Z][a-z]+ [A-Z][a-z]+\b'
+}
+
+class PIIDetectorApp:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("PII Data Classification Tool")
+        self.root.geometry("950x600")
+        self.root.configure(bg="#f5f7fa")
+
+        # Title
+        tk.Label(root, text="🔍 Intelligent PII Data Classification Tool", 
+                 font=("Arial", 20, "bold"), bg="#f5f7fa", fg="#333").pack(pady=15)
+
+        # Input section
+        self.url_entry = tk.Entry(root, font=("Arial", 12), width=50)
+        self.url_entry.pack(pady=5)
+        self.url_entry.insert(0, "Enter dataset URL (optional)")
+
+        tk.Button(root, text="Load from URL", command=self.load_from_url,
+                  bg="#4c8bf5", fg="white", font=("Arial", 12)).pack(pady=5)
+
+        tk.Button(root, text="Upload Local File (CSV/TXT)", command=self.upload_file,
+                  bg="#2f9e44", fg="white", font=("Arial", 12)).pack(pady=10)
+
+        # Results area
+        self.text_area = tk.Text(root, wrap="word", font=("Consolas", 11), height=20)
+        self.text_area.pack(fill='both', expand=True, padx=20, pady=15)
+
+    # ------------------- Detect from URL (In Transit) -------------------
+    def load_from_url(self):
+        url = self.url_entry.get().strip()
+        if not url.startswith("http"):
+            messagebox.showerror("Invalid URL", "Please enter a valid URL (starting with http/https).")
+            return
+        try:
+            response = requests.get(url)
+            response.raise_for_status()
+            if url.endswith(".csv"):
+                df = pd.read_csv(StringIO(response.text), nrows=100)
+                self.analyze_structured_data(df, "In Transit")
+            else:
+                text = response.text
+                self.analyze_unstructured_data(text, "In Transit")
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to fetch data: {e}")
+
+    # ------------------- Detect from Local File (At Rest) -------------------
+    def upload_file(self):
+        file_path = filedialog.askopenfilename(filetypes=[("CSV files","*.csv"),("Text files","*.txt")])
+        if not file_path:
+            return
+        
+        ext = os.path.splitext(file_path)[1].lower()
+        try:
+            if ext == ".csv":
+                data = pd.read_csv(file_path, nrows=100)
+                self.analyze_structured_data(data, "At Rest")
+            elif ext == ".txt":
+                with open(file_path, "r", encoding="utf-8") as f:
+                    text = f.read()
+                self.analyze_unstructured_data(text, "At Rest")
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to read file: {e}")
+
+    # ------------------- Structured Data Analysis -------------------
+    def analyze_structured_data(self, df, state):
+        result = ["✅ Data Type: Structured"]
+        result.append(f"✅ Data State: {state}")
+
+        # Once analyzed, it's "In Use"
+        result.append("⚙️ Data is currently being processed → In Use")
+
+        pii_found = False
+        for col in df.columns:
+            col_data = df[col].astype(str).str.cat(sep=' ')
+            for key, pattern in PII_PATTERNS.items():
+                if re.search(pattern, col_data):
+                    result.append(f"⚠️ PII Detected: {key} found in column '{col}'")
+                    pii_found = True
+        
+        if not pii_found:
+            result.append("✔️ No PII Detected in structured dataset.")
+        
+        self.display_result(result)
+
+    # ------------------- Unstructured Data Analysis -------------------
+    def analyze_unstructured_data(self, text, state):
+        result = ["✅ Data Type: Unstructured"]
+        result.append(f"✅ Data State: {state}")
+        result.append("⚙️ Data is currently being processed → In Use")
+
+        pii_found = False
+        for key, pattern in PII_PATTERNS.items():
+            matches = re.findall(pattern, text)
+            if matches:
+                result.append(f"⚠️ PII Detected: {key} ({len(matches)} instances)")
+                pii_found = True
+        
+        if not pii_found:
+            result.append("✔️ No PII Detected in unstructured data.")
+        
+        self.display_result(result)
+
+    def display_result(self, lines):
+        self.text_area.delete("1.0", tk.END)
+        self.text_area.insert(tk.END, "\n".join(lines))
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = PIIDetectorApp(root)
+    root.mainloop()
+
+
+
+RESULT 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11 B Anonymization with k-Anonymity: Use a sample dataset with PII (like healthcare data). Apply k-anonymity using Python or tools like ARX. Evaluate re-identification risk before and after anonymization. 
+
+CODE IMPLEMENTATION
+
+import streamlit as st
+import pandas as pd
+import numpy as np
+import io
+
+# ------------------------------
+# Utility Functions
+# ------------------------------
+
+def generalize_zip(zipcode, level):
+    if pd.isna(zipcode): return zipcode
+    s = str(zipcode)
+    if level &lt;= 0: return s
+    if level &gt;= len(s): return "*" * len(s)
+    return s[:len(s) - level] + "*" * level
+
+def generalize_age(age, bin_size):
+    if pd.isna(age): return age
+    # Ensure age is treated as a number for binning
+    try:
+        age = int(age)
+    except ValueError:
+        return age # Return as-is if conversion fails
+        
+    start = (age // bin_size) * bin_size
+    return f"{start}-{start+bin_size-1}"
+
+def equivalence_classes(df, quasi_identifiers):
+    """
+    Return merged dataframe and grouped summary (counts per equivalence class).
+    """
+    if not quasi_identifiers:
+        # Return empty grouped DataFrame with expected structure
+        grouped = pd.DataFrame(columns=quasi_identifiers + ["count"])
+        merged = df.copy()
+        merged["count"] = len(df)
+        return merged, grouped
+    grouped = df.groupby(quasi_identifiers).size().reset_index(name="count")
+    merged = df.merge(grouped, on=quasi_identifiers, how="left")
+    return merged, grouped
+
+def reidentification_risk(df, quasi_identifiers):
+    """
+    Computes re-identification risk metrics based on equivalence class sizes.
+    """
+    if not quasi_identifiers:
+        n = len(df)
+        if n == 0:
+            return {"min_eq_size": 0, "avg_eq_size": 0, "naive_min_risk": 1.0, "unique_fraction": 0.0}
+        # If no QIs, the whole dataset is treated as one class
+        return {"min_eq_size": n, "avg_eq_size": float(n), "naive_min_risk": 1.0 / n, "unique_fraction": 0.0}
+
+    _, grouped = equivalence_classes(df, quasi_identifiers)
+    
+    if grouped.empty and len(df) &gt; 0:
+        # Defensive fallback if grouping produced nothing but data exists (e.g., all NaN QIs)
+        n = len(df)
+        return {"min_eq_size": n, "avg_eq_size": float(n), "naive_min_risk": 1.0 / n, "unique_fraction": 0.0}
+    elif grouped.empty and len(df) == 0:
+        return {"min_eq_size": 0, "avg_eq_size": 0, "naive_min_risk": 1.0, "unique_fraction": 0.0}
+        
+    min_size = int(grouped["count"].min())
+    avg_size = float(grouped["count"].mean())
+    naive_min_risk = 1.0 / min_size if min_size &gt; 0 else 1.0
+    unique_frac = (grouped["count"] == 1).sum() / len(df)
+    
+    return {
+        "min_eq_size": min_size,
+        "avg_eq_size": avg_size,
+        "naive_min_risk": naive_min_risk,
+        "unique_fraction": unique_frac
+    }
+
+def apply_k_anonymity(df, quasi_identifiers, k):
+    """
+    Applies generalization to Age/Zip QIs until k-anonymity is met or limits are reached.
+    Returns the generalized DataFrame, the final risk stats, and the list of QI columns used for the check.
+    """
+    df_work = df.copy()
+    
+    def make_qis(d, zip_level, age_bin):
+        """Helper to create generalized columns based on current levels."""
+        d = d.copy()
+        qi_cols_used = []
+        
+        if "Zip" in quasi_identifiers and "Zip" in d.columns:
+            d["Zip_g"] = d["Zip"].apply(lambda z: generalize_zip(z, zip_level))
+            qi_cols_used.append("Zip_g")
+        elif "Zip" in quasi_identifiers and "Zip" not in d.columns:
+             # QI selected but not in data, ignore
+             pass
+        elif "Zip" in d.columns:
+             # Column in data but not QI, keep as-is
+             qi_cols_used.append("Zip")
+        
+        if "Age" in quasi_identifiers and "Age" in d.columns:
+            # Handle potential non-numeric Age values by coercing
+            d["Age_g"] = d["Age"].apply(lambda a: generalize_age(a, age_bin))
+            qi_cols_used.append("Age_g")
+        elif "Age" in quasi_identifiers and "Age" not in d.columns:
+             pass
+        elif "Age" in d.columns:
+             qi_cols_used.append("Age")
+
+        # For other QIs, use the original column name if present
+        for q in quasi_identifiers:
+            if q not in ["Zip", "Age"] and q in d.columns:
+                qi_cols_used.append(q)
+
+        # Filter to unique columns for the check
+        return d, list(set(qi_cols_used))
+
+    # Initial generalization levels
+    zip_level = 0
+    age_bin = 5
+
+    # ---------------------------------------------
+    # Initial Check (level 0 generalization)
+    # ---------------------------------------------
+    zipped, risk_qis = make_qis(df_work, zip_level, age_bin)
+    
+    # If no QIs were selected or found, return original data and single class stats
+    if not risk_qis:
+        stats = reidentification_risk(df_work, []) # Single equivalence class
+        return df_work, stats, []
+
+    stats = reidentification_risk(zipped, risk_qis)
+
+    # ---------------------------------------------
+    # Iterate generalization until k satisfied
+    # ---------------------------------------------
+    max_zip_level = 5 # 56001 -&gt; 5600* -&gt; 560** -&gt; 56*** -&gt; 5**** -&gt; *****
+    max_age_bin = 80
+    
+    while stats["min_eq_size"] &lt; k:
+        
+        # Determine the next step: generalize Zip first, then widen Age bins
+        if "Zip" in quasi_identifiers and zip_level &lt; max_zip_level:
+            zip_level += 1
+        elif "Age" in quasi_identifiers and age_bin &lt; max_age_bin:
+            # Double the bin size until max_age_bin
+            age_bin = min(age_bin * 2, max_age_bin)
+        else:
+            # no generalizable QIs left or limits reached -&gt; break
+            break
+        
+        # Apply new generalization levels and re-evaluate
+        zipped, risk_qis = make_qis(df_work, zip_level, age_bin)
+        stats = reidentification_risk(zipped, risk_qis)
+
+    # Final result: only include original columns plus the generalized ones (if created)
+    return zipped, stats, risk_qis
+
+def l_diversity_check(df, quasi_identifiers, sensitive_attr, l):
+    if sensitive_attr not in df.columns:
+        return {"total_classes": 0, "failing_classes": 0, "failing_fraction": 0.0, "error": f"Sensitive attribute '{sensitive_attr}' not found."}
+        
+    if not quasi_identifiers:
+        distinct_sens = df[sensitive_attr].nunique()
+        failing = 1 if distinct_sens &lt; l else 0
+        return {"total_classes": 1, "failing_classes": failing, "failing_fraction": float(failing)}
+        
+    merged = df.groupby(quasi_identifiers)[sensitive_attr].nunique().reset_index(name="distinct_sens")
+    failing = merged[merged["distinct_sens"] &lt; l]
+    
+    return {
+        "total_classes": len(merged),
+        "failing_classes": len(failing),
+        "failing_fraction": (len(failing) / len(merged)) if len(merged) &gt; 0 else 0
+    }
+
+def t_closeness_check(df, quasi_identifiers, sensitive_attr, t):
+    if sensitive_attr not in df.columns:
+        return {"num_classes": 0, "failing_classes": 0, "failing_fraction": 0.0, "error": f"Sensitive attribute '{sensitive_attr}' not found."}
+        
+    if not quasi_identifiers:
+        # single class; TVD is 0
+        return {"num_classes": 1, "failing_classes": 0, "failing_fraction": 0.0}
+        
+    # Global distribution of the sensitive attribute
+    global_dist = df[sensitive_attr].value_counts(normalize=True)
+    grouped = df.groupby(quasi_identifiers)
+    
+    failing = 0
+    num_classes = 0
+    
+    for _, group in grouped:
+        num_classes += 1
+        class_dist = group[sensitive_attr].value_counts(normalize=True)
+        
+        # Union of indices to cover all possible values in the TVD calculation
+        all_idx = global_dist.index.union(class_dist.index)
+        gd = global_dist.reindex(all_idx, fill_value=0)
+        cd = class_dist.reindex(all_idx, fill_value=0)
+        
+        # Total Variation Distance (TVD)
+        tvd = 0.5 * (gd - cd).abs().sum()
+        
+        if tvd &gt; t:
+            failing += 1
+            
+    return {
+        "num_classes": num_classes,
+        "failing_classes": failing,
+        "failing_fraction": failing / num_classes if num_classes &gt; 0 else 0
+    }
+
+def apply_differential_privacy(df, numeric_cols, epsilon):
+    df2 = df.copy()
+    scale = 1.0 / epsilon # Laplace mechanism scale (sensitivity/epsilon, sensitivity assumed 1 for counts/sums)
+    
+    for col in numeric_cols:
+        if col in df2.columns:
+            noise = np.random.laplace(0, scale, size=len(df2))
+            
+            # Check if the column is primarily integer-based to round the noisy result
+            is_int = pd.api.types.is_integer_dtype(df2[col]) or all(float(x).is_integer() for x in df2[col].dropna())
+            
+            if is_int:
+                # Add noise, round, and ensure result is within reasonable bounds (e.g., non-negative for age/counts)
+                df2[col + "_dp"] = (df2[col] + noise).round().clip(lower=0).astype(int)
+            else:
+                df2[col + "_dp"] = df2[col] + noise
+                
+    return df2
+
+# ------------------------------
+# Streamlit UI
+# ------------------------------
+
+st.set_page_config(page_title="PII Anonymizer Advanced", layout="wide")
+st.title("🔐 PII Anonymizer — Advanced Streamlit Demo")
+
+st.write("Upload a CSV file containing PII-like data and apply privacy-preserving techniques.")
+
+uploaded_file = st.file_uploader("Upload CSV dataset", type=["csv"])
+
+if uploaded_file:
+    df_raw = pd.read_csv(uploaded_file)
+    st.subheader("📄 Original Dataset Preview")
+    st.dataframe(df_raw.head(10))
+else:
+    st.info("Upload a CSV to begin, or use the sample dataset below.")
+    np.random.seed(42)
+    names = [f"Person_{i+1}" for i in range(20)]
+    # Create sample data
+    df_raw = pd.DataFrame({
+        "Name": names,
+        "Age": np.random.randint(20, 80, 20),
+        "Gender": np.random.choice(["M", "F"], 20),
+        "Zip": np.random.choice([56001, 56002, 56003, 56004, 56005], 20),
+        "Diagnosis": np.random.choice(["Flu", "Diabetes", "COVID", "Healthy"], 20)
+    })
+    st.dataframe(df_raw.head(10))
+
+# ------------------------------
+# Sidebar settings
+# ------------------------------
+st.sidebar.header("⚙️ Settings")
+
+available_cols = df_raw.columns.tolist()
+
+# Drop Direct PII (Name) if it exists in the raw data
+df_anon = df_raw.copy()
+if 'Name' in available_cols:
+    df_anon = df_anon.drop(columns=['Name'])
+    available_cols.remove('Name')
+    st.sidebar.caption("✅ 'Name' column (Direct PII) has been dropped for anonymization.")
+
+# Update available columns after dropping 'Name'
+current_cols = df_anon.columns.tolist()
+
+# Safe defaults for QIs
+default_qi = [c for c in ["Age", "Gender", "Zip"] if c in current_cols]
+quasi_identifiers = st.sidebar.multiselect(
+    "Select Quasi-Identifiers (QI)",
+    current_cols,
+    default=default_qi
+)
+
+# Safe default for sensitive attribute
+if "Diagnosis" in current_cols:
+    default_sensitive = "Diagnosis"
+elif len(current_cols) &gt; 0:
+    default_sensitive = current_cols[-1]
+else:
+    default_sensitive = None
+
+sensitive_attr = st.sidebar.selectbox(
+    "Select Sensitive Attribute",
+    current_cols,
+    index=current_cols.index(default_sensitive) if default_sensitive in current_cols else 0
+)
+
+# Safe numeric column detection
+numeric_cols_all = [c for c in current_cols if pd.api.types.is_numeric_dtype(df_anon[c])]
+default_numeric = [c for c in ["Age"] if c in numeric_cols_all]
+
+numeric_cols = st.sidebar.multiselect(
+    "Numeric Columns for Differential Privacy",
+    numeric_cols_all,
+    default=default_numeric
+)
+
+# Privacy parameters
+k = st.sidebar.slider("k (k-anonymity)", 2, 10, 3)
+l = st.sidebar.slider("l (l-diversity)", 1, 5, 2)
+t = st.sidebar.slider("t (t-closeness)", 0.0, 1.0, 0.25, step=0.05)
+epsilon = st.sidebar.slider("ε (Differential Privacy)", 0.1, 5.0, 1.0, step=0.1)
+
+# ------------------------------
+# Apply button
+# ------------------------------
+if st.button("🔒 Apply Anonymization &amp; Evaluate Risk", key="apply_btn_main"):
+    with st.spinner("Applying privacy techniques..."):
+        
+        # 1. Evaluate risk before (using df_anon which has PII removed)
+        if not quasi_identifiers:
+             st.error("⚠️ Please select at least one quasi-identifier (QI) before applying anonymization.")
+             st.stop()
+             
+        risk_before = reidentification_risk(df_anon, quasi_identifiers)
+
+        # 2. Apply k-anonymity (an_k contains generalized columns like Age_g, Zip_g)
+        #    qi_cols_anonymized contains the generalized column names (e.g., 'Age_g', 'Zip_g', 'Gender')
+        an_k, stats_k, qi_cols_anonymized = apply_k_anonymity(df_anon, quasi_identifiers, k)
+
+        # 3. Evaluate l-diversity and t-closeness (on the k-anonymized data)
+        l_stats = l_diversity_check(an_k, qi_cols_anonymized, sensitive_attr, l)
+        t_stats = t_closeness_check(an_k, qi_cols_anonymized, sensitive_attr, t)
+        
+        # 4. Apply differential privacy
+        an_dp = apply_differential_privacy(an_k, numeric_cols, epsilon)
+
+        # 5. Risk after (using the combined an_dp dataset and the generalized QI columns)
+        risk_after = reidentification_risk(an_dp, qi_cols_anonymized)
+
+    st.success("Anonymization Completed ✅")
+
+    st.subheader("📊 Risk Evaluation Comparison")
+    col1, col2 = st.columns(2)
+    with col1:
+        st.write("**Before Anonymization** (Risk based on original QIs)")
+        st.json(risk_before)
+    with col2:
+        st.write("**After Anonymization** (Risk based on generalized QIs: **{}**)".format(", ".join(qi_cols_anonymized)))
+        st.json(risk_after)
+
+    st.subheader("k-Anonymity &amp; Diversity Metrics")
+    st.write(f"**Target k-Anonymity:** k={k} (Achieved minimum equivalence class size: **{stats_k['min_eq_size']}**)")
+    st.write("**k-Anonymity Stats (based on generalized data):**", stats_k)
+    st.write("**l-Diversity Stats (based on generalized data):**", l_stats)
+    st.write("**t-Closeness Stats (based on generalized data):**", t_stats)
+
+    st.subheader("🔍 Anonymized Dataset (Top 10 Rows)")
+    st.write("Contains original columns, generalized QI columns (e.g., `Age_g`, `Zip_g`), and differentially private columns (e.g., `Age_dp`).")
+    st.dataframe(an_dp.head(10))
+
+    # Download anonymized CSV
+    csv = an_dp.to_csv(index=False).encode('utf-8')
+    st.download_button("📥 Download Anonymized CSV", csv, "anonymized_dataset.csv", "text/csv")
+
+st.markdown("---")
+st.caption("Educational demo — for learning only. Use professional anonymization libraries for production.")
+
+
+RESULT
+
+
+
+
+
+
+
+12. Case Study on GDPR and DPDP Act 2023: create a comparative chart of GDPR and DPDP Act 2023 principles and explain roles like Data Protection Officer (DPO). Include a mock incident report format.
+
+The rapid digitization of personal, financial, health, and behavioral data has intensified the need for robust data protection and privacy regulations globally. The European Union’s General Data Protection Regulation (GDPR), implemented in May 2018, is considered a gold standard in personal data protection, influencing many global regulations. India, recognizing the critical importance of safeguarding digital personal data, enacted the Digital Personal Data Protection (DPDP) Act, 2023, to establish a legal framework regulating the collection, processing, storage, and sharing of digital personal data. 
+This case study provides a comprehensive comparative analysis of GDPR and the DPDP Act 2023, focusing on their principles, individual rights, compliance requirements, enforcement mechanisms, and key roles like the Data Protection Officer (DPO). The analysis highlights how both regulations address modern data processing challenges, enhance transparency, ensure accountability, and protect data subject rights. Understanding the similarities and differences aids organizations, policymakers, and researchers in achieving compliance and implementing best practices.
+
+DATA PROTECTION OFFICER (DPO) 
+A Data Protection Officer (DPO) is a senior-level official responsible for ensuring that an organization processes personal data in compliance with data protection laws and regulations. 
+They act as an independent advisor and monitor within an organization to ensure lawful data collection, processing, storage, and sharing.The DPO also serves as a bridge between the organization, data subjects (individuals), and data protection authorities (regulators). 
+The DPO is not directly responsible for making business decisions, but ensures that those decisions comply with data protection principles. 
+The Data Protection Officer (DPO) is a mandatory role under the European Union’s General Data Protection Regulation (GDPR) and a recommended or conditional role under India’s Digital Personal Data Protection (DPDP) Act, 2023/2024. 
+
+
+Role and Responsibilities of DPO 
+
+Core Responsibilities under the GDPR 
+Under the European GDPR, the DPO’s role is comprehensive and strategic. The DPO must ensure that all data processing activities within the organization adhere to the core principles of lawfulness, fairness, transparency, purpose limitation, and accountability.
+
+Key functions include: 
+Monitoring Compliance: The DPO oversees the organization’s data protection framework, ensuring that all activities comply with the GDPR. This involves regular audits, policy reviews, and continuous risk assessments. 
+
+Advisory Role: The DPO advises the management and employees on their legal obligations under GDPR. Before any new project or data processing activity is launched, the DPO evaluates its compliance implications and provides recommendations. 
+
+Supervisory Authority Liaison: A critical responsibility is to act as the contact point between the organization and the national data protection authority. The DPO communicates with regulators, manages data breach notifications, and supports audits or investigations. 
+
+Employee Awareness and Training: The DPO develops training programs to educate employees about data privacy obligations, cybersecurity awareness, and responsible data handling. 
+
+Data Breach Response: In the event of a data breach, the DPO coordinates the organization’s response. This includes confirming the breach, assessing its impact, notifying the authority within 72 hours, and informing affected individuals if required. 
+
+Documentation and Reporting: The DPO maintains detailed records of data processing activities, breach logs, and risk assessments, ensuring traceability and accountability. 
+
+
+Core Responsibilities under the DPDP Act 2023–2024 
+The Digital Personal Data Protection (DPDP) Act 2023–2024 introduces the role of the DPO primarily for Significant Data Fiduciaries (SDFs). While the DPO’s role under the Indian law mirrors several GDPR principles, it also includes user-centric functions and responsibilities unique to the Indian context. 
+
+Ensuring Compliance: The DPO ensures that the organization complies with all obligations under the DPDP Act—particularly regarding lawful data processing, obtaining valid consent, and upholding user rights such as access, correction, and erasure. 
+
+User Grievance Redressal: A distinctive feature of the Indian DPO’s role is the responsibility to act as the point of contact for data principals (users). The DPO must address grievances, provide explanations of data handling practices, and ensure that users receive timely redressal. 
+
+Coordination with the Data Protection Board of India (DPBI): The DPO represents the organization in all communications with the DPBI. This includes responding to compliance inquiries, breach investigations, or enforcement actions initiated by the Board. 
+
+Risk and Impact Assessment: Before initiating high-risk data processing activities, the DPO assists the organization in conducting a Data Protection Impact Assessment (DPIA). The assessment identifies potential harms to users and recommends measures to mitigate those risks. 
+
+Documentation and Record-Keeping: The DPO maintains comprehensive documentation of consent records, processing activities, data sharing logs, and breach reports. These records are crucial for demonstrating compliance to the DPBI during audits. 
+
+Training and Awareness: The DPO must ensure that employees handling personal data are well-informed about their obligations under the DPDP Act. This includes periodic training sessions on consent management, secure data storage, and breach prevention.
+
+
+Reporting Structure and Independence 
+Under GDPR 
+The DPO must report directly to the highest management level and cannot be dismissed or penalized for performing their duties objectively. 
+The DPO should not have conflicting roles—such as heading IT, HR, or marketing—where data protection could be compromised by business interests. 
+DPO ensures that data protection is not merely a technical function but an organizational value. 
+
+Under the DPDP Act 
+While formal independence is not as explicitly defined, the DPO is expected to maintain autonomy in decision-making and act as an impartial compliance officer. 
+The DPO’s communication line typically extends to both the organizational leadership and the Data Protection Board of India. 
+DPO ensures that data protection is not merely a technical function but an organizational value. 
+
+Enforcement and Accountability 
+Failure to appoint or empower a DPO carries severe consequences. 
+Under GDPR, non-compliance can lead to administrative fines of up to €10 million or 2% of the global annual turnover, whichever is higher. 
+Under the DPDP Act 2023–2024, penalties can reach up to ₹250 crore for significant non-compliance, including neglecting DPO responsibilities or mishandling personal data breaches. 
+In both jurisdictions, while the DPO provides oversight and advice, ultimate accountability lies with the organization or the data fiduciary. The DPO’s role is advisory and supervisory—not managerial—but their recommendations carry significant weight in compliance audits. 
+
+
+Filing a Compliance under the DPDP Act (2023–2024) 
+Under India’s DPDP Act, the process of filing a compliance or responding to a data protection inquiry is coordinated through the Data Protection Officer (DPO), especially for Significant Data Fiduciaries (SDFs). When an organization identifies a potential breach or non-compliance, the DPO must prepare a Compliance Report outlining the nature of the incident, corrective measures undertaken, and steps for future prevention. This report is submitted electronically to the Data Protection Board of India (DPBI) through the official grievance or compliance portal specified in the forthcoming DPDP Draft Rules (2024–25). The submission includes details such as the timeline of the event, categories of affected data principals, security measures applied, and remedial actions. 
+If the DPBI initiates an investigation, the DPO is responsible for providing additional clarifications, evidence of internal audits, and proof of adherence to lawful data processing principles. In serious cases, the DPO may also coordinate with sectoral regulators and ensure that all communications are documented for audit trails. This structured compliance filing mechanism ensures transparency, accountability, and prompt resolution of privacy incidents under the DPDP regime. 
+
+Steps to File a Compliance 
+Step 1: Identify and Document the Incident 
+Detect any data breach, security lapse, or non-compliance with the DPDP Act. 
+The DPO conducts an internal assessment to determine the nature, scope, and impact of the incident on data principals (users). 
+Document key details such as date, systems affected, type of data compromised, and immediate mitigation actions. 
+
+Step 2: Prepare the Compliance / Breach Report 
+Draft a formal report summarizing: Description of the incident or compliance issue. 
+Root cause analysis and corrective actions taken. 
+Steps to prevent recurrence. 
+
+Include supporting materials such as audit logs, risk assessment notes, and internal communications. 
+
+Step 3: Submit the Report to the Data Protection Board of India (DPBI) 
+The DPO submits the report electronically through the official DPBI portal (as per Draft Rules 2024–25). 
+The submission should clearly mention: Organization details and classification (Data Fiduciary or SDF). 
+DPO’s contact details. 
+Categories of affected data principals. 
+Timeline of detection and response actions. 
+
+
+Step 4: Notify Affected Data Principals (if applicable) 
+If personal data of individuals has been compromised, the DPO must notify the affected data principals promptly. 
+The notification should include information on the nature of the breach, possible risks, and recommended precautions. 
+
+Step 5: Coordinate with Regulatory Authorities 
+If requested, the DPO provides additional documentation, clarifications, and evidence to the DPBI. 
+The DPO may also need to communicate with sectoral regulators (e.g., RBI, SEBI, IRDAI) in cases involving financial or healthcare data. 
+
+Step 6: Implement Corrective and Preventive Measures 
+Based on findings or directions from the DPBI, the organization strengthens its data protection controls. 
+Conduct post-incident reviews, employee retraining, and policy updates to prevent recurrence. 
+
+Step 7: Maintain Records for Audit and Accountability 
+The DPO ensures that all incident-related communications, reports, and responses are documented. 
+These records must be retained for inspection or audits as proof of due diligence and compliance with the DPDP Act. 

@@ -22,8 +22,18 @@ import json
 import time
 import io
 import csv
+import base64
+import hmac
+import re
+import math
+import random
+from collections import Counter
 
 from flask import Flask, render_template, request, jsonify, Response, send_file
+
+# RSA digital signatures (Q10) -- from the 'cryptography' library
+from cryptography.hazmat.primitives.asymmetric import rsa, padding
+from cryptography.hazmat.primitives import hashes, serialization
 
 app = Flask(__name__)
 
@@ -40,7 +50,7 @@ def load_wordlist():
 
 
 def make_hash(text, algo):
-    """Hash `text` with the chosen algorithm (md5 / sha1 / sha256)."""
+    
     h = hashlib.new(algo)
     h.update(text.encode("utf-8"))
     return h.hexdigest()
@@ -442,6 +452,326 @@ def virus_sample():
               + VIRUS_SIGNATURE + "\n"
               "End of file.\n")
     return jsonify({"content": sample})
+
+
+# ===========================================================================
+# 6. HASH FUNCTIONS & OBFUSCATION  (Q9)
+# ===========================================================================
+@app.route("/api/hash", methods=["POST"])
+def api_hash():
+    """
+    Hash a STRING or an uploaded FILE with several algorithms at once
+    (MD5, SHA1, SHA256, SHA512) so the differences are visible side by side.
+    """
+    if request.files.get("file") and request.files["file"].filename:
+        f = request.files["file"]
+        data = f.read()
+        source = "file: " + f.filename
+        length = len(data)
+    else:
+        text = request.form.get("text")
+        if text is None:
+            text = (request.get_json(silent=True) or {}).get("text", "")
+        data = text.encode("utf-8")
+        source = "text"
+        length = len(text)
+
+    def H(algo):
+        h = hashlib.new(algo)
+        h.update(data)
+        return h.hexdigest()
+
+    return jsonify({
+        "source": source,
+        "length": length,
+        "hashes": {"md5": H("md5"), "sha1": H("sha1"),
+                   "sha256": H("sha256"), "sha512": H("sha512")},
+    })
+
+
+@app.route("/api/obfuscate", methods=["POST"])
+def obfuscate():
+    """
+    Simple obfuscation: Base64-encode the source code and wrap it in an
+    exec() call. The logic is hidden (unreadable) but the one-liner still
+    runs exactly the same. This is reversible -- see /api/deobfuscate.
+    """
+    code = request.get_json().get("code", "")
+    b64 = base64.b64encode(code.encode("utf-8")).decode()
+    obf = 'import base64\nexec(base64.b64decode("%s").decode())' % b64
+    return jsonify({"obfuscated": obf, "b64": b64})
+
+
+@app.route("/api/deobfuscate", methods=["POST"])
+def deobfuscate():
+    """Reverse the obfuscation above -> recover the original readable code."""
+    obf = request.get_json().get("obfuscated", "")
+    m = re.search(r'b64decode\("([^"]+)"\)', obf)
+    payload = m.group(1) if m else obf.strip()
+    try:
+        return jsonify({"code": base64.b64decode(payload).decode("utf-8")})
+    except Exception:
+        return jsonify({"error": "Could not decode the obfuscated payload."}), 400
+
+
+# ===========================================================================
+# 7. DIGITAL SIGNATURES (RSA) + AUTH/AUTHORIZATION (JWT)  (Q10)
+# ===========================================================================
+# One RSA key pair is generated when the server starts.
+_rsa_private = rsa.generate_private_key(public_exponent=65537, key_size=2048)
+_rsa_public = _rsa_private.public_key()
+_PSS = padding.PSS(mgf=padding.MGF1(hashes.SHA256()),
+                   salt_length=padding.PSS.MAX_LENGTH)
+
+
+@app.route("/api/rsa/keys")
+def rsa_keys():
+    pem = _rsa_public.public_bytes(
+        serialization.Encoding.PEM,
+        serialization.PublicFormat.SubjectPublicKeyInfo).decode()
+    return jsonify({"public_key": pem})
+
+
+@app.route("/api/rsa/sign", methods=["POST"])
+def rsa_sign():
+    """Sign a message with the PRIVATE key -> produces a signature."""
+    msg = request.get_json().get("message", "").encode("utf-8")
+    sig = _rsa_private.sign(msg, _PSS, hashes.SHA256())
+    return jsonify({"signature": base64.b64encode(sig).decode()})
+
+
+@app.route("/api/rsa/verify", methods=["POST"])
+def rsa_verify():
+    """Verify a signature with the PUBLIC key. If the message was changed,
+    verification fails -> proves authenticity + integrity."""
+    d = request.get_json()
+    msg = d.get("message", "").encode("utf-8")
+    try:
+        sig = base64.b64decode(d.get("signature", ""))
+        _rsa_public.verify(sig, msg, _PSS, hashes.SHA256())
+        return jsonify({"valid": True})
+    except Exception:
+        return jsonify({"valid": False})
+
+
+# ---- minimal JWT (HS256) implemented by hand, so it can be explained -----
+JWT_SECRET = "demo-secret-key-change-me"
+USERS = {
+    "admin": {"password": "admin123", "role": "admin"},
+    "user":  {"password": "user123",  "role": "user"},
+}
+
+
+def _b64url(raw):
+    return base64.urlsafe_b64encode(raw).rstrip(b"=").decode()
+
+
+def jwt_encode(payload):
+    header = {"alg": "HS256", "typ": "JWT"}
+    seg = [_b64url(json.dumps(header).encode()),
+           _b64url(json.dumps(payload).encode())]
+    signing_input = ".".join(seg).encode()
+    sig = hmac.new(JWT_SECRET.encode(), signing_input, hashlib.sha256).digest()
+    seg.append(_b64url(sig))
+    return ".".join(seg)
+
+
+def jwt_decode(token):
+    try:
+        h, p, s = token.split(".")
+        signing_input = (h + "." + p).encode()
+        expected = _b64url(hmac.new(JWT_SECRET.encode(), signing_input,
+                                    hashlib.sha256).digest())
+        if not hmac.compare_digest(expected, s):
+            return None, "invalid signature (token tampered)"
+        payload = json.loads(base64.urlsafe_b64decode(p + "=="))
+        if payload.get("exp", 0) < time.time():
+            return None, "token expired"
+        return payload, None
+    except Exception:
+        return None, "malformed token"
+
+
+def _bearer_token():
+    auth = request.headers.get("Authorization", "")
+    if auth.startswith("Bearer "):
+        return auth[7:]
+    return (request.get_json(silent=True) or {}).get("token", "")
+
+
+@app.route("/api/auth/login", methods=["POST"])
+def auth_login():
+    d = request.get_json()
+    user = USERS.get(d.get("username", ""))
+    if not user or user["password"] != d.get("password", ""):
+        return jsonify({"error": "Invalid username or password"}), 401
+    token = jwt_encode({"sub": d["username"], "role": user["role"],
+                        "exp": int(time.time()) + 300})   # valid 5 minutes
+    return jsonify({"token": token, "role": user["role"]})
+
+
+@app.route("/api/auth/protected", methods=["POST"])
+def auth_protected():
+    payload, err = jwt_decode(_bearer_token())
+    if err:
+        return jsonify({"error": "Access denied: " + err}), 401
+    return jsonify({"message": "Welcome, " + payload["sub"] +
+                    "! You reached a protected resource.",
+                    "role": payload["role"]})
+
+
+@app.route("/api/auth/admin", methods=["POST"])
+def auth_admin():
+    payload, err = jwt_decode(_bearer_token())
+    if err:
+        return jsonify({"error": "Access denied: " + err}), 401
+    if payload.get("role") != "admin":
+        return jsonify({"error": "Forbidden: admin role required "
+                        "(you are '" + payload.get("role", "?") + "')"}), 403
+    return jsonify({"message": "ADMIN AREA unlocked: sensitive settings.",
+                    "role": payload["role"]})
+
+
+# ===========================================================================
+# 8. PII CLASSIFICATION + ANONYMIZATION  (Q11)
+# ===========================================================================
+# Order = priority. Earlier patterns claim their characters first, so an
+# overlapping later pattern (e.g. Aadhaar over a +91 phone) is skipped.
+PII_PATTERNS = [
+    ("Email",          r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"),
+    ("PAN",            r"\b[A-Z]{5}\d{4}[A-Z]\b"),
+    ("SSN",            r"\b\d{3}-\d{2}-\d{4}\b"),
+    ("Date of Birth",  r"\b\d{2}[/-]\d{2}[/-]\d{4}\b"),
+    ("IP Address",     r"\b(?:\d{1,3}\.){3}\d{1,3}\b"),
+    ("Phone (India)",  r"(?:\+91[-\s]?)?[6-9]\d{9}"),
+    ("Aadhaar",        r"\d{4}\s\d{4}\s\d{4}|\b\d{12}\b"),
+]
+
+
+@app.route("/api/pii/classify", methods=["POST"])
+def pii_classify():
+    """Scan text for PII elements and guess if it is structured or not."""
+    text = request.get_json().get("text", "")
+    found = []
+    claimed = []   # character spans already matched, to avoid double-counting
+    for name, pat in PII_PATTERNS:
+        for m in re.finditer(pat, text):
+            s, e = m.span()
+            if any(not (e <= cs or s >= ce) for cs, ce in claimed):
+                continue
+            claimed.append((s, e))
+            found.append({"type": name, "value": m.group()})
+    found.sort(key=lambda x: text.find(x["value"]))
+
+    t = text.strip()
+    lines = [ln for ln in text.splitlines() if ln.strip()]
+    if t.startswith("{") or t.startswith("["):
+        structure = "Structured (JSON-like)"
+    elif len(lines) > 1 and sum("," in ln for ln in lines) >= len(lines) - 1:
+        structure = "Structured (CSV-like table)"
+    else:
+        structure = "Unstructured (free text)"
+
+    return jsonify({"found": found, "count": len(found),
+                    "structure": structure})
+
+
+# ---- a small sample healthcare dataset with PII --------------------------
+HEALTH_DATA = [
+    {"name": "Rahul",  "age": 28, "pincode": 560001, "gender": "M", "disease": "Flu"},
+    {"name": "Arjun",  "age": 22, "pincode": 560002, "gender": "M", "disease": "Cancer"},
+    {"name": "Priya",  "age": 24, "pincode": 560001, "gender": "F", "disease": "Diabetes"},
+    {"name": "Sneha",  "age": 21, "pincode": 560003, "gender": "F", "disease": "Flu"},
+    {"name": "Vikram", "age": 33, "pincode": 560002, "gender": "M", "disease": "Cancer"},
+    {"name": "Karan",  "age": 36, "pincode": 560004, "gender": "M", "disease": "Flu"},
+    {"name": "Divya",  "age": 37, "pincode": 560001, "gender": "F", "disease": "Diabetes"},
+    {"name": "Meera",  "age": 31, "pincode": 560003, "gender": "F", "disease": "Cancer"},
+    {"name": "Rohit",  "age": 45, "pincode": 560002, "gender": "M", "disease": "Flu"},
+    {"name": "Dev",    "age": 41, "pincode": 560004, "gender": "M", "disease": "Diabetes"},
+    {"name": "Anita",  "age": 48, "pincode": 560001, "gender": "F", "disease": "Cancer"},
+    {"name": "Kavya",  "age": 43, "pincode": 560003, "gender": "F", "disease": "Flu"},
+]
+
+
+def _age_band(a):
+    lo = (a // 10) * 10
+    return "%d-%d" % (lo, lo + 9)
+
+
+def _zip_gen(z):
+    return str(z)[:4] + "XX"
+
+
+@app.route("/api/anon/apply", methods=["POST"])
+def anon_apply():
+    """
+    Apply k-anonymity by generalising quasi-identifiers (age -> band,
+    pincode -> prefix) and suppressing the name. Then measure k-anonymity,
+    l-diversity, (simplified) t-closeness, and re-identification risk.
+    """
+    data = HEALTH_DATA
+
+    # --- re-identification risk BEFORE (records unique on quasi-identifiers)
+    orig_keys = [(r["age"], r["gender"], r["pincode"]) for r in data]
+    oc = Counter(orig_keys)
+    unique_before = sum(1 for key in orig_keys if oc[key] == 1)
+    risk_before = round(unique_before / len(data) * 100, 1)
+
+    # --- anonymise
+    anon = [{"name": "*", "age": _age_band(r["age"]), "gender": r["gender"],
+             "pincode": _zip_gen(r["pincode"]), "disease": r["disease"]}
+            for r in data]
+
+    # --- equivalence classes on the generalised quasi-identifiers
+    groups = {}
+    for r in anon:
+        groups.setdefault((r["age"], r["gender"], r["pincode"]), []).append(r)
+
+    k = min(len(g) for g in groups.values())                      # k-anonymity
+    l = min(len(set(x["disease"] for x in g)) for g in groups.values())  # l-div
+
+    # --- simplified t-closeness: max total-variation distance between a
+    #     group's sensitive distribution and the overall distribution
+    overall = Counter(r["disease"] for r in anon)
+    n = len(anon)
+    diseases = list(overall)
+    t = 0.0
+    for g in groups.values():
+        gc = Counter(x["disease"] for x in g)
+        tvd = 0.5 * sum(abs(gc[d] / len(g) - overall[d] / n) for d in diseases)
+        t = max(t, tvd)
+
+    risk_after = round(1 / k * 100, 1)   # best case an attacker can do: 1/k
+
+    return jsonify({
+        "original": data, "anonymized": anon,
+        "k": k, "l": l, "t": round(t, 2), "groups": len(groups),
+        "risk_before": risk_before, "risk_after": risk_after,
+    })
+
+
+@app.route("/api/anon/dp", methods=["POST"])
+def anon_dp():
+    """
+    Differential privacy: answer a COUNT query but add Laplace noise so no
+    single person's presence can be detected. Smaller epsilon = more noise
+    = more privacy.
+    """
+    d = request.get_json() or {}
+    disease = d.get("disease", "Flu")
+    eps = float(d.get("epsilon", 1.0))
+
+    true_count = sum(1 for r in HEALTH_DATA
+                     if r["disease"].lower() == disease.lower())
+
+    # sample Laplace noise with scale b = sensitivity(=1) / epsilon
+    u = random.random() - 0.5
+    b = 1.0 / max(eps, 0.01)
+    noise = -b * math.copysign(1, u) * math.log(1 - 2 * abs(u))
+    noisy = round(true_count + noise, 2)
+
+    return jsonify({"disease": disease, "epsilon": eps,
+                    "true_count": true_count, "noisy_count": noisy})
 
 
 # ---------------------------------------------------------------------------

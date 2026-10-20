@@ -35,6 +35,9 @@
     <button class="qtab active" data-q="q3">Q3 · CIA TRIAD</button>
     <button class="qtab" data-q="q4">Q4 · PASSWORD ATTACKS</button>
     <button class="qtab" data-q="q5">Q5 · VIRUS SIMULATION</button>
+    <button class="qtab" data-q="q9">Q9 · HASH &amp; OBFUSCATION</button>
+    <button class="qtab" data-q="q10">Q10 · SIGNATURES &amp; AUTH</button>
+    <button class="qtab" data-q="q11">Q11 · PII &amp; ANONYMIZATION</button>
   </nav>
 
   <!-- =================================================================== -->
@@ -211,6 +214,114 @@
           <button onclick="scanContent()">SCAN FILE</button>
         </div>
         <pre id="vs-out" class="output"></pre>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =================================================================== -->
+  <!-- Q9 : HASH FUNCTIONS & OBFUSCATION                                    -->
+  <!-- =================================================================== -->
+  <div class="question" id="q9">
+    <div class="panel-grid">
+
+      <div class="box ic-hash">
+        <h2>HASH GENERATOR</h2>
+        <p class="hint">Hash a string or a file with MD5 / SHA1 / SHA256 / SHA512 (Python hashlib).</p>
+        <label>TEXT</label>
+        <input id="h-text" type="text" placeholder="type any text">
+        <label>OR UPLOAD A FILE</label>
+        <input id="h-file" type="file">
+        <button onclick="runHash()">GENERATE HASHES</button>
+        <pre id="h-out" class="output"></pre>
+      </div>
+
+      <div class="box ic-mask">
+        <h2>CODE OBFUSCATION</h2>
+        <p class="hint">Hide a Python function's logic (Base64 + exec). Reversible — proves the logic is only hidden, not gone.</p>
+        <label>PYTHON CODE</label>
+        <textarea id="o-code" rows="5">def secret(x):
+    return x * 42 + 7</textarea>
+        <div class="row">
+          <button onclick="runObfuscate()">OBFUSCATE</button>
+          <button onclick="runDeobfuscate()">DE-OBFUSCATE</button>
+        </div>
+        <pre id="o-out" class="output"></pre>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =================================================================== -->
+  <!-- Q10 : DIGITAL SIGNATURES (RSA) + AUTH / AUTHORIZATION (JWT)          -->
+  <!-- =================================================================== -->
+  <div class="question" id="q10">
+    <div class="panel-grid">
+
+      <div class="box ic-sign">
+        <h2>RSA DIGITAL SIGNATURE</h2>
+        <p class="hint">Sign with the private key, verify with the public key. Change the message after signing and verification fails.</p>
+        <label>MESSAGE</label>
+        <input id="r-msg" type="text" value="Transfer Rs.5000 to Bob">
+        <div class="row">
+          <button onclick="rsaSign()">SIGN</button>
+          <button onclick="rsaVerify()">VERIFY</button>
+        </div>
+        <label>SIGNATURE (base64)</label>
+        <textarea id="r-sig" rows="3" placeholder="signature appears here after signing"></textarea>
+        <pre id="r-out" class="output"></pre>
+      </div>
+
+      <div class="box ic-token">
+        <h2>LOGIN + JWT AUTHORIZATION</h2>
+        <p class="hint">Log in to get a signed JWT token, then call protected APIs. Users: admin/admin123, user/user123.</p>
+        <label>USERNAME</label>
+        <input id="a-user" type="text" value="user">
+        <label>PASSWORD</label>
+        <input id="a-pass" type="text" value="user123">
+        <button onclick="authLogin()">LOGIN</button>
+        <label>JWT TOKEN</label>
+        <textarea id="a-token" rows="3" placeholder="token appears here after login"></textarea>
+        <div class="row">
+          <button onclick="authCall('protected')">CALL PROTECTED</button>
+          <button onclick="authCall('admin')">CALL ADMIN-ONLY</button>
+        </div>
+        <pre id="auth-out" class="output"></pre>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =================================================================== -->
+  <!-- Q11 : PII CLASSIFICATION + ANONYMIZATION                            -->
+  <!-- =================================================================== -->
+  <div class="question" id="q11">
+    <div class="panel-grid">
+
+      <div class="box ic-idcard">
+        <h2>PII CLASSIFIER</h2>
+        <p class="hint">Detect PII (email, phone, PAN, Aadhaar, SSN, IP, DOB) and classify the data as structured / unstructured.</p>
+        <label>DATA / TEXT</label>
+        <textarea id="p-text" rows="5">Patient Ravi, email ravi@mail.com, phone +919876543210,
+PAN ABCDE1234F, Aadhaar 1234 5678 9012, DOB 05/08/1998</textarea>
+        <button onclick="runPII()">CLASSIFY</button>
+        <pre id="p-out" class="output"></pre>
+      </div>
+
+      <div class="box ic-anon">
+        <h2>ANONYMIZATION (k / l / t / DP)</h2>
+        <p class="hint">Apply k-anonymity to a sample healthcare dataset and measure re-identification risk before vs after.</p>
+        <button onclick="runAnon()">ANONYMIZE DATASET</button>
+        <pre id="an-out" class="output"></pre>
+        <label>DIFFERENTIAL PRIVACY — count query</label>
+        <div class="row">
+          <select id="dp-disease">
+            <option>Flu</option><option>Cancer</option><option>Diabetes</option>
+          </select>
+          <input id="dp-eps" type="number" value="0.5" step="0.1" min="0.1" max="5" title="epsilon">
+          <button onclick="runDP()">NOISY COUNT</button>
+        </div>
+        <pre id="dp-out" class="output"></pre>
       </div>
 
     </div>

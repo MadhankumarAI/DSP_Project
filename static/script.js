@@ -298,6 +298,124 @@ async function scanContent() {
 }
 
 // =========================================================
+// Q9 : HASH + OBFUSCATION
+// =========================================================
+async function runHash() {
+  const fileEl = document.getElementById("h-file");
+  let res;
+  if (fileEl.files.length) {
+    const fd = new FormData();
+    fd.append("file", fileEl.files[0]);
+    res = await fetch("/api/hash", { method: "POST", body: fd });
+  } else {
+    res = await fetch("/api/hash", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text: document.getElementById("h-text").value }),
+    });
+  }
+  const d = await res.json();
+  setOut("h-out",
+    "SOURCE : " + d.source + "  (" + d.length + " bytes)\n\n" +
+    "MD5    : " + d.hashes.md5 + "\n" +
+    "SHA1   : " + d.hashes.sha1 + "\n" +
+    "SHA256 : " + d.hashes.sha256 + "\n" +
+    "SHA512 : " + d.hashes.sha512, "ok");
+}
+
+let lastObfuscated = "";
+async function runObfuscate() {
+  const code = document.getElementById("o-code").value;
+  const d = await postJSON("/api/obfuscate", { code });
+  lastObfuscated = d.obfuscated;
+  setOut("o-out", "OBFUSCATED (logic hidden, but still runs):\n\n" + d.obfuscated);
+}
+async function runDeobfuscate() {
+  if (!lastObfuscated) return setOut("o-out", "Press OBFUSCATE first.", "bad");
+  const d = await postJSON("/api/deobfuscate", { obfuscated: lastObfuscated });
+  if (d.error) return setOut("o-out", d.error, "bad");
+  setOut("o-out", "RECOVERED ORIGINAL CODE:\n\n" + d.code, "ok");
+}
+
+// =========================================================
+// Q10 : RSA SIGNATURES + JWT AUTH
+// =========================================================
+async function rsaSign() {
+  const message = document.getElementById("r-msg").value;
+  const d = await postJSON("/api/rsa/sign", { message });
+  document.getElementById("r-sig").value = d.signature;
+  setOut("r-out", "SIGNED with the PRIVATE key.\nSignature placed below.\n" +
+    "Now press VERIFY — or edit the message first to watch it fail.", "ok");
+}
+async function rsaVerify() {
+  const message = document.getElementById("r-msg").value;
+  const signature = document.getElementById("r-sig").value;
+  const d = await postJSON("/api/rsa/verify", { message, signature });
+  if (d.valid) setOut("r-out", ">> VALID: signature matches the message.\nAuthentic and untampered.", "ok");
+  else setOut("r-out", ">> INVALID: the message was changed or the signature is wrong.", "bad");
+}
+
+async function authLogin() {
+  const username = document.getElementById("a-user").value;
+  const password = document.getElementById("a-pass").value;
+  const d = await postJSON("/api/auth/login", { username, password });
+  if (d.error) { document.getElementById("a-token").value = ""; return setOut("auth-out", d.error, "bad"); }
+  document.getElementById("a-token").value = d.token;
+  setOut("auth-out", "LOGIN OK — role: " + d.role +
+    "\nA signed JWT token was issued (below). Now call the protected APIs.", "ok");
+}
+async function authCall(kind) {
+  const token = document.getElementById("a-token").value;
+  const d = await postJSON("/api/auth/" + kind, { token });
+  if (d.error) return setOut("auth-out", d.error, "bad");
+  setOut("auth-out", d.message + "\n(role: " + d.role + ")", "ok");
+}
+
+// =========================================================
+// Q11 : PII + ANONYMIZATION
+// =========================================================
+async function runPII() {
+  const text = document.getElementById("p-text").value;
+  const d = await postJSON("/api/pii/classify", { text });
+  let txt = "DATA TYPE : " + d.structure +
+    "\nPII FOUND : " + d.count +
+    "\nDATA STATES: at-rest (stored) / in-transit (sent) / in-use (processed)\n\n";
+  txt += d.found.length
+    ? d.found.map(x => "  [" + x.type + "] " + x.value).join("\n")
+    : "  (no PII detected)";
+  setOut("p-out", txt);
+}
+
+async function runAnon() {
+  const d = await postJSON("/api/anon/apply", {});
+  const head = "NAME   AGE    G  PIN      DISEASE";
+  const fmt = rows => rows.map(r =>
+    ("" + r.name).padEnd(7) + ("" + r.age).padEnd(7) +
+    ("" + r.gender).padEnd(3) + ("" + r.pincode).padEnd(9) + r.disease).join("\n");
+  const txt =
+    "ORIGINAL (identifiable):\n" + head + "\n" + fmt(d.original) +
+    "\n\nANONYMIZED (generalised):\n" + head + "\n" + fmt(d.anonymized) +
+    "\n\nMETRICS\n" +
+    "  k-anonymity : " + d.k + "  (every record hides in a group of >= " + d.k + ")\n" +
+    "  l-diversity : " + d.l + "  (distinct diseases per group)\n" +
+    "  t-closeness : " + d.t + "  (0 = closest to overall, best)\n" +
+    "  groups      : " + d.groups + "\n" +
+    "  RE-ID RISK  : " + d.risk_before + "%  ->  " + d.risk_after + "%";
+  setOut("an-out", txt, "ok");
+}
+
+async function runDP() {
+  const disease = document.getElementById("dp-disease").value;
+  const epsilon = document.getElementById("dp-eps").value;
+  const d = await postJSON("/api/anon/dp", { disease, epsilon });
+  setOut("dp-out",
+    "Query: how many patients have " + d.disease + "?\n" +
+    "  TRUE count  : " + d.true_count + "\n" +
+    "  NOISY count : " + d.noisy_count + "   (epsilon = " + d.epsilon + ")\n\n" +
+    "Smaller epsilon = more noise = more privacy.", "ok");
+}
+
+// =========================================================
 // TASKBAR CLOCK (cosmetic)
 // =========================================================
 function tickClock() {
