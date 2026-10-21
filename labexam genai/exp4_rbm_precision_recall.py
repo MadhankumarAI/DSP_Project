@@ -12,16 +12,17 @@ Experiment 4: RBM + Precision & Recall
 """
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.datasets import fetch_openml
+from tensorflow.keras.datasets import mnist
 from sklearn.model_selection import train_test_split
 from sklearn.neural_network import BernoulliRBM
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import classification_report
 
-# Load MNIST
-mnist = fetch_openml("mnist_784", version=1, as_frame=False)
-pixels, labels = mnist.data, mnist.target.astype(int)
+(xtr,ytr),(xte,yte)=mnist.load_data()
+pixels=np.concatenate((xtr,xte))
+labels=np.concatenate((ytr,yte))
+pixels=pixels.reshape(-1,784).astype("float32")
 
 # Display any 5 digits
 fig, axes = plt.subplots(1, 5, figsize=(8, 2))
@@ -56,15 +57,18 @@ def sigmoid(x):
 
 fitted_rbm = model.named_steps["rbm"]
 hidden_probs = sigmoid(x_test[:5] @ fitted_rbm.components_.T + fitted_rbm.intercept_hidden_)
-reconstructed = sigmoid(hidden_probs @ fitted_rbm.components_ + fitted_rbm.intercept_visible_)
+rec = sigmoid(hidden_probs @ fitted_rbm.components_ + fitted_rbm.intercept_visible_)
 
-fig, axes = plt.subplots(2, 5, figsize=(8, 3.5))
-for i in range(5):
-    axes[0, i].imshow(x_test[i].reshape(28, 28), cmap="gray")
-    axes[0, i].set_title(f"Original: {y_test[i]}")
-    axes[0, i].axis("off")
-    axes[1, i].imshow(reconstructed[i].reshape(28, 28), cmap="gray")
-    axes[1, i].set_title("RBM reconstructed")
-    axes[1, i].axis("off")
-plt.tight_layout()
+print("og")
+fig,axes=plt.subplots(1,5,figsize=(15,15))
+for i,ax in enumerate(axes):
+  ax.imshow(xte[i].reshape(28,28),cmap="gray")
+  ax.set_title(yte[i])
+plt.show()
+
+print("rec")
+fig,axes=plt.subplots(1,5,figsize=(15,15))
+for i,ax in enumerate(axes):
+  ax.imshow(rec[i].reshape(28,28),cmap="gray")
+  ax.set_title(yte[i])
 plt.show()
