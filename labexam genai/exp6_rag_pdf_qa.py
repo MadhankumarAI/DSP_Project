@@ -9,13 +9,14 @@ Experiment 6: RAG over PDFs with LangChain
    with k = 3, 5, 10
 """
 import glob
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_huggingface import HuggingFaceEmbeddings, HuggingFacePipeline
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from langchain_core.runnables import RunnablePassthrough
+from langchain_core.runnables import RunnablePassthrough, RunnableLambda
 
 PDF_FOLDER = "./pdfs"          # put research PDFs here
 QUESTIONS = [
@@ -36,7 +37,18 @@ embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-
 vectorstore = FAISS.from_documents(chunks, embeddings)
 
 # 2. RAG chain: retriever -> prompt template -> LLM -> output parser
-llm = HuggingFacePipeline.from_model_id(model_id="google/flan-t5-base", task="text2text-generation")
+# flan-t5 loaded directly (not via HuggingFacePipeline.from_model_id - it calls
+# the removed transformers "text2text-generation" pipeline task internally)
+flan_tokenizer = AutoTokenizer.from_pretrained("google/flan-t5-base")
+flan_model = AutoModelForSeq2SeqLM.from_pretrained("google/flan-t5-base")
+
+def run_flan_t5(prompt_value):
+    text = prompt_value.to_string()
+    inputs = flan_tokenizer(text, return_tensors="pt", truncation=True)
+    output_tokens = flan_model.generate(**inputs, max_new_tokens=128)
+    return flan_tokenizer.decode(output_tokens[0], skip_special_tokens=True)
+
+llm = RunnableLambda(run_flan_t5)
 prompt = ChatPromptTemplate.from_template(
     "Answer the question using only the context below.\n\nContext:\n{context}\n\nQuestion: {question}\nAnswer:"
 )

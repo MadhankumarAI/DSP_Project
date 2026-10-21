@@ -5,14 +5,23 @@ i) Zero-shot, few-shot, role-based chain-of-thought & structured
    output prompting using accuracy, precision, recall, F1-score
 """
 from datasets import load_dataset
-from transformers import pipeline
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 from sklearn.metrics import classification_report
 
 NUM_SAMPLES = 20
 LABELS = ["World", "Sports", "Business", "Sci/Tech"]
-generator = pipeline("text2text-generation", model="google/flan-t5-base")
 
-dataset = load_dataset("ag_news", split=f"test[:{NUM_SAMPLES}]")
+# flan-t5 loaded directly (not via pipeline() - the "text2text-generation" task
+# and its pipeline class were removed in this transformers version)
+flan_tokenizer = AutoTokenizer.from_pretrained("google/flan-t5-base")
+flan_model = AutoModelForSeq2SeqLM.from_pretrained("google/flan-t5-base")
+
+def generate(prompt, max_new_tokens=30):
+    inputs = flan_tokenizer(prompt, return_tensors="pt", truncation=True)
+    output_tokens = flan_model.generate(**inputs, max_new_tokens=max_new_tokens)
+    return flan_tokenizer.decode(output_tokens[0], skip_special_tokens=True)
+
+dataset = load_dataset("fancyzhx/ag_news", split=f"test[:{NUM_SAMPLES}]")
 articles = dataset["text"]
 gold_labels = [LABELS[i] for i in dataset["label"]]
 
@@ -42,7 +51,7 @@ def extract_label(generated_text):
 for strategy_name, build_prompt in PROMPTS.items():
     predictions = []
     for article in articles:
-        output_text = generator(build_prompt(article), max_new_tokens=30)[0]["generated_text"]
+        output_text = generate(build_prompt(article))
         predictions.append(extract_label(output_text))
 
     print(f"\n=== Prompting strategy: {strategy_name} ===")

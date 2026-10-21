@@ -13,11 +13,20 @@ import numpy as np
 import faiss
 from datasets import load_dataset
 from sentence_transformers import SentenceTransformer
-from transformers import pipeline
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
 NUM_QUESTIONS = 10
 embedder = SentenceTransformer("all-MiniLM-L6-v2")
-generator = pipeline("text2text-generation", model="google/flan-t5-base")
+
+# flan-t5 loaded directly (not via pipeline() - the "text2text-generation" task
+# and its pipeline class were removed in this transformers version)
+flan_tokenizer = AutoTokenizer.from_pretrained("google/flan-t5-base")
+flan_model = AutoModelForSeq2SeqLM.from_pretrained("google/flan-t5-base")
+
+def generate(prompt):
+    inputs = flan_tokenizer(prompt, return_tensors="pt", truncation=True)
+    output_tokens = flan_model.generate(**inputs, max_new_tokens=64)
+    return flan_tokenizer.decode(output_tokens[0], skip_special_tokens=True)
 
 # i) Load HotpotQA, extract questions + support (context) documents
 dataset = load_dataset("hotpot_qa", "distractor", split=f"validation[:{NUM_QUESTIONS}]", trust_remote_code=True)
@@ -56,7 +65,7 @@ for item in dataset:
     hop1_doc = sentences[hop1_idx[0][0]]
 
     # single-hop RAG answer (context = HOP1 doc only)
-    single_hop_answer = generator(f"Context: {hop1_doc}\nQuestion: {question}\nAnswer:")[0]["generated_text"]
+    single_hop_answer = generate(f"Context: {hop1_doc}\nQuestion: {question}\nAnswer:")
 
     # second query built from HOP1 info, retrieve HOP2 doc
     hop2_query = f"{question} {hop1_doc}"
@@ -66,7 +75,7 @@ for item in dataset:
 
     # iv) combine both retrieved docs, generate final (2-hop) answer
     combined_context = hop1_doc + " " + hop2_doc
-    multi_hop_answer = generator(f"Context: {combined_context}\nQuestion: {question}\nAnswer:")[0]["generated_text"]
+    multi_hop_answer = generate(f"Context: {combined_context}\nQuestion: {question}\nAnswer:")
 
     single_hop_scores.append((exact_match(single_hop_answer, gold_answer), f1_score(single_hop_answer, gold_answer)))
     multi_hop_scores.append((exact_match(multi_hop_answer, gold_answer), f1_score(multi_hop_answer, gold_answer)))
