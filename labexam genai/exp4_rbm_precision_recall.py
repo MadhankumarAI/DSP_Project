@@ -1,10 +1,14 @@
 """
-Experiment 4: RBM + Precision-Recall
-- Load the MNIST handwritten digit dataset & display (any 5)
-- Preprocess the dataset by normalizing pixel values between 0 & 1
-- Implement a Restricted Boltzmann Machine. Use a logistic regression
-  classifier with RBM features to classify the digits from 0-9
-- Generate classification report -> Precision, Recall, F1 for each digit
+Experiment 4: RBM + Precision & Recall
+1) Load MNIST handwritten digit dataset & display any 5 sample images
+2) Preprocess dataset by normalising pixel values b/w 0 & 1, splitting
+   data into training & testing sets
+3) Implement Restricted Boltzmann Machine. Use logistic regression
+   classifier with RBM feature to classify handwritten digits 0-9
+4) Generate classification report showing precision, recall, F1-score
+   for each digit
+5) Display some RBM-reconstructed handwritten digits & compare them
+   with original image
 """
 import numpy as np
 import matplotlib.pyplot as plt
@@ -42,3 +46,25 @@ predictions = model.predict(x_test)
 
 print("Classification Report (Precision, Recall, F1 per digit):\n")
 print(classification_report(y_test, predictions))
+
+# Step 5: RBM-reconstructed digits vs originals.
+# Use the deterministic mean-field pass P(h|v) then P(v|h) (sigmoid probabilities),
+# NOT rbm.gibbs() - gibbs() draws stochastic binary 0/1 samples, which look like
+# noisy dots rather than a clean reconstruction of the original grayscale digit.
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
+
+fitted_rbm = model.named_steps["rbm"]
+hidden_probs = sigmoid(x_test[:5] @ fitted_rbm.components_.T + fitted_rbm.intercept_hidden_)
+reconstructed = sigmoid(hidden_probs @ fitted_rbm.components_ + fitted_rbm.intercept_visible_)
+
+fig, axes = plt.subplots(2, 5, figsize=(8, 3.5))
+for i in range(5):
+    axes[0, i].imshow(x_test[i].reshape(28, 28), cmap="gray")
+    axes[0, i].set_title(f"Original: {y_test[i]}")
+    axes[0, i].axis("off")
+    axes[1, i].imshow(reconstructed[i].reshape(28, 28), cmap="gray")
+    axes[1, i].set_title("RBM reconstructed")
+    axes[1, i].axis("off")
+plt.tight_layout()
+plt.show()
