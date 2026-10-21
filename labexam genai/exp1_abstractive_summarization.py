@@ -13,10 +13,10 @@ from rouge_score import rouge_scorer
 NUM_DOCS = 20
 
 # 1. Pretrained abstractive summarization model (Facebook's BART)
-summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+summarizer = pipeline("text-generation", model="facebook/bart-large-cnn")
 
 # 2. Dataset: CNN/DailyMail (articles + reference "highlights" summaries)
-dataset = load_dataset("cnn_dailymail", "3.0.0", split=f"test[:{NUM_DOCS}]")
+dataset = load_dataset("abisee/cnn_dailymail", "3.0.0", split=f"test[:{NUM_DOCS}]")
 
 print(dataset)
 
@@ -26,7 +26,7 @@ totals = {"rouge1": 0.0, "rouge2": 0.0, "rougeL": 0.0}
 # 3-5. Generate summaries, compare with references, accumulate ROUGE scores
 for i, article in enumerate(dataset):
     reference_summary = article["highlights"]
-    generated_summary = summarizer(article["article"], max_length=120, min_length=30, truncation=True)[0]["summary_text"]
+    generated_summary = summarizer(article["article"], max_length=120, min_length=30, truncation=True)[0]["generated_text"]
 
     scores = scorer.score(reference_summary, generated_summary)
     for metric in totals:

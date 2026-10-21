@@ -9,7 +9,7 @@ T6: Identify NER errors, grammar mistakes, word order errors
 T7: Suggest improvements using larger models / finetuning
 """
 import sacrebleu
-from transformers import pipeline
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
 SENTENCES = [
     "The weather is nice today.", "I love reading books.", "She went to the market.",
@@ -22,16 +22,23 @@ SENTENCES = [
     "The city is very crowded.",
 ]  # T3: 20 sentences
 
-REFERENCE_HINDI = ["आज मौसम अच्छा है।"] * len(SENTENCES)  # placeholder references for BLEU demo
+REFERENCE_HINDI = ["आ मौसम अच्छा है।"] * len(SENTENCES)  # placeholder references for BLEU demo
 REFERENCE_FRENCH = ["Le temps est agréable aujourd'hui."] * len(SENTENCES)
 
-# T1: pretrained NLLB-200 translation model
-translator_hindi = pipeline("translation", model="facebook/nllb-200-distilled-600M", src_lang="eng_Latn", tgt_lang="hin_Deva")
-translator_french = pipeline("translation", model="facebook/nllb-200-distilled-600M", src_lang="eng_Latn", tgt_lang="fra_Latn")
+# T1: pretrained NLLB-200 translation model (loaded once, reused for both languages)
+model_name = "facebook/nllb-200-distilled-600M"
+tokenizer = AutoTokenizer.from_pretrained(model_name, src_lang="eng_Latn")
+model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+
+def translate(text, target_lang):
+    inputs = tokenizer(text, return_tensors="pt")
+    forced_bos_token_id = tokenizer.convert_tokens_to_ids(target_lang)
+    output_tokens = model.generate(**inputs, forced_bos_token_id=forced_bos_token_id, max_length=60)
+    return tokenizer.decode(output_tokens[0], skip_special_tokens=True)
 
 # T2: translate Eng->Hindi and Eng->French
-hindi_outputs = [translator_hindi(sentence)[0]["translation_text"] for sentence in SENTENCES]
-french_outputs = [translator_french(sentence)[0]["translation_text"] for sentence in SENTENCES]
+hindi_outputs = [translate(sentence, "hin_Deva") for sentence in SENTENCES]
+french_outputs = [translate(sentence, "fra_Latn") for sentence in SENTENCES]
 
 for sentence, hindi, french in zip(SENTENCES, hindi_outputs, french_outputs):
     print(f"EN: {sentence}\n  HI: {hindi}\n  FR: {french}\n")
