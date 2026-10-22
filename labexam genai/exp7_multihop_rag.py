@@ -29,7 +29,7 @@ def generate(prompt):
     return flan_tokenizer.decode(output_tokens[0], skip_special_tokens=True)
 
 # i) Load HotpotQA, extract questions + support (context) documents
-dataset = load_dataset("hotpot_qa", "distractor", split=f"validation[:{NUM_QUESTIONS}]", trust_remote_code=True)
+dataset = load_dataset("hotpotqa/hotpot_qa", "distractor", split=f"validation[:{NUM_QUESTIONS}]", trust_remote_code=True)
 
 def normalize(text):
     text = text.lower()
