@@ -1,4 +1,13 @@
-"""Q4: Dictionary + brute-force attack demo on a hash, with strength check & export."""
+"""
+Experiment 4: Build python code for Dictionary Attack for plaintext and hash value.
+- Add brute-force simulation in this GUI
+- Add password strength checker (weak/medium/strong)
+- Export analyzed passwords by category
+- Support longer passwords (4+ characters)
+- Export analysis report as .txt or .csv
+- Add real-time progress bar for brute-force
+(GUI used here because the question explicitly asks for one.)
+"""
 import hashlib
 import itertools
 import string

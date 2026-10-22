@@ -1,7 +1,15 @@
-"""Q8: Secure messaging - TLS (transport) + E2EE (Fernet, server never sees plaintext).
+"""
+Experiment 8: Develop a real-time messaging application where two
+devices can communicate securely. The application must use Transport
+Layer Security (TLS) for securing the client-server communication and
+End-to-End Encryption (E2EE) to ensure that only the sender and
+recipient can access the message content. The server should act
+solely as a message relay and have no access to plaintext messages.
+
 Run:  python q8_secure_messaging.py server
       python q8_secure_messaging.py client
-(Self-signed cert is auto-generated on first run for the TLS layer.)"""
+(Self-signed cert is auto-generated on first run for the TLS layer.)
+"""
 import sys
 import ssl
 import socket

@@ -1,49 +1,36 @@
-"""Q10a: RSA digital signature sign/verify (tkinter GUI) - default mode.
-Q10b: Flask login + JWT-secured API - run as: python q10_digital_signature_auth.py server"""
+"""
+Experiment 10: Digital Signatures, Authentication, and Authorization
+a) Implement digital signature generation and verification using RSA
+   (cryptography library).
+b) Simulate authentication and authorization using a web application
+   (Flask). Implement login functionality and secure API calls with
+   tokens (JWT).
+Case Study: Use of digital signatures in e-commerce and banking -
+RSA signatures let a bank/merchant server prove a transaction message
+really came from them and was not altered in transit, the same idea
+demonstrated in part (a) below.
+
+Run (b) as:  python q10_digital_signature_auth.py server
+"""
 import sys
 
-def run_rsa_gui():
-    import tkinter as tk
-    from tkinter import ttk
+def run_rsa_signature_demo():
     from cryptography.hazmat.primitives.asymmetric import rsa, padding
     from cryptography.hazmat.primitives import hashes
 
     private_key = rsa.generate_private_key(public_exponent=65537, key_size=2048)
     public_key = private_key.public_key()
-    signature_holder = {"signature": None}
+    sign_padding = padding.PSS(mgf=padding.MGF1(hashes.SHA256()), salt_length=padding.PSS.MAX_LENGTH)
 
-    def sign_message():
-        message = message_entry.get().encode()
-        signature_holder["signature"] = private_key.sign(
-            message,
-            padding.PSS(mgf=padding.MGF1(hashes.SHA256()), salt_length=padding.PSS.MAX_LENGTH),
-            hashes.SHA256(),
-        )
-        result_label.config(text=f"Signature (hex): {signature_holder['signature'].hex()[:60]}...")
+    message = input("Enter message to sign (e.g. a bank transaction): ").encode()
+    signature = private_key.sign(message, sign_padding, hashes.SHA256())
+    print("Signature (hex):", signature.hex()[:60], "...")
 
-    def verify_message():
-        try:
-            public_key.verify(
-                signature_holder["signature"],
-                message_entry.get().encode(),
-                padding.PSS(mgf=padding.MGF1(hashes.SHA256()), salt_length=padding.PSS.MAX_LENGTH),
-                hashes.SHA256(),
-            )
-            result_label.config(text="Signature VALID - message authentic & untampered.")
-        except Exception:
-            result_label.config(text="Signature INVALID - message was tampered or wrong signature.")
-
-    root = tk.Tk()
-    root.title("Q10a - RSA Digital Signature")
-    root.geometry("420x200")
-    ttk.Label(root, text="Message (e.g. bank transaction):").pack()
-    message_entry = ttk.Entry(root, width=45)
-    message_entry.pack()
-    ttk.Button(root, text="Sign", command=sign_message).pack(pady=4)
-    ttk.Button(root, text="Verify", command=verify_message).pack(pady=4)
-    result_label = ttk.Label(root, text="", wraplength=380)
-    result_label.pack(pady=6)
-    root.mainloop()
+    try:
+        public_key.verify(signature, message, sign_padding, hashes.SHA256())
+        print("Signature VALID - message authentic & untampered.")
+    except Exception:
+        print("Signature INVALID - message was tampered or wrong signature.")
 
 def run_flask_server():
     import jwt
@@ -80,4 +67,4 @@ if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "server":
         run_flask_server()
     else:
-        run_rsa_gui()
+        run_rsa_signature_demo()

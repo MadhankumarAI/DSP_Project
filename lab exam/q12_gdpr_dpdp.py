@@ -1,7 +1,10 @@
-"""Q12: GDPR vs DPDP Act 2023 comparative chart + mock data-breach incident report generator."""
+"""
+Experiment 12: Case Study on GDPR and DPDP Act 2023
+Create a comparative chart of GDPR and DPDP Act 2023 principles and
+explain roles like Data Protection Officer (DPO). Include a mock
+incident report format.
+"""
 import datetime
-import tkinter as tk
-from tkinter import ttk, filedialog, messagebox
 
 COMPARISON_ROWS = [
     ("Jurisdiction", "European Union", "India"),
@@ -13,19 +16,21 @@ COMPARISON_ROWS = [
     ("Scope", "Applies to EU residents' data globally", "Applies to digital personal data of Indian residents"),
 ]
 
-def show_comparison_chart():
-    window = tk.Toplevel(root)
-    window.title("GDPR vs DPDP Act 2023")
-    tree = ttk.Treeview(window, columns=("Aspect", "GDPR", "DPDP Act 2023"), show="headings", height=8)
-    for column, width in (("Aspect", 160), ("GDPR", 260), ("DPDP Act 2023", 260)):
-        tree.heading(column, text=column)
-        tree.column(column, width=width)
-    for row in COMPARISON_ROWS:
-        tree.insert("", tk.END, values=row)
-    tree.pack(fill="both", expand=True, padx=8, pady=8)
+for aspect, gdpr, dpdp in COMPARISON_ROWS:
+    print(f"\n{aspect}")
+    print(f"  GDPR         : {gdpr}")
+    print(f"  DPDP Act 2023: {dpdp}")
 
-def generate_incident_report():
-    report = f"""DATA BREACH INCIDENT REPORT (Mock)
+print("""
+Role of the Data Protection Officer (DPO):
+Under both laws, the DPO is the person responsible for overseeing an
+organization's data protection strategy - monitoring compliance,
+handling data subject/principal requests, acting as the contact point
+for the regulator, and advising on data protection impact assessments.
+""")
+
+# Mock incident report format
+report = f"""DATA BREACH INCIDENT REPORT (Mock)
 Date/Time Reported : {datetime.datetime.now()}
 Incident ID         : INC-{datetime.datetime.now():%Y%m%d%H%M}
 Reported By         : DPO - Data Protection Officer
@@ -37,17 +42,4 @@ Notification Status  : Regulator notified per GDPR/DPDP timelines
 Root Cause           : Weak access-control misconfiguration
 Remediation Plan     : Rotate credentials, enable MFA, audit logs
 """
-    path = filedialog.asksaveasfilename(defaultextension=".txt", initialfile="incident_report.txt")
-    if path:
-        with open(path, "w") as f:
-            f.write(report)
-        messagebox.showinfo("Saved", "Mock incident report saved.")
-
-root = tk.Tk()
-root.title("Q12 - GDPR vs DPDP Act 2023")
-root.geometry("320x160")
-
-ttk.Button(root, text="Show Comparative Chart", command=show_comparison_chart).pack(pady=10)
-ttk.Button(root, text="Generate Mock Incident Report", command=generate_incident_report).pack(pady=10)
-
-root.mainloop()
+print(report)

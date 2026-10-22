@@ -1,46 +1,58 @@
-"""Q3: CIA Triad simulation - Confidentiality, Integrity, Availability."""
+"""
+Experiment 3: Exploring CIA Triad with Simulations
+Using a Python-based simulation to demonstrate how data can be
+protected (confidentiality), checked for tampering (integrity), and
+ensured to be available under attack (availability).
+"""
 import hashlib
 import time
 import threading
-import tkinter as tk
-from tkinter import ttk, scrolledtext
 from cryptography.fernet import Fernet
 
-def log(message):
-    output_box.insert(tk.END, message + "\n")
-    output_box.see(tk.END)
-
 def confidentiality_demo():
+    print("\n--- Confidentiality Demo ---")
     key = Fernet.generate_key()
     cipher = Fernet(key)
-    message = b"Top Secret: AI is amazing!"
-    encrypted = cipher.encrypt(message)
-    decrypted = cipher.decrypt(encrypted)
-    log(f"[Confidentiality] Original: {message}\nEncrypted: {encrypted}\nDecrypted: {decrypted}")
+    message = "Top Secret: AI is amazing!"
+    print("Original Message:", message)
+    encrypted = cipher.encrypt(message.encode())
+    print("Encrypted Message:", encrypted)
+    decrypted = cipher.decrypt(encrypted).decode()
+    print("Decrypted Message:", decrypted)
 
 def integrity_demo():
-    original_hash = hashlib.sha256(b"Data must stay the same").hexdigest()
-    tampered_hash = hashlib.sha256(b"Data must stay different").hexdigest()
-    result = "OK: unchanged" if original_hash == tampered_hash else "BREACH: data was altered!"
-    log(f"[Integrity] Original hash: {original_hash}\nTampered hash: {tampered_hash}\n{result}")
+    print("\n--- Integrity Demo ---")
+    message = "Data must stay the same"
+    hash1 = hashlib.sha256(message.encode()).hexdigest()
+    print("Original Hash:", hash1)
+    tampered_message = "Data must stay different"
+    hash2 = hashlib.sha256(tampered_message.encode()).hexdigest()
+    print("Tampered Hash :", hash2)
+    if hash1 == hash2:
+        print("Integrity OK")
+    else:
+        print("Integrity Breach! Data has been altered")
 
 def availability_demo():
-    def worker():
-        log("[Availability] Server running, files available.")
-        log("[Availability] Simulating DDoS attack... server busy!")
+    print("\n--- Availability Demo ---")
+    data_store = {"file1": "important data", "file2": "student records"}
+
+    def server():
+        for _ in range(3):
+            print("Server running. Files available:", list(data_store.keys()))
+            time.sleep(1)
+
+    def ddos_attack():
+        print("Simulating DDoS Attack... server busy!")
         time.sleep(2)
-        log("[Availability] Server restored and available again.")
-    threading.Thread(target=worker, daemon=True).start()
+        print("Server restored and available again.")
 
-root = tk.Tk()
-root.title("Q3 - CIA Triad")
-root.geometry("480x380")
+    server_thread = threading.Thread(target=server, daemon=True)
+    server_thread.start()
+    time.sleep(1)
+    ddos_attack()
 
-ttk.Button(root, text="Confidentiality Demo", command=confidentiality_demo).pack(pady=4)
-ttk.Button(root, text="Integrity Demo", command=integrity_demo).pack(pady=4)
-ttk.Button(root, text="Availability Demo", command=availability_demo).pack(pady=4)
-
-output_box = scrolledtext.ScrolledText(root, height=18)
-output_box.pack(fill="both", expand=True, padx=6, pady=6)
-
-root.mainloop()
+if __name__ == "__main__":
+    confidentiality_demo()
+    integrity_demo()
+    availability_demo()
